@@ -1,269 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Leverage — Revenue Systems by Matthew Bis</title>
-<meta name="description" content="Productized revenue systems for mid-market B2B teams — installed in your stack, configured for your motion, and yours to keep. Scale without scaling headcount." />
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%230B1220'/%3E%3Crect x='6' y='6' width='8' height='8' fill='none' stroke='%23FF6A39' stroke-width='2'/%3E%3Crect x='18' y='18' width='8' height='8' fill='none' stroke='%23FF6A39' stroke-width='2'/%3E%3C/svg%3E" />
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Leverage | Revenue Systems by Matthew Bis</title>
+<meta name="description" content="Productized revenue systems for mid-market B2B teams — installed in your stack, configured for your motion, and yours to keep. Scale without scaling headcount.">
+<meta name="theme-color" content="#f4f1ea">
+<meta property="og:title" content="Leverage | Revenue Systems by Matthew Bis">
+<meta property="og:description" content="Productized revenue systems mid-market teams own. Scale without scaling headcount.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://leverage.mattbis.com">
+<meta property="og:site_name" content="Matthew Bis">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leverage | Revenue Systems by Matthew Bis">
+<meta name="twitter:description" content="Productized revenue systems mid-market teams own. Scale without scaling headcount.">
+<link rel="canonical" href="https://leverage.mattbis.com">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
+<link rel="apple-touch-icon" href="/favicon-180.png">
+
+<!-- structured data: Service -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Leverage — Productized Revenue Systems",
+  "provider": {
+    "@type": "Person",
+    "name": "Matthew Bis",
+    "url": "https://mattbis.com"
+  },
+  "areaServed": "US",
+  "description": "Productized revenue systems for mid-market B2B teams — installed in the client's stack, configured for their motion, and owned by them after handoff.",
+  "offers": {
+    "@type": "Offer",
+    "name": "GTM / Revenue Diagnostic",
+    "priceCurrency": "USD",
+    "price": "2500-4000",
+    "description": "A focused 2–3 hour audit of where the revenue motion leaks, stalls, or hides — ending in a concrete system proposal."
+  }
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
-  :root{
-    --bg: #0B1220;
-    --bg-panel: #121B2E;
-    --bg-panel-2: #16223A;
-    --line: rgba(255,255,255,0.08);
-    --line-strong: rgba(255,255,255,0.16);
-    --text: #EDEFF4;
-    --text-muted: #8C96AE;
-    --text-faint: #5C6680;
-    --accent: #FF6A39;
-    --accent-soft: rgba(255,106,57,0.14);
-    --display: 'Space Grotesk', sans-serif;
-    --body: 'IBM Plex Sans', sans-serif;
-    --mono: 'IBM Plex Mono', monospace;
-  }
+:root{
+  --bg:#f4f1ea;
+  --ink:#1a1714;
+  --ink-soft:#4a443c;
+  --ink-faint:#6e6557;
+  --line:#d8d2c6;
+  --line-soft:#e4ded2;
+  --accent:#b5341f;
+  --accent-hover:#9c2c1a;
+  --paper:#faf8f3;
+  --shadow:rgba(26,23,20,.08);
+  --display:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  --mono:'JetBrains Mono',ui-monospace,monospace;
+  --serif:'Newsreader',Georgia,serif;
+  --focus:0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --easing:cubic-bezier(.2,.7,.3,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  background:var(--bg);
+  color:var(--ink);
+  font-family:var(--serif);
+  font-size:19px;
+  line-height:1.65;
+  -webkit-font-smoothing:antialiased;
+  text-rendering:optimizeLegibility;
+  overflow-x:hidden;
+}
+body::before{
+  content:"";
+  position:fixed;inset:0;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events:none;z-index:9999;mix-blend-mode:multiply;
+}
 
-  *{ margin:0; padding:0; box-sizing:border-box; }
+/* focus */
+:focus{outline:none}
+:focus-visible{outline:none;box-shadow:var(--focus);border-radius:2px}
 
-  html{ scroll-behavior:smooth; }
+/* skip link */
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
+  padding:12px 18px;font-family:var(--mono);font-size:12px;z-index:1000;border-radius:2px}
+.skip:focus{left:16px;top:16px}
 
-  body{
-    background:var(--bg);
-    color:var(--text);
-    font-family:var(--body);
-    line-height:1.6;
-    -webkit-font-smoothing:antialiased;
-  }
+.wrap{max-width:1080px;margin:0 auto;padding:0 7vw}
+@media(max-width:640px){.wrap{padding:0 22px}}
 
-  /* background grid texture */
-  body::before{
-    content:'';
-    position:fixed;
-    inset:0;
-    background-image:
-      linear-gradient(rgba(255,255,255,0.025) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255,255,255,0.025) 1px, transparent 1px);
-    background-size: 48px 48px;
-    pointer-events:none;
-    z-index:0;
-  }
+/* ─── NAV ─────────────────────────────────────────── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:100;
+  display:flex;justify-content:space-between;align-items:center;
+  padding:18px 7vw;
+  background:color-mix(in srgb, var(--bg) 86%, transparent);
+  backdrop-filter:saturate(140%) blur(8px);
+  -webkit-backdrop-filter:saturate(140%) blur(8px);
+  border-bottom:1px solid transparent;
+  transition:border-color .3s var(--easing), background .3s var(--easing);
+  font-family:var(--mono);
+  font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+}
+nav.scrolled{border-bottom-color:var(--line)}
+@media(max-width:640px){nav{padding:14px 22px}}
+nav .brand{font-weight:500;color:var(--ink);text-decoration:none;
+  padding:8px 0;display:inline-flex;align-items:center;gap:9px}
+nav .brand .brand-mark{color:var(--accent)}
+nav .brand .brand-sub{color:var(--ink-faint)}
+nav .links{display:flex;gap:6px;align-items:center}
+nav .links > a{color:var(--ink-soft);text-decoration:none;
+  padding:10px 14px;transition:color .25s,background .25s;border-radius:2px}
+nav .links > a:hover{color:var(--accent)}
+nav .links > a.nav-cta{
+  color:var(--accent);border:1px solid var(--line);
+  transition:border-color .25s,color .25s,background .25s;
+}
+nav .links > a.nav-cta:hover{border-color:var(--accent);background:var(--paper)}
+@media(max-width:680px){
+  nav .links > a.nav-back{display:none}
+}
 
-  .wrap{ max-width:1080px; margin:0 auto; padding:0 24px; position:relative; z-index:1; }
+/* ─── HERO ────────────────────────────────────────── */
+header{
+  min-height:100vh;min-height:100svh;
+  display:flex;flex-direction:column;justify-content:center;
+  padding-top:120px;padding-bottom:70px;position:relative;
+}
+@media(max-width:640px){
+  header{padding-top:104px;padding-bottom:48px;min-height:auto;
+    padding-top:calc(100px + env(safe-area-inset-top));}
+}
+.eyebrow{
+  font-family:var(--mono);font-size:12.5px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:30px;display:flex;align-items:center;gap:14px;
+  opacity:0;animation:rise .9s .1s forwards;
+}
+.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block}
+@media(max-width:640px){.eyebrow{font-size:11px;letter-spacing:.14em;margin-bottom:22px;gap:10px}}
 
-  /* ===== Nav ===== */
-  header.nav{
-    position:sticky; top:0; z-index:10;
-    background:rgba(11,18,32,0.85);
-    backdrop-filter: blur(8px);
-    border-bottom:1px solid var(--line);
-  }
-  header.nav .wrap{
-    display:flex; align-items:center; justify-content:space-between;
-    height:64px;
-  }
-  .wordmark{
-    font-family:var(--mono); font-size:14px; letter-spacing:0.12em;
-    color:var(--text);
-  }
-  .wordmark span{ color:var(--accent); }
-  .nav a.cta{
-    font-family:var(--mono); font-size:13px; letter-spacing:0.04em;
-    color:var(--text); text-decoration:none;
-    border:1px solid var(--line-strong); padding:8px 16px; border-radius:2px;
-    transition:border-color .15s, color .15s;
-  }
-  .nav a.cta:hover{ border-color:var(--accent); color:var(--accent); }
+h1{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(2.4rem,7.5vw,5.4rem);
+  line-height:1.05;letter-spacing:-.03em;
+  margin-bottom:32px;max-width:15ch;
+}
+h1 em{font-style:normal;color:var(--accent)}
+h1 .l{display:block;opacity:0;animation:rise 1s forwards}
+h1 .l:nth-child(1){animation-delay:.2s}
+h1 .l:nth-child(2){animation-delay:.34s}
+@media(max-width:640px){h1{line-height:1.07;margin-bottom:26px;max-width:none}}
 
-  /* ===== Sections ===== */
-  section{ padding:96px 0; position:relative; }
-  section + section{ border-top:1px solid var(--line); }
+.lede{
+  font-size:clamp(1.12rem,2.2vw,1.45rem);
+  color:var(--ink-soft);max-width:50ch;line-height:1.55;
+  opacity:0;animation:rise 1s .6s forwards;
+}
+@media(max-width:640px){.lede{font-size:1.05rem;line-height:1.55}}
 
-  .eyebrow{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.2em;
-    text-transform:uppercase; color:var(--accent);
-    margin-bottom:20px; display:flex; align-items:center; gap:10px;
-  }
-  .eyebrow::before{ content:''; width:18px; height:1px; background:var(--accent); display:inline-block; }
+.actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;
+  opacity:0;animation:rise 1s .78s forwards;}
+@media(max-width:640px){.actions{margin-top:32px;gap:12px}}
 
-  h1,h2,h3{ font-family:var(--display); font-weight:600; letter-spacing:-0.01em; }
+.btn{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
+  text-transform:uppercase;
+  padding:15px 28px;border-radius:2px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:10px;
+  transition:background .25s,border-color .25s,color .25s,transform .15s var(--easing);
+  min-height:50px;
+}
+.btn:active{transform:scale(.98)}
+.btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent)}
+.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink-soft);background:transparent}
+.btn-ghost:hover{border-color:var(--ink-soft);color:var(--ink)}
+@media(max-width:480px){.btn{width:100%;justify-content:center}}
 
-  /* ===== Hero ===== */
-  .hero{ padding-top:72px; }
-  .hero h1{
-    font-size:clamp(2.6rem, 6vw, 4.4rem);
-    line-height:1.08;
-    max-width:14ch;
-  }
-  .hero h1 em{
-    font-style:normal; color:var(--accent);
-  }
-  .hero p.lede{
-    margin-top:28px; max-width:46ch;
-    font-size:1.125rem; color:var(--text-muted);
-  }
-  .hero .actions{ margin-top:40px; display:flex; gap:16px; flex-wrap:wrap; }
+/* ─── SCHEMATIC (signature) ───────────────────────── */
+.schematic{margin-top:64px;opacity:0;animation:rise 1s .95s forwards}
+@media(max-width:640px){.schematic{margin-top:48px}}
+.schematic-frame{
+  border:1px solid var(--line);border-radius:2px;
+  padding:30px 26px 24px;background:var(--paper);position:relative;
+}
+.schematic-frame .fig-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:var(--ink-faint);text-transform:uppercase;margin-bottom:22px;
+}
+.schematic svg{width:100%;height:auto;display:block}
 
-  .btn{
-    font-family:var(--mono); font-size:14px; letter-spacing:0.04em;
-    padding:14px 28px; border-radius:2px; text-decoration:none;
-    display:inline-flex; align-items:center; gap:10px;
-    transition: transform .15s ease, opacity .15s ease;
-  }
-  .btn:hover{ transform: translateY(-1px); }
-  .btn-primary{ background:var(--accent); color:#0B1220; font-weight:500; }
-  .btn-ghost{ border:1px solid var(--line-strong); color:var(--text); }
-  .btn-ghost:hover{ border-color:var(--accent); color:var(--accent); }
+/* bracket motif — corner ticks in the accent */
+.bracket{position:relative}
+.bracket::before,.bracket::after{
+  content:"";position:absolute;width:13px;height:13px;
+  border:2px solid var(--accent);
+}
+.bracket::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
+.bracket::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
 
-  /* ===== Schematic diagram ===== */
-  .schematic{ margin-top:72px; }
-  .schematic-frame{
-    border:1px solid var(--line); border-radius:2px;
-    padding:32px 24px 24px;
-    background:linear-gradient(180deg, var(--bg-panel), var(--bg));
-  }
-  .schematic-frame .fig-label{
-    font-family:var(--mono); font-size:11px; letter-spacing:0.18em;
-    color:var(--text-faint); text-transform:uppercase;
-    margin-bottom:24px;
-  }
-  .schematic svg{ width:100%; height:auto; display:block; }
+@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
 
-  /* ===== Bracket motif ===== */
-  .bracket{ position:relative; }
-  .bracket::before, .bracket::after{
-    content:''; position:absolute; width:14px; height:14px;
-    border:2px solid var(--accent); opacity:0.85;
-  }
-  .bracket::before{ top:-1px; left:-1px; border-right:none; border-bottom:none; }
-  .bracket::after{ bottom:-1px; right:-1px; border-left:none; border-top:none; }
+/* ─── SECTIONS ────────────────────────────────────── */
+section{padding:clamp(64px,10vw,120px) 0;position:relative}
+@media(max-width:640px){section{padding:68px 0}}
+.divider{height:1px;background:var(--line);border:0;margin:0}
 
-  /* ===== Systems grid ===== */
-  .section-head{ max-width:60ch; margin-bottom:56px; }
-  .section-head h2{ font-size:clamp(1.8rem, 3.4vw, 2.6rem); }
-  .section-head p{ color:var(--text-muted); margin-top:14px; font-size:1.05rem; }
+.sec-label{
+  font-family:var(--mono);font-size:12px;
+  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:16px;display:flex;align-items:center;gap:12px;
+}
+.sec-label::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block}
+@media(max-width:640px){.sec-label{font-size:11px;margin-bottom:14px}}
 
-  .systems-grid{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:24px;
-  }
-  .system-card{
-    background:var(--bg-panel); border:1px solid var(--line);
-    border-radius:2px; padding:32px 28px; display:flex; flex-direction:column;
-  }
-  .system-card .sys-id{
-    font-family:var(--mono); font-size:12px; letter-spacing:0.18em;
-    color:var(--accent); margin-bottom:18px;
-  }
-  .system-card h3{ font-size:1.25rem; margin-bottom:14px; line-height:1.3; }
-  .system-card .problem{
-    font-family:var(--mono); font-size:13px; color:var(--text-faint);
-    margin-bottom:16px; line-height:1.6;
-  }
-  .system-card .problem span{ color:var(--text-muted); }
-  .system-card p.outcome{ color:var(--text-muted); font-size:0.97rem; flex-grow:1; }
+.sec-head{
+  font-family:var(--display);font-weight:500;
+  font-size:clamp(1.85rem,4.2vw,2.9rem);line-height:1.12;
+  letter-spacing:-.02em;max-width:22ch;
+}
+.sec-intro{color:var(--ink-soft);max-width:56ch;margin-top:16px;
+  font-size:clamp(1rem,1.6vw,1.08rem);line-height:1.6}
+@media(max-width:640px){.sec-intro{font-size:1rem}}
+.section-head{margin-bottom:52px}
+@media(max-width:640px){.section-head{margin-bottom:40px}}
 
-  /* ===== Ownership / two-col ===== */
-  .twocol{ display:grid; grid-template-columns:1.1fr 0.9fr; gap:64px; align-items:center; }
-  .twocol h2{ font-size:clamp(1.8rem, 3.4vw, 2.4rem); margin-bottom:20px; }
-  .twocol p{ color:var(--text-muted); margin-bottom:16px; }
-  .twocol p:last-child{ margin-bottom:0; }
-  .twocol .lead-line{ color:var(--text); font-weight:500; font-family:var(--display); font-size:1.15rem; }
+/* reveal */
+.reveal{opacity:0;transform:translateY(28px);
+  transition:opacity .9s var(--easing),transform .9s var(--easing)}
+.reveal.in{opacity:1;transform:none}
+.r-stagger > *{opacity:0;transform:translateY(18px);
+  transition:opacity .65s var(--easing),transform .65s var(--easing)}
+.r-stagger.in > *{opacity:1;transform:none}
+.r-stagger.in > *:nth-child(1){transition-delay:.05s}
+.r-stagger.in > *:nth-child(2){transition-delay:.15s}
+.r-stagger.in > *:nth-child(3){transition-delay:.25s}
 
-  .own-panel{
-    border:1px solid var(--line); border-radius:2px;
-    padding:28px; background:var(--bg-panel);
-  }
-  .own-panel .fig-label{
-    font-family:var(--mono); font-size:11px; letter-spacing:0.18em;
-    color:var(--text-faint); text-transform:uppercase; margin-bottom:20px;
-  }
-  .own-panel ul{ list-style:none; }
-  .own-panel li{
-    font-family:var(--mono); font-size:13px; color:var(--text-muted);
-    padding:14px 0; border-bottom:1px solid var(--line);
-    display:flex; justify-content:space-between; gap:16px;
-  }
-  .own-panel li:last-child{ border-bottom:none; }
-  .own-panel li b{ color:var(--text); font-weight:500; }
+/* ─── SYSTEMS CATALOG ─────────────────────────────── */
+.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+@media(max-width:860px){.systems-grid{grid-template-columns:1fr;gap:18px}}
+.system-card{
+  background:var(--paper);border:1px solid var(--line);
+  border-radius:2px;padding:32px 28px;display:flex;flex-direction:column;
+  transition:border-color .3s var(--easing),transform .35s var(--easing);
+}
+@media(hover:hover){
+  .system-card:hover{border-color:var(--ink-soft);transform:translateY(-3px)}
+}
+.system-card .sys-id{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:var(--accent);margin-bottom:18px;
+}
+.system-card h3{font-family:var(--display);font-weight:600;font-size:1.3rem;
+  letter-spacing:-.015em;line-height:1.25;margin-bottom:16px}
+.system-card .problem{
+  font-family:var(--serif);font-style:italic;font-size:1.02rem;
+  color:var(--ink);border-left:2px solid var(--accent);padding-left:16px;
+  line-height:1.5;margin-bottom:18px;
+}
+.system-card .problem .klabel{
+  display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);
+  margin-bottom:7px;
+}
+.system-card p.outcome{color:var(--ink-soft);font-size:1.02rem;line-height:1.6;flex-grow:1}
 
-  /* ===== Process ladder ===== */
-  .ladder{
-    display:grid; grid-template-columns:repeat(3, 1fr); gap:24px; position:relative;
-  }
-  .ladder::before{
-    content:''; position:absolute; top:34px; left:0; right:0; height:1px;
-    background:repeating-linear-gradient(to right, var(--line-strong) 0 8px, transparent 8px 16px);
-    z-index:0;
-  }
-  .step{ position:relative; z-index:1; }
-  .step .step-num{
-    width:68px; height:68px; border-radius:50%;
-    background:var(--bg-panel); border:1px solid var(--line-strong);
-    display:flex; align-items:center; justify-content:center;
-    font-family:var(--mono); font-size:13px; color:var(--accent);
-    margin-bottom:24px;
-  }
-  .step h3{ font-size:1.1rem; margin-bottom:10px; }
-  .step p{ color:var(--text-muted); font-size:0.95rem; }
-  .step .price{
-    display:inline-block; margin-top:14px; font-family:var(--mono);
-    font-size:12px; color:var(--text-faint); letter-spacing:0.04em;
-  }
+/* ─── OWNERSHIP (two-col) ─────────────────────────── */
+.proof{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
+@media(max-width:860px){.twocol{grid-template-columns:1fr;gap:40px}}
+.twocol .sec-head{margin-bottom:18px}
+.twocol .lead-line{
+  font-family:var(--display);font-weight:400;
+  font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.32;letter-spacing:-.015em;
+  color:var(--ink);max-width:24ch;margin-bottom:22px;
+}
+.twocol .lead-line em{font-style:normal;color:var(--accent)}
+.twocol p{color:var(--ink-soft);font-size:1.05rem;line-height:1.62;margin-bottom:16px;max-width:52ch}
+.twocol p:last-child{margin-bottom:0}
 
-  /* ===== Diagnostic CTA ===== */
-  .diagnostic-panel{
-    border:1px solid var(--line); border-radius:2px;
-    padding:48px; background:linear-gradient(135deg, var(--bg-panel) 0%, var(--bg-panel-2) 100%);
-    display:grid; grid-template-columns:1.3fr 1fr; gap:48px; align-items:center;
-  }
-  .diagnostic-panel h2{ font-size:clamp(1.6rem, 3vw, 2.2rem); margin-bottom:16px; }
-  .diagnostic-panel p{ color:var(--text-muted); }
-  .diagnostic-meta{ font-family:var(--mono); font-size:13px; color:var(--text-muted); }
-  .diagnostic-meta .price{ color:var(--accent); font-size:1.4rem; display:block; margin-bottom:6px; font-family:var(--display); font-weight:600; }
-  .diagnostic-cta-actions{ margin-top:28px; }
+.own-panel{
+  border:1px solid var(--line);border-radius:2px;
+  padding:30px 28px;background:var(--bg);
+}
+.own-panel .fig-label{
+  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
+  color:var(--ink-faint);text-transform:uppercase;margin-bottom:18px;
+}
+.own-panel ul{list-style:none}
+.own-panel li{
+  font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
+  padding:14px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:16px;align-items:baseline;
+}
+.own-panel li:last-child{border-bottom:none}
+.own-panel li b{color:var(--accent);font-weight:500}
 
-  /* ===== Footer ===== */
-  footer{ padding:48px 0 64px; }
-  footer .wrap{
-    display:flex; justify-content:space-between; align-items:center;
-    flex-wrap:wrap; gap:16px;
-    font-family:var(--mono); font-size:12px; color:var(--text-faint); letter-spacing:0.04em;
-  }
-  footer a{ color:var(--text-muted); text-decoration:none; }
-  footer a:hover{ color:var(--accent); }
+/* ─── PROCESS LADDER ──────────────────────────────── */
+.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
+.ladder::before{
+  content:"";position:absolute;top:33px;left:8%;right:8%;height:1px;
+  background:repeating-linear-gradient(to right,var(--line) 0 7px,transparent 7px 14px);
+  z-index:0;
+}
+@media(max-width:860px){
+  .ladder{grid-template-columns:1fr;gap:38px}
+  .ladder::before{display:none}
+}
+.step{position:relative;z-index:1}
+.step .step-num{
+  width:66px;height:66px;border-radius:50%;
+  background:var(--paper);border:1px solid var(--line);
+  display:flex;align-items:center;justify-content:center;
+  font-family:var(--mono);font-size:13px;color:var(--accent);
+  margin-bottom:22px;
+}
+.step h3{font-family:var(--display);font-weight:600;font-size:1.15rem;
+  letter-spacing:-.01em;margin-bottom:10px}
+.step p{color:var(--ink-soft);font-size:1rem;line-height:1.58;max-width:34ch}
+.step .price{
+  display:inline-block;margin-top:14px;font-family:var(--mono);
+  font-size:12px;color:var(--ink-faint);letter-spacing:.04em;
+}
 
-  /* ===== Responsive ===== */
-  @media (max-width: 860px){
-    .systems-grid{ grid-template-columns:1fr; }
-    .twocol{ grid-template-columns:1fr; gap:40px; }
-    .ladder{ grid-template-columns:1fr; gap:40px; }
-    .ladder::before{ display:none; }
-    .diagnostic-panel{ grid-template-columns:1fr; padding:32px; }
-    section{ padding:64px 0; }
+/* ─── DIAGNOSTIC CTA ──────────────────────────────── */
+.diag{background:var(--ink);color:var(--paper)}
+.diag .wrap{padding-top:clamp(72px,10vw,116px);padding-bottom:clamp(72px,10vw,116px)}
+.diagnostic-panel{
+  display:grid;grid-template-columns:1.3fr 1fr;gap:52px;align-items:center;
+}
+@media(max-width:860px){.diagnostic-panel{grid-template-columns:1fr;gap:36px}}
+.diag .sec-label{color:#e8a08d}
+.diag .sec-label::before{background:#e8a08d}
+.diag h2{font-family:var(--display);font-weight:500;
+  font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.025em;line-height:1.1;
+  margin-bottom:18px;max-width:18ch}
+.diag h2 em{font-style:normal;color:#e8a08d}
+.diag p{color:#c9c2b6;font-size:clamp(1rem,1.5vw,1.1rem);line-height:1.58;max-width:48ch}
+.diagnostic-cta-actions{margin-top:30px}
+.diag .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+.diag .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
+.diagnostic-meta{
+  font-family:var(--mono);font-size:13px;color:#c9c2b6;line-height:1.7;
+  border-left:1px solid #555049;padding-left:24px;
+}
+@media(max-width:860px){.diagnostic-meta{border-left:0;padding-left:0;border-top:1px solid #555049;padding-top:24px}}
+.diagnostic-meta .price{
+  color:#e8a08d;font-size:1.7rem;display:block;margin-bottom:10px;
+  font-family:var(--display);font-weight:600;letter-spacing:-.02em;
+}
+
+/* ─── FOOTER ──────────────────────────────────────── */
+footer{padding:48px 0;font-family:var(--mono);font-size:12px;
+  letter-spacing:.05em;color:var(--ink-faint)}
+footer .row{display:flex;justify-content:space-between;
+  flex-wrap:wrap;gap:18px;align-items:center}
+@media(max-width:640px){
+  footer{padding:40px 0}
+  footer .row{flex-direction:column;align-items:flex-start;gap:20px}
+}
+footer a{color:var(--ink-soft);text-decoration:none;
+  border-bottom:1px solid var(--line);padding:4px 0;display:inline-block;
+  transition:color .25s,border-color .25s}
+footer a:hover{color:var(--accent);border-color:var(--accent)}
+footer .fl{display:flex;gap:24px;flex-wrap:wrap}
+@media(max-width:640px){footer .fl{gap:18px}}
+
+/* ─── REDUCED MOTION ──────────────────────────────── */
+@media (prefers-reduced-motion: reduce){
+  *,*::before,*::after{
+    animation-duration:.01ms !important;animation-iteration-count:1 !important;
+    transition-duration:.01ms !important;transition-delay:0ms !important;
+    scroll-behavior:auto !important;
   }
+  .reveal,.r-stagger > *{opacity:1 !important;transform:none !important}
+  .eyebrow,h1 .l,.lede,.actions,.schematic{opacity:1 !important;animation:none !important}
+}
 </style>
 </head>
 <body>
 
-<header class="nav">
-  <div class="wrap">
-    <div class="wordmark">LEVERAGE<span>.</span>MATTBIS.COM</div>
-    <a class="cta" href="#diagnostic">Diagnostic →</a>
-  </div>
-</header>
+<a class="skip" href="#main">Skip to content</a>
 
-<!-- ===== HERO ===== -->
-<section class="hero">
+<nav>
+  <a href="#top" class="brand">
+    <span class="brand-mark">Leverage</span>
+    <span class="brand-sub">— Matthew Bis</span>
+  </a>
+  <span class="links">
+    <a href="https://mattbis.com" class="nav-back">&#8592;&nbsp;Main&nbsp;site</a>
+    <a href="#systems">Systems</a>
+    <a href="#diagnostic" class="nav-cta">Diagnostic&nbsp;&rarr;</a>
+  </span>
+</nav>
+
+<main id="main">
+
+<header id="top">
   <div class="wrap">
     <div class="eyebrow">Revenue systems, productized</div>
-    <h1>Scale without <em>scaling headcount.</em></h1>
-    <p class="lede">
-      Your pipeline is slow, your reps are buried in admin, and expansion revenue is sitting
-      unread in your CRM. I build the systems that fix that — installed in your stack,
-      configured for your motion, and yours to keep when I'm done.
-    </p>
+    <h1>
+      <span class="l">Scale without</span>
+      <span class="l"><em>scaling headcount.</em></span>
+    </h1>
+    <p class="lede">Your pipeline is slow, your reps are buried in admin, and expansion revenue is sitting unread in your CRM. I build the systems that fix that — installed in your stack, configured for your motion, and yours to keep when I'm done.</p>
     <div class="actions">
       <a class="btn btn-primary" href="#diagnostic">Book a revenue diagnostic</a>
       <a class="btn btn-ghost" href="#systems">See the systems</a>
@@ -272,63 +418,61 @@
     <div class="schematic">
       <div class="schematic-frame bracket">
         <div class="fig-label">Fig. 00 — Deterministic, not agentic</div>
-        <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: an input flows through a system into a measurable output">
-          <!-- INPUT box -->
-          <rect x="20" y="40" width="180" height="80" fill="none" stroke="#3A4666" stroke-width="1.5"/>
-          <text x="110" y="75" fill="#EDEFF4" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="middle">INPUT</text>
-          <text x="110" y="96" fill="#8C96AE" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">CRM + ICP data</text>
-
+        <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: CRM and ICP data flow through an installed, owned system into pipeline and revenue output.">
+          <!-- INPUT -->
+          <rect x="20" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="110" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">INPUT</text>
+          <text x="110" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">CRM + ICP data</text>
           <!-- connector 1 -->
-          <line x1="200" y1="80" x2="310" y2="80" stroke="#FF6A39" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <polygon points="310,80 300,75 300,85" fill="#FF6A39"/>
-
-          <!-- SYSTEM box -->
-          <rect x="310" y="20" width="180" height="120" fill="#16223A" stroke="#FF6A39" stroke-width="1.5"/>
-          <text x="400" y="75" fill="#EDEFF4" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="middle">SYSTEM</text>
-          <text x="400" y="96" fill="#8C96AE" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">installed + owned</text>
-
+          <line x1="200" y1="80" x2="306" y2="80" stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <polygon points="312,80 302,75 302,85" fill="#b5341f"/>
+          <!-- SYSTEM -->
+          <rect x="312" y="20" width="176" height="120" fill="#faf8f3" stroke="#b5341f" stroke-width="1.5"/>
+          <text x="400" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">SYSTEM</text>
+          <text x="400" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">installed + owned</text>
           <!-- connector 2 -->
-          <line x1="490" y1="80" x2="600" y2="80" stroke="#FF6A39" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <polygon points="600,80 590,75 590,85" fill="#FF6A39"/>
-
-          <!-- OUTPUT box -->
-          <rect x="600" y="40" width="180" height="80" fill="none" stroke="#3A4666" stroke-width="1.5"/>
-          <text x="690" y="75" fill="#EDEFF4" font-family="IBM Plex Mono, monospace" font-size="14" text-anchor="middle">OUTPUT</text>
-          <text x="690" y="96" fill="#8C96AE" font-family="IBM Plex Mono, monospace" font-size="11" text-anchor="middle">pipeline / revenue</text>
+          <line x1="488" y1="80" x2="594" y2="80" stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5"/>
+          <polygon points="600,80 590,75 590,85" fill="#b5341f"/>
+          <!-- OUTPUT -->
+          <rect x="600" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="690" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">OUTPUT</text>
+          <text x="690" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">pipeline / revenue</text>
         </svg>
       </div>
     </div>
   </div>
-</section>
+</header>
+
+<hr class="divider">
 
 <!-- ===== SYSTEMS ===== -->
 <section id="systems">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">The catalog</div>
-      <h2>Three systems. Three expensive problems.</h2>
-      <p>Each one is named for the problem it kills — not the technology underneath. Fixed scope, fixed price, configured for your stack, and handed off when it's done.</p>
+    <div class="section-head reveal">
+      <div class="sec-label">The catalog</div>
+      <h2 class="sec-head">Three systems. Three expensive problems.</h2>
+      <p class="sec-intro">Each one is named for the problem it kills — not the technology underneath. Fixed scope, fixed price, configured for your stack, and handed off when it's done.</p>
     </div>
 
-    <div class="systems-grid">
+    <div class="systems-grid reveal r-stagger">
       <div class="system-card bracket">
         <div class="sys-id">SYS. 01</div>
         <h3>Pipeline Velocity Engine</h3>
-        <div class="problem"><span>Kills:</span> "Our pipeline is too slow, and the funnel leaks from MQL to SQL."</div>
+        <div class="problem"><span class="klabel">Kills</span>"Our pipeline is too slow, and the funnel leaks from MQL to SQL."</div>
         <p class="outcome">Turns your ICP definition into live, targeted outbound — identification, sequencing, personalization, and automatic CRM logging — so the path from "who should we talk to" to "we're in conversation" compresses.</p>
       </div>
 
       <div class="system-card bracket">
         <div class="sys-id">SYS. 02</div>
         <h3>Expansion Signal System</h3>
-        <div class="problem"><span>Kills:</span> "We're leaving expansion revenue on the table because nobody's watching the signals."</div>
+        <div class="problem"><span class="klabel">Kills</span>"We're leaving expansion revenue on the table because nobody's watching the signals."</div>
         <p class="outcome">Reads existing CRM correspondence and account data to surface upsell and renewal signals your reps would otherwise miss — a revenue-retention layer over data you already own.</p>
       </div>
 
       <div class="system-card bracket">
         <div class="sys-id">SYS. 03</div>
         <h3>Sales Enablement &amp; Content System</h3>
-        <div class="problem"><span>Kills:</span> "Our reps waste hours making collateral, and our messaging is inconsistent."</div>
+        <div class="problem"><span class="klabel">Kills</span>"Our reps waste hours making collateral, and our messaging is inconsistent."</div>
         <p class="outcome">Generates on-brand collateral, sequence copy, and battle cards from a controlled context layer — so enablement scales without adding a content team.</p>
       </div>
     </div>
@@ -336,13 +480,13 @@
 </section>
 
 <!-- ===== OWNERSHIP ===== -->
-<section>
+<section class="proof">
   <div class="wrap">
-    <div class="twocol">
+    <div class="twocol reveal">
       <div>
-        <div class="eyebrow">Ownership</div>
-        <h2>You own it when I'm done.</h2>
-        <p class="lead-line">No retainer hostage, no black box, no vendor who disappears.</p>
+        <div class="sec-label">Ownership</div>
+        <h2 class="sec-head">You own it when I'm done.</h2>
+        <p class="lead-line">No retainer hostage, no black box, no <em>vendor who disappears.</em></p>
         <p>Every system is built inside your own stack — your CRM, your infrastructure, your data. When the build is handed off, it's yours: documented, maintainable, and running whether or not we keep working together.</p>
         <p>Maintenance is opt-in, not an ongoing toll. Built by one operator who's shipped 150+ production systems running a real go-to-market motion — not learned secondhand as a consultant.</p>
       </div>
@@ -361,15 +505,15 @@
 </section>
 
 <!-- ===== PROCESS ===== -->
-<section>
+<section id="process">
   <div class="wrap">
-    <div class="section-head">
-      <div class="eyebrow">How it works</div>
-      <h2>Diagnostic → build → own.</h2>
-      <p>A short, low-risk entry point, a fixed-scope build, and a clean handoff. No discovery spiral, no open-ended retainer to get started.</p>
+    <div class="section-head reveal">
+      <div class="sec-label">How it works</div>
+      <h2 class="sec-head">Diagnostic &rarr; build &rarr; own.</h2>
+      <p class="sec-intro">A short, low-risk entry point, a fixed-scope build, and a clean handoff. No discovery spiral, no open-ended retainer to get started.</p>
     </div>
 
-    <div class="ladder">
+    <div class="ladder reveal r-stagger">
       <div class="step">
         <div class="step-num">01</div>
         <h3>Diagnostic</h3>
@@ -393,16 +537,16 @@
 </section>
 
 <!-- ===== DIAGNOSTIC CTA ===== -->
-<section id="diagnostic">
+<section id="diagnostic" class="diag">
   <div class="wrap">
-    <div class="diagnostic-panel bracket">
+    <div class="diagnostic-panel reveal">
       <div>
-        <div class="eyebrow">Start here</div>
-        <h2>Start with the revenue diagnostic.</h2>
+        <div class="sec-label">Start here</div>
+        <h2>Start with the <em>revenue diagnostic.</em></h2>
         <p>A focused, paid audit of your sales and revenue operations — where the funnel leaks, where expansion revenue hides, and what a system to fix it would look like. You walk away with a concrete proposal, whether or not we work together next.</p>
         <div class="diagnostic-cta-actions">
-          <!-- TODO: replace mailto with a booking link (Calendly / scheduling tool) once set up -->
-          <a class="btn btn-primary" href="mailto:matt@mattbis.com?subject=Revenue%20Diagnostic">Book a diagnostic</a>
+          <!-- TODO: swap mailto for a booking link (Calendly / scheduling tool) once set up -->
+          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Revenue%20Diagnostic">Book a diagnostic</a>
         </div>
       </div>
       <div class="diagnostic-meta">
@@ -413,12 +557,42 @@
   </div>
 </section>
 
+</main>
+
 <footer>
   <div class="wrap">
-    <div>© 2026 Matthew Bis — Leverage</div>
-    <div><a href="https://www.mattbis.com">mattbis.com</a></div>
+    <div class="row">
+      <span>&copy; 2026 Matthew Bis — Leverage</span>
+      <span class="fl">
+        <a href="https://mattbis.com">Main site</a>
+        <a href="https://blog.mattbis.com">Blog</a>
+        <a href="https://www.linkedin.com/in/matthewjbis/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="mailto:matthewjbis@gmail.com">Email</a>
+      </span>
+    </div>
   </div>
 </footer>
 
+<script>
+(function(){
+  'use strict';
+
+  // scroll reveal
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  },{threshold:.15, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+
+  // nav hairline on scroll
+  var navEl = document.querySelector('nav');
+  if(navEl){
+    var onScroll = function(){ navEl.classList.toggle('scrolled', window.scrollY > 40); };
+    onScroll();
+    window.addEventListener('scroll', onScroll, {passive:true});
+  }
+})();
+</script>
 </body>
 </html>
