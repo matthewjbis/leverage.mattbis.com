@@ -164,8 +164,19 @@ h1 .l:nth-child(2){animation-delay:.34s}
 }
 @media(max-width:640px){.lede{font-size:1.05rem;line-height:1.55}}
 
+/* hero risk-reversal — A/B candidate; remove this rule + the matching
+   <p class="hero-guarantee"> in the hero to pull it back out cleanly */
+.hero-guarantee{
+  font-family:var(--mono);font-size:13px;line-height:1.5;
+  color:var(--ink);max-width:48ch;margin-top:24px;
+  padding-left:16px;border-left:2px solid var(--accent);
+  opacity:0;animation:rise 1s .72s forwards;
+}
+.hero-guarantee strong{font-weight:500}
+@media(max-width:640px){.hero-guarantee{font-size:12px;margin-top:20px}}
+
 .actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;
-  opacity:0;animation:rise 1s .78s forwards;}
+  opacity:0;animation:rise 1s .84s forwards;}
 @media(max-width:640px){.actions{margin-top:32px;gap:12px}}
 
 .btn{
@@ -184,7 +195,7 @@ h1 .l:nth-child(2){animation-delay:.34s}
 @media(max-width:480px){.btn{width:100%;justify-content:center}}
 
 /* ─── SCHEMATIC (signature) ───────────────────────── */
-.schematic{margin-top:64px;opacity:0;animation:rise 1s .95s forwards}
+.schematic{margin-top:64px;opacity:0;animation:rise 1s 1s forwards}
 @media(max-width:640px){.schematic{margin-top:48px}}
 .schematic-frame{
   border:1px solid var(--line);border-radius:2px;
@@ -382,7 +393,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
     scroll-behavior:auto !important;
   }
   .reveal,.r-stagger > *{opacity:1 !important;transform:none !important}
-  .eyebrow,h1 .l,.lede,.actions,.schematic{opacity:1 !important;animation:none !important}
+  .eyebrow,h1 .l,.lede,.hero-guarantee,.actions,.schematic{opacity:1 !important;animation:none !important}
 }
 </style>
 </head>
@@ -411,7 +422,8 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
       <span class="l">Scale without</span>
       <span class="l"><em>scaling headcount.</em></span>
     </h1>
-    <p class="lede">Your pipeline moves too slow. Your reps spend half the week on admin instead of selling. And the expansion revenue you already earned is sitting unactioned in your CRM. I build the systems that fix that, install them in your own stack, and hand them to you to keep. No retainer, no black box, no new headcount.</p>
+    <p class="lede">Your pipeline moves too slow. Your reps spend half the week on admin instead of selling. And the expansion revenue you already earned is sitting untouched in your CRM. I build the systems that fix that, install them in your own stack, and hand them to you to keep. No retainer, no black box, no new headcount.</p>
+    <p class="hero-guarantee"><strong>If the diagnostic doesn't hand you three fixes you can act on, you don't pay.</strong></p>
     <div class="actions">
       <a class="btn btn-primary" href="#diagnostic">Book the revenue diagnostic</a>
       <a class="btn btn-ghost" href="#systems">See the systems</a>
@@ -552,7 +564,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
         <!-- GUARANTEE: this risk-reversal is the single biggest lever on the page, but it's your money and reputation on the line. The bar below is deliberately concrete ("at least three specific fixes you can act on") so it's observable, not a subjective judgment a bad-faith buyer could argue. Edit the number or delete this paragraph entirely if you'd rather not commit. -->
         <p class="guarantee"><b>If you don't leave with at least three specific fixes you can act on, you don't pay.</b> And if we build, every dollar of the diagnostic credits toward the system.</p>
         <div class="diagnostic-cta-actions">
-          <!-- TODO: swap mailto for a booking link (Calendly / scheduling tool) once set up -->
+          <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the scheduler exists. This is the single most important conversion asset on the page — confirm the booking flow fires a confirmation and lands on your calendar before going live. The hero and nav "Diagnostic" buttons both scroll here, so the whole funnel collapses onto THIS one href. -->
           <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Revenue%20Diagnostic">Book a diagnostic</a>
         </div>
       </div>
@@ -574,6 +586,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
         <a href="https://mattbis.com">Main site</a>
         <a href="https://blog.mattbis.com">Blog</a>
         <a href="https://www.linkedin.com/in/matthewjbis/" target="_blank" rel="noopener">LinkedIn</a>
+        <!-- TODO: swap for matthew@mattbis.com once the domain mailbox is live and forwarding somewhere you read -->
         <a href="mailto:matthewjbis@gmail.com">Email</a>
       </span>
     </div>
