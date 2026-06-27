@@ -11,17 +11,18 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leverage | Revenue Systems by Matthew Bis</title>
-<meta name="description" content="Productized revenue systems for mid-market B2B teams. Installed in your stack, configured for your motion, and yours to keep. Scale without scaling headcount.">
+<title>Leverage | Outbound Systems by Matthew Bis</title>
+<!-- MATTHEW: title keeps the "Leverage" umbrella brand stable across your sites. Description + OG below are narrowed to the single outbound/SDR offer. When you reintroduce the catalog, widen these back. -->
+<meta name="description" content="Add SDR-level pipeline without adding SDR headcount. I build the outbound system that sources, sequences, and qualifies for you — installed in your own stack, and yours to keep.">
 <meta name="theme-color" content="#f4f1ea">
-<meta property="og:title" content="Leverage | Revenue Systems by Matthew Bis">
-<meta property="og:description" content="Productized revenue systems mid-market teams own. Scale without scaling headcount.">
+<meta property="og:title" content="Leverage | Outbound Systems by Matthew Bis">
+<meta property="og:description" content="More pipeline, not more reps. A deterministic outbound system you own — not a product you rent or an agency on retainer.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leverage.mattbis.com">
 <meta property="og:site_name" content="Matthew Bis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Leverage | Revenue Systems by Matthew Bis">
-<meta name="twitter:description" content="Productized revenue systems mid-market teams own. Scale without scaling headcount.">
+<meta name="twitter:title" content="Leverage | Outbound Systems by Matthew Bis">
+<meta name="twitter:description" content="More pipeline, not more reps. A deterministic outbound system you own.">
 <link rel="canonical" href="https://leverage.mattbis.com">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -33,20 +34,21 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Leverage — Productized Revenue Systems",
+  "name": "Leverage — Outbound Systems",
   "provider": {
     "@type": "Person",
     "name": "Matthew Bis",
     "url": "https://mattbis.com"
   },
   "areaServed": "US",
-  "description": "Productized revenue systems for mid-market B2B teams. Installed in the client's stack, configured for their motion, and owned by them after handoff.",
+  "serviceType": "B2B outbound / SDR automation system, built and handed off",
+  "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff. Scale SDR-level pipeline without scaling SDR headcount.",
   "offers": {
     "@type": "Offer",
-    "name": "GTM / Revenue Diagnostic",
+    "name": "Pipeline Diagnostic",
     "priceCurrency": "USD",
     "price": "2500-4000",
-    "description": "A focused 2 to 3 hour audit of where the revenue motion leaks, stalls, or hides, ending in a concrete system proposal."
+    "description": "A focused 2 to 3 hour audit of where the outbound motion leaks, stalls, or hides, ending in a concrete system proposal."
   }
 }
 </script>
@@ -261,7 +263,13 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 .r-stagger.in > *:nth-child(2){transition-delay:.15s}
 .r-stagger.in > *:nth-child(3){transition-delay:.25s}
 
-/* ─── SYSTEMS CATALOG ─────────────────────────────── */
+/* ─── BAND (paper-background section) ─────────────── */
+.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+
+/* ─── SYSTEMS CATALOG ─────────────────────────────────
+   Reserved. The 3-system catalog is intentionally pulled from the live page
+   while the site runs a single focused offer. These rules are kept so the
+   catalog can be dropped back in unchanged once each system has real proof. */
 .systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
 @media(max-width:860px){.systems-grid{grid-template-columns:1fr;gap:18px}}
 .system-card{
@@ -290,7 +298,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 }
 .system-card p.outcome{color:var(--ink-soft);font-size:1.02rem;line-height:1.6;flex-grow:1}
 
-/* ─── OWNERSHIP (two-col) ─────────────────────────── */
+/* ─── TWO-COL (prose + panel) ─────────────────────── */
 .proof{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
 .twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
 @media(max-width:860px){.twocol{grid-template-columns:1fr;gap:40px}}
@@ -320,6 +328,21 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 }
 .own-panel li:last-child{border-bottom:none}
 .own-panel li b{color:var(--accent);font-weight:500}
+/* total row — for the cost ledger */
+.own-panel li.total{border-bottom:none;border-top:1px solid var(--accent);
+  margin-top:4px;padding-top:16px}
+.own-panel li.total b{font-size:1.15rem;font-family:var(--display)}
+
+/* ─── DUO SPLIT (the build: machine vs. human) ────── */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+@media(max-width:860px){.duo{grid-template-columns:1fr;gap:18px}}
+.duo .own-panel{background:var(--paper)}
+.duo .own-panel li{justify-content:flex-start}
+/* wide ledger — two-up list inside one panel */
+.own-panel.wide{margin-top:20px;background:var(--paper)}
+.own-panel.wide ul{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
+@media(max-width:640px){.own-panel.wide ul{grid-template-columns:1fr}}
+.own-panel.wide li{justify-content:flex-start}
 
 /* ─── PROCESS LADDER ──────────────────────────────── */
 .ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
@@ -416,7 +439,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
   </a>
   <span class="links">
     <a href="https://mattbis.com" class="nav-back">&#8592;&nbsp;Main&nbsp;site</a>
-    <a href="#systems">Systems</a>
+    <a href="#build">The&nbsp;build</a>
     <a href="#diagnostic" class="nav-cta">Diagnostic&nbsp;&rarr;</a>
   </span>
 </nav>
@@ -425,26 +448,26 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
 
 <header id="top">
   <div class="wrap">
-    <div class="eyebrow">Productized revenue systems</div>
+    <div class="eyebrow">Outbound systems for B2B sales teams</div>
     <h1>
-      <span class="l">Scale without</span>
-      <span class="l"><em>scaling headcount.</em></span>
+      <span class="l">More pipeline.</span>
+      <span class="l"><em>Not more reps.</em></span>
     </h1>
-    <p class="lede">Your pipeline moves too slow. Your reps spend half the week on admin instead of selling. And the expansion revenue you already earned is sitting untouched in your CRM. I build the systems that fix that, install them in your own stack, and hand them to you to keep. No retainer, no black box, no new headcount.</p>
+    <p class="lede">A fully-loaded SDR runs six figures a year and is gone inside two. Before one is even ramped, you're hiring the next. I build the system that does the top-of-funnel work — finds the accounts, runs the sequences, qualifies the replies — installed in your own stack and handed to you to keep. Your reps stop prospecting and start closing.</p>
     <p class="hero-guarantee"><strong>If the diagnostic doesn't hand you three fixes you can act on, you don't pay.</strong></p>
     <div class="actions">
-      <a class="btn btn-primary" href="#diagnostic">Book the revenue diagnostic</a>
-      <a class="btn btn-ghost" href="#systems">See the systems</a>
+      <a class="btn btn-primary" href="#diagnostic">Book the pipeline diagnostic</a>
+      <a class="btn btn-ghost" href="#math">See the math</a>
     </div>
 
     <div class="schematic">
       <div class="schematic-frame bracket">
         <div class="fig-label">Fig. 00 — Deterministic, not agentic</div>
-        <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: CRM and ICP data flow through an installed, owned system into pipeline and revenue output.">
+        <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: ICP and buying-signal data flow through an installed, owned system into qualified meetings.">
           <!-- INPUT -->
           <rect x="20" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
           <text x="110" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">INPUT</text>
-          <text x="110" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">CRM + ICP data</text>
+          <text x="110" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">ICP + signals</text>
           <!-- connector 1 -->
           <line x1="200" y1="80" x2="306" y2="80" stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5"/>
           <polygon points="312,80 302,75 302,85" fill="#b5341f"/>
@@ -458,7 +481,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
           <!-- OUTPUT -->
           <rect x="600" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
           <text x="690" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">OUTPUT</text>
-          <text x="690" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">pipeline / revenue</text>
+          <text x="690" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">qualified meetings</text>
         </svg>
       </div>
     </div>
@@ -467,39 +490,82 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
 
 <hr class="divider">
 
-<!-- ===== SYSTEMS ===== -->
-<section id="systems">
+<!-- ===== THE MATH (cost of the status quo) ===== -->
+<section id="math" class="band">
+  <div class="wrap">
+    <div class="twocol reveal">
+      <div>
+        <div class="sec-label">The status quo</div>
+        <h2 class="sec-head">The math on one SDR.</h2>
+        <p class="lead-line">A rep you hire this week isn't selling until Q2. <em>And won't be here in two years.</em></p>
+        <!-- MATTHEW: the figures in the ledger + this prose are industry numbers (Bridge Group SDR Metrics; Emergence Capital; Built In comp data) so they're defensible without claiming they're yours. If you want hard citations on the page later, a single small "sources" line under the panel is the cleanest place. Adjust ranges to whatever you're comfortable defending on a call. -->
+        <p>The real cost of an SDR isn't the base salary. Add benefits, tooling and data seats, a three-month ramp where they generate nothing, and a manager's time to coach them — and one rep lands between $100K and $170K a year, fully loaded.</p>
+        <p>Median tenure is under two years and turnover runs 34–40%. So you're not hiring once. You're re-hiring and re-ramping on a loop, and a five-person desk becomes a half-million-dollar line item that resets every couple of years.</p>
+        <p>A system doesn't ramp. It doesn't churn, and it never needs backfilling. It runs the same top-of-funnel work every day, for a one-time build, and it's yours.</p>
+      </div>
+      <div class="own-panel bracket">
+        <div class="fig-label">Fig. 02 — One SDR, fully loaded</div>
+        <ul>
+          <li>Base salary <b>$55–60K</b></li>
+          <li>Benefits &amp; payroll tax <b>+~20%</b></li>
+          <li>Tools, data &amp; seats <b>$5–10K</b></li>
+          <li>3-month ramp <b>Sunk</b></li>
+          <li>Management overhead <b>Ongoing</b></li>
+          <li class="total">Per year <b>$100–170K</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE BUILD ===== -->
+<section id="build">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sec-label">The catalog</div>
-      <h2 class="sec-head">Three systems. Three expensive problems.</h2>
-      <p class="sec-intro">Each is named for the problem it kills, not the tech underneath. Fixed scope, fixed price, configured for your stack, and handed off when it's done.</p>
+      <div class="sec-label">The build</div>
+      <h2 class="sec-head">One system that runs the top of your funnel.</h2>
+      <!-- The "not an autonomous agent" framing is the implicit counter-position: it separates you from rented AI-SDR products and from set-it-loose agents, without naming anyone. -->
+      <p class="sec-intro">Not an autonomous agent turned loose on your CRM. A deterministic pipeline that does the repeatable work — sourcing, sequencing, qualifying, logging — so the only things that reach a human are the conversations that need one.</p>
     </div>
 
-    <div class="systems-grid reveal r-stagger">
-      <div class="system-card bracket">
-        <div class="sys-id">SYS. 01</div>
-        <h3>Pipeline Velocity Engine</h3>
-        <div class="problem"><span class="klabel">Kills</span>"Our pipeline's too slow, and the funnel leaks between MQL and SQL."</div>
-        <p class="outcome">Turns your ICP into booked conversations. The system finds the right accounts, sequences them, personalizes at scale, and logs every touch to your CRM on its own. The distance between "who should we talk to" and "we're in a deal" stops being a hiring problem.</p>
-        <!-- PROOF (work in progress): drop one real result here once you have it. Strongest form = a before/after meetings number tied to a named account. e.g. "Built this for [client]; went from X to Y qualified meetings/month with zero new SDRs." Render it as a short line, ideally in the accent color or a small bordered callout. -->
+    <div class="duo reveal r-stagger">
+      <div class="own-panel bracket">
+        <div class="fig-label">The system handles — volume</div>
+        <ul>
+          <li>Sources &amp; enriches target accounts</li>
+          <li>Builds lists from live buying signals</li>
+          <li>Runs multi-step sequences</li>
+          <li>Personalizes every touch in your voice</li>
+          <li>Triages &amp; qualifies replies</li>
+          <li>Dedupes against open opps + customers</li>
+          <li>Logs every touch to your CRM</li>
+        </ul>
       </div>
+      <div class="own-panel bracket">
+        <div class="fig-label">Your reps keep — judgment</div>
+        <ul>
+          <li>The qualified conversations</li>
+          <li>Real objection handling</li>
+          <li>Multi-threading the buying committee</li>
+          <li>Reading the room on a live call</li>
+          <li>Negotiating and closing</li>
+          <li>The relationships that compound</li>
+        </ul>
+      </div>
+    </div>
 
-      <div class="system-card bracket">
-        <div class="sys-id">SYS. 02</div>
-        <h3>Expansion Signal System</h3>
-        <div class="problem"><span class="klabel">Kills</span>"We're leaving expansion revenue on the table because nobody's watching the signals."</div>
-        <p class="outcome">Surfaces the upsell and renewal signals already buried in your CRM and inbox, and drops them in front of the rep who owns the account before the moment passes. Revenue retention from data you already paid to collect.</p>
-        <!-- PROOF (work in progress): a recovered-revenue dollar figure or a renewal-rate lift from a real account lands hardest here. -->
-      </div>
-
-      <div class="system-card bracket">
-        <div class="sys-id">SYS. 03</div>
-        <h3>Sales Enablement &amp; Content System</h3>
-        <div class="problem"><span class="klabel">Kills</span>"Our reps burn hours building collateral, and the messaging drifts."</div>
-        <p class="outcome">Generates on-brand collateral, sequence copy, and battle cards from one controlled source of truth. Enablement that scales without a content hire, and a message that stays consistent across every rep.</p>
-        <!-- PROOF (work in progress): hours saved per rep/week, or a rep ramp-time reduction, is the proof point to add here. -->
-      </div>
+    <div class="own-panel wide bracket reveal">
+      <div class="fig-label">Fig. 03 — In every build</div>
+      <ul>
+        <li>ICP + target-account definition</li>
+        <li>Sourcing + enrichment pipeline</li>
+        <li>Sequenced outbound in your brand voice</li>
+        <li>Qualification + reply-classification gate</li>
+        <li>CRM dedup + automatic logging</li>
+        <li>Deterministic orchestration (n8n)</li>
+        <li>Hallucination + false-positive guardrails</li>
+        <li>Documentation + full handoff</li>
+      </ul>
     </div>
   </div>
 </section>
@@ -511,9 +577,10 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
       <div>
         <div class="sec-label">Ownership</div>
         <h2 class="sec-head">You own it when I'm done.</h2>
-        <p class="lead-line">No retainer hostage. No black box. No <em>vendor who disappears.</em></p>
-        <p>Every system is built inside your own stack: your CRM, your infrastructure, your data. When the build ships, it's yours. Documented, maintainable, and running whether or not we ever work together again.</p>
-        <p>Maintenance is opt-in, never a toll. Built by one operator who runs this exact go-to-market motion every day, not a consultant who learned it secondhand. 150+ production systems shipped.<!-- PROOF (work in progress): stack one more hard specific onto "150+" to harden it, e.g. across how many companies, or over how many years. Hopkins: a definite number gets believed; a round claim gets discounted. --></p>
+        <!-- Implicit counter-position lives in this line: "subscription" → rented products, "vendor you can't switch off" → retainer agencies. No competitor named. -->
+        <p class="lead-line">No subscription. No black box. No <em>vendor you can't switch off.</em></p>
+        <p>Every system is built inside your own stack — your CRM, your infrastructure, your data. It isn't a seat you rent or a dashboard you log into. When the build ships, it's yours: documented, maintainable, and running whether or not we ever work together again.</p>
+        <p>Maintenance is opt-in, never a toll. Built by one operator who runs this exact outbound motion every day, not a consultant who learned it secondhand. 150+ production systems shipped.<!-- MATTHEW: harden "150+" with one definite second fact — across how many companies, or over how many years. A specific number gets believed; a round one gets discounted. This is also the slot for your first real anonymized result the moment you close one ("took [client] from X to Y meetings/month with zero new SDRs") — that single line outweighs every industry stat above it. --></p>
       </div>
       <div class="own-panel bracket">
         <div class="fig-label">Fig. 01 — What you get</div>
@@ -542,14 +609,15 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
       <div class="step">
         <div class="step-num">01</div>
         <h3>Diagnostic</h3>
-        <p>A focused 2 to 3 hour audit of where your revenue motion leaks, stalls, or hides. You leave with a written proposal you can act on, with me or without me. If we build, the fee credits toward the system.</p>
+        <p>A focused 2 to 3 hour audit of where your outbound motion leaks, stalls, or hides. You leave with a written proposal you can act on, with me or without me. If we build, the fee credits toward the system.</p>
         <span class="price">$2,500 – $4,000</span>
       </div>
       <div class="step">
         <div class="step-num">02</div>
-        <h3>System build</h3>
-        <p>One named system from the catalog, installed and configured for your stack on fixed scope and timeline.</p>
-        <span class="price">$8,000 – $15,000</span>
+        <h3>Build</h3>
+        <p>The system, built and configured for your exact stack on a fixed scope and timeline. You review the sequences and logic before anything goes live.</p>
+        <!-- MATTHEW: build range ($8–15K) is deliberately kept off the page per the single-price decision — it comes up live in the diagnostic, after the proposal has framed the value. Re-add a price line here if you ever want it to pre-qualify on budget. -->
+        <span class="price">Fixed scope · priced in the diagnostic</span>
       </div>
       <div class="step">
         <div class="step-num">03</div>
@@ -567,13 +635,13 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
     <div class="diagnostic-panel reveal">
       <div>
         <div class="sec-label">Start here</div>
-        <h2>Start with the <em>revenue diagnostic.</em></h2>
-        <p>A focused, paid audit of your sales and revenue operations. In 2 to 3 hours I map where your funnel leaks, where expansion revenue is hiding, and exactly what a system to fix it looks like. You walk away with a written proposal you own, whether or not we ever build together.</p>
+        <h2>Start with the <em>pipeline diagnostic.</em></h2>
+        <p>A focused, paid audit of your outbound motion. In 2 to 3 hours I map where your pipeline stalls, what a system to fix it would do, and what it replaces in headcount cost. You leave with a written proposal you own — whether or not we ever build together.</p>
         <!-- GUARANTEE: this risk-reversal is the single biggest lever on the page, but it's your money and reputation on the line. The bar below is deliberately concrete ("at least three specific fixes you can act on") so it's observable, not a subjective judgment a bad-faith buyer could argue. Edit the number or delete this paragraph entirely if you'd rather not commit. -->
         <p class="guarantee"><b>If you don't leave with at least three specific fixes you can act on, you don't pay.</b> And if we build, every dollar of the diagnostic credits toward the system.</p>
         <div class="diagnostic-cta-actions">
           <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the scheduler exists. This is the single most important conversion asset on the page — confirm the booking flow fires a confirmation and lands on your calendar before going live. The hero and nav "Diagnostic" buttons both scroll here, so the whole funnel collapses onto THIS one href. -->
-          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Revenue%20Diagnostic">Book a diagnostic</a>
+          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic</a>
         </div>
       </div>
       <div class="diagnostic-meta">
