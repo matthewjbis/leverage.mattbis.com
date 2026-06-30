@@ -54,7 +54,7 @@
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#f4f1ea;
@@ -65,9 +65,10 @@
   --line-soft:#e4ded2;
   --accent:#b5341f;
   --accent-hover:#9c2c1a;
+  --accent-on-dark:#e8a08d;
   --paper:#faf8f3;
   --shadow:rgba(26,23,20,.08);
-  --display:'Space Grotesk',-apple-system,BlinkMacSystemFont,sans-serif;
+  --display:'Instrument Sans',-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --serif:'Newsreader',Georgia,serif;
   --focus:0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
@@ -121,7 +122,7 @@ nav.scrolled{border-bottom-color:var(--line)}
 @media(max-width:640px){nav{padding:14px 22px}}
 nav .brand{font-weight:500;color:var(--ink);text-decoration:none;
   padding:8px 0;display:inline-flex;align-items:center;gap:9px}
-nav .brand .brand-mark{color:var(--accent)}
+nav .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
 nav .brand .brand-sub{color:var(--ink-faint)}
 nav .links{display:flex;gap:6px;align-items:center}
 nav .links > a{color:var(--ink-soft);text-decoration:none;
@@ -174,8 +175,8 @@ h1 .l:nth-child(2){animation-delay:.34s}
 }
 @media(max-width:640px){.lede{font-size:1.05rem;line-height:1.55}}
 
-/* hero risk-reversal — A/B candidate; remove this rule + the matching
-   <p class="hero-guarantee"> in the hero to pull it back out cleanly */
+/* hero risk-reversal — primary guarantee placement; the diagnostic CTA
+   section keeps only the credit-toward-build clause, not a restated guarantee */
 .hero-guarantee{
   font-family:var(--mono);font-size:13px;line-height:1.5;
   color:var(--ink);max-width:48ch;margin-top:24px;
@@ -378,15 +379,15 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
   display:grid;grid-template-columns:1.3fr 1fr;gap:52px;align-items:center;
 }
 @media(max-width:860px){.diagnostic-panel{grid-template-columns:1fr;gap:36px}}
-.diag .sec-label{color:#e8a08d}
-.diag .sec-label::before{background:#e8a08d}
+.diag .sec-label{color:var(--accent-on-dark)}
+.diag .sec-label::before{background:var(--accent-on-dark)}
 .diag h2{font-family:var(--display);font-weight:500;
   font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.025em;line-height:1.1;
   margin-bottom:18px;max-width:18ch}
-.diag h2 em{font-style:normal;color:#e8a08d}
+.diag h2 em{font-style:normal;color:var(--accent-on-dark)}
 .diag p{color:#c9c2b6;font-size:clamp(1rem,1.5vw,1.1rem);line-height:1.58;max-width:48ch}
 .diag p.guarantee{color:var(--paper);margin-top:18px}
-.diag p.guarantee b{color:#e8a08d;font-weight:500}
+.diag p.guarantee b{color:var(--accent-on-dark);font-weight:500}
 .diagnostic-cta-actions{margin-top:30px}
 .diag .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
 .diag .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
@@ -396,7 +397,7 @@ section{padding:clamp(64px,10vw,120px) 0;position:relative}
 }
 @media(max-width:860px){.diagnostic-meta{border-left:0;padding-left:0;border-top:1px solid #555049;padding-top:24px}}
 .diagnostic-meta .price{
-  color:#e8a08d;font-size:1.7rem;display:block;margin-bottom:10px;
+  color:var(--accent-on-dark);font-size:1.7rem;display:block;margin-bottom:10px;
   font-family:var(--display);font-weight:600;letter-spacing:-.02em;
 }
 
@@ -434,8 +435,8 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
 
 <nav>
   <a href="#top" class="brand">
-    <span class="brand-mark">Leverage</span>
-    <span class="brand-sub">— Matthew Bis</span>
+    <span class="dot" aria-hidden="true"></span>Matthew&nbsp;Bis
+    <span class="brand-sub">&middot; Leverage</span>
   </a>
   <span class="links">
     <a href="https://mattbis.com" class="nav-back">&#8592;&nbsp;Main&nbsp;site</a>
@@ -454,9 +455,9 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
       <span class="l"><em>Not more reps.</em></span>
     </h1>
     <p class="lede">A fully-loaded SDR runs six figures a year and is gone inside two. Before one is even ramped, you're hiring the next. I build the system that does the top-of-funnel work — finds the accounts, runs the sequences, qualifies the replies — installed in your own stack and handed to you to keep. Your reps stop prospecting and start closing.</p>
-    <p class="hero-guarantee"><strong>If the diagnostic doesn't hand you three fixes you can act on, you don't pay.</strong></p>
+    <p class="hero-guarantee"><strong>Guaranteed: you leave with three actionable fixes — or you don't pay.</strong></p>
     <div class="actions">
-      <a class="btn btn-primary" href="#diagnostic">Book the pipeline diagnostic</a>
+      <a class="btn btn-primary" href="#diagnostic">Book the diagnostic — guaranteed actionable or it's free</a>
       <a class="btn btn-ghost" href="#math">See the math</a>
     </div>
 
@@ -637,8 +638,8 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
         <div class="sec-label">Start here</div>
         <h2>Start with the <em>pipeline diagnostic.</em></h2>
         <p>A focused, paid audit of your outbound motion. In 2 to 3 hours I map where your pipeline stalls, what a system to fix it would do, and what it replaces in headcount cost. You leave with a written proposal you own — whether or not we ever build together.</p>
-        <!-- GUARANTEE: this risk-reversal is the single biggest lever on the page, but it's your money and reputation on the line. The bar below is deliberately concrete ("at least three specific fixes you can act on") so it's observable, not a subjective judgment a bad-faith buyer could argue. Edit the number or delete this paragraph entirely if you'd rather not commit. -->
-        <p class="guarantee"><b>If you don't leave with at least three specific fixes you can act on, you don't pay.</b> And if we build, every dollar of the diagnostic credits toward the system.</p>
+        <!-- GUARANTEE: the risk-reversal itself now lives in the hero so it's the first thing a visitor sees. This paragraph just keeps the credit-toward-build clause, which isn't a duplicate. -->
+        <p class="guarantee">If we build, <b>every dollar of the diagnostic credits toward the system.</b></p>
         <div class="diagnostic-cta-actions">
           <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the scheduler exists. This is the single most important conversion asset on the page — confirm the booking flow fires a confirmation and lands on your calendar before going live. The hero and nav "Diagnostic" buttons both scroll here, so the whole funnel collapses onto THIS one href. -->
           <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic</a>
