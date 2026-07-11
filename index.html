@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Google tag (gtag.js) -->
+<!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-G74Q0SPWF1"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
@@ -11,18 +11,23 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leverage | Outbound Systems by Matthew Bis</title>
-<!-- MATTHEW: title keeps the "Leverage" umbrella brand stable across your sites. Description + OG below are narrowed to the single outbound/SDR offer. When you reintroduce the catalog, widen these back. -->
-<meta name="description" content="Add SDR-level pipeline without adding SDR headcount. I build the outbound system that sources, sequences, and qualifies for you — installed in your own stack, and yours to keep.">
-<meta name="theme-color" content="#f4f1ea">
-<meta property="og:title" content="Leverage | Outbound Systems by Matthew Bis">
-<meta property="og:description" content="More pipeline, not more reps. A deterministic outbound system you own — not a product you rent or an agency on retainer.">
+<title>Leverage | GTM Engineering by Matt Bis</title>
+<!-- MATTHEW: full redesign, modeled on the page architecture the category leaders converged on
+     (sticky nav + CTA button · hero + trust strip · numbered pain points · system diagram ·
+     card grids · big-stat band · pricing cards with checklists · FAQ accordion · final CTA band).
+     Both run LIGHT themes with bold sans headlines — so does this. Your signature element,
+     replacing the client-logo walls you don't have yet, is the terminal/system-log card in the
+     hero: it SHOWS the product doing its job, which no logo wall can. -->
+<meta name="description" content="I build the outbound system that finds your accounts, runs your sequences, and qualifies your replies — installed in your stack, live in ~30 days, and yours to keep. No retainer, no seat license, no SDR ramp.">
+<meta name="theme-color" content="#fdfdfb">
+<meta property="og:title" content="Leverage | GTM Engineering by Matt Bis">
+<meta property="og:description" content="More pipeline, not more reps. A GTM engineer builds your outbound system in your own stack — and hands you the keys.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leverage.mattbis.com">
 <meta property="og:site_name" content="Matthew Bis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Leverage | Outbound Systems by Matthew Bis">
-<meta name="twitter:description" content="More pipeline, not more reps. A deterministic outbound system you own.">
+<meta name="twitter:title" content="Leverage | GTM Engineering by Matt Bis">
+<meta name="twitter:description" content="More pipeline, not more reps. GTM engineering you own — not a seat you rent.">
 <link rel="canonical" href="https://leverage.mattbis.com">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
@@ -34,398 +39,288 @@
 {
   "@context": "https://schema.org",
   "@type": "Service",
-  "name": "Leverage — Outbound Systems",
-  "provider": {
-    "@type": "Person",
-    "name": "Matthew Bis",
-    "url": "https://mattbis.com"
-  },
+  "name": "Leverage — GTM Engineering, Installed & Owned",
+  "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
   "areaServed": "US",
-  "serviceType": "B2B outbound / SDR automation system, built and handed off",
-  "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff. Scale SDR-level pipeline without scaling SDR headcount.",
+  "serviceType": "B2B GTM engineering — outbound system built in the client's stack and handed off",
+  "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff.",
   "offers": {
     "@type": "Offer",
     "name": "Pipeline Diagnostic",
     "priceCurrency": "USD",
-    "price": "2500-4000",
-    "description": "A focused 2 to 3 hour audit of where the outbound motion leaks, stalls, or hides, ending in a concrete system proposal."
+    "price": "3500",
+    "description": "A focused 2 to 3 hour audit of the outbound motion, ending in a Pipeline Leak Map and a fixed-scope system proposal. Guaranteed actionable or free; fee credits toward the build."
   }
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Newsreader:ital,opsz,wght@0,6..72,300;0,6..72,400;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#f4f1ea;
-  --ink:#1a1714;
-  --ink-soft:#4a443c;
-  --ink-faint:#6e6557;
-  --line:#d8d2c6;
-  --line-soft:#e4ded2;
-  --accent:#b5341f;
-  --accent-hover:#9c2c1a;
-  --accent-on-dark:#e8a08d;
-  --paper:#faf8f3;
-  --shadow:rgba(26,23,20,.08);
-  --display:'Instrument Sans',-apple-system,BlinkMacSystemFont,sans-serif;
+  --bg:#fdfdfb;
+  --bg-soft:#f4f5f1;
+  --ink:#10130f;
+  --ink-soft:#3f463d;
+  --ink-faint:#6b7267;
+  --line:#e0e3da;
+  --line-strong:#c9cec2;
+  --accent:#15803d;          /* pipeline green */
+  --accent-ink:#0f5c2c;
+  --accent-soft:#e7f4ec;
+  --accent-bright:#4ade80;   /* on dark only */
+  --dark:#0e120f;
+  --dark-2:#161b17;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
-  --serif:'Newsreader',Georgia,serif;
-  --focus:0 0 0 2px var(--bg), 0 0 0 4px var(--accent);
+  --radius:14px;
+  --shadow:0 1px 2px rgba(16,19,15,.05),0 8px 24px -12px rgba(16,19,15,.12);
   --easing:cubic-bezier(.2,.7,.3,1);
+  --focus:0 0 0 2px var(--bg),0 0 0 4px var(--accent);
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  background:var(--bg);
-  color:var(--ink);
-  font-family:var(--serif);
-  font-size:19px;
-  line-height:1.65;
-  -webkit-font-smoothing:antialiased;
-  text-rendering:optimizeLegibility;
+  background:var(--bg);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.65;
+  -webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;
   overflow-x:hidden;
 }
-body::before{
-  content:"";
-  position:fixed;inset:0;
-  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='120'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-  pointer-events:none;z-index:9999;mix-blend-mode:multiply;
-}
-
-/* focus */
 :focus{outline:none}
-:focus-visible{outline:none;box-shadow:var(--focus);border-radius:2px}
+:focus-visible{outline:none;box-shadow:var(--focus);border-radius:6px}
 
-/* skip link */
-.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:var(--paper);
-  padding:12px 18px;font-family:var(--mono);font-size:12px;z-index:1000;border-radius:2px}
+.skip{position:absolute;left:-9999px;top:0;background:var(--ink);color:#fff;
+  padding:12px 18px;font-family:var(--mono);font-size:12px;z-index:1000;border-radius:6px}
 .skip:focus{left:16px;top:16px}
 
-.wrap{max-width:1080px;margin:0 auto;padding:0 7vw}
-@media(max-width:640px){.wrap{padding:0 22px}}
+.wrap{max-width:1120px;margin:0 auto;padding:0 6vw}
+@media(max-width:640px){.wrap{padding:0 20px}}
 
-/* ─── NAV ─────────────────────────────────────────── */
+/* ─── NAV (leader pattern: sticky bar + hard CTA button) ─── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
-  display:flex;justify-content:space-between;align-items:center;
-  padding:18px 7vw;
-  background:color-mix(in srgb, var(--bg) 86%, transparent);
-  backdrop-filter:saturate(140%) blur(8px);
-  -webkit-backdrop-filter:saturate(140%) blur(8px);
+  display:flex;justify-content:space-between;align-items:center;gap:16px;
+  padding:14px 6vw;
+  background:color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter:saturate(160%) blur(10px);
+  -webkit-backdrop-filter:saturate(160%) blur(10px);
   border-bottom:1px solid transparent;
-  transition:border-color .3s var(--easing), background .3s var(--easing);
-  font-family:var(--mono);
-  font-size:12px;letter-spacing:.08em;text-transform:uppercase;
+  transition:border-color .3s var(--easing);
 }
 nav.scrolled{border-bottom-color:var(--line)}
-@media(max-width:640px){nav{padding:14px 22px}}
-nav .brand{font-weight:500;color:var(--ink);text-decoration:none;
-  padding:8px 0;display:inline-flex;align-items:center;gap:9px}
-nav .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-nav .brand .brand-sub{color:var(--ink-faint)}
-nav .links{display:flex;gap:6px;align-items:center}
-nav .links > a{color:var(--ink-soft);text-decoration:none;
-  padding:10px 14px;transition:color .25s,background .25s;border-radius:2px}
-nav .links > a:hover{color:var(--accent)}
-nav .links > a.nav-cta{
-  color:var(--accent);border:1px solid var(--line);
-  transition:border-color .25s,color .25s,background .25s;
-}
-nav .links > a.nav-cta:hover{border-color:var(--accent);background:var(--paper)}
-@media(max-width:680px){
-  nav .links > a.nav-back{display:none}
-}
+@media(max-width:640px){nav{padding:12px 20px}}
+nav .brand{font-weight:700;font-size:15px;letter-spacing:-.01em;color:var(--ink);
+  text-decoration:none;display:inline-flex;align-items:center;gap:9px}
+nav .brand .dot{width:8px;height:8px;border-radius:2px;background:var(--accent);flex-shrink:0}
+nav .brand .brand-sub{color:var(--ink-faint);font-weight:500}
+nav .links{display:flex;gap:2px;align-items:center;font-size:13.5px;font-weight:500}
+nav .links > a{color:var(--ink-soft);text-decoration:none;padding:9px 13px;border-radius:99px;
+  transition:color .2s,background .2s}
+nav .links > a:hover{color:var(--ink);background:var(--bg-soft)}
+nav .links > a.nav-cta{background:var(--ink);color:#fff;padding:10px 18px;margin-left:8px}
+nav .links > a.nav-cta:hover{background:var(--accent-ink);color:#fff}
+@media(max-width:760px){nav .links > a:not(.nav-cta){display:none}}
 
-/* ─── HERO ────────────────────────────────────────── */
-header{
-  min-height:100vh;min-height:100svh;
-  display:flex;flex-direction:column;justify-content:center;
-  padding-top:120px;padding-bottom:70px;position:relative;
-}
-@media(max-width:640px){
-  header{padding-top:104px;padding-bottom:48px;min-height:auto;
-    padding-top:calc(100px + env(safe-area-inset-top));}
-}
-.eyebrow{
-  font-family:var(--mono);font-size:12.5px;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-  margin-bottom:30px;display:flex;align-items:center;gap:14px;
-  opacity:0;animation:rise .9s .1s forwards;
-}
-.eyebrow::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block}
-@media(max-width:640px){.eyebrow{font-size:11px;letter-spacing:.14em;margin-bottom:22px;gap:10px}}
-
-h1{
-  font-family:var(--display);font-weight:500;
-  font-size:clamp(2.4rem,7.5vw,5.4rem);
-  line-height:1.05;letter-spacing:-.03em;
-  margin-bottom:32px;max-width:15ch;
-}
-h1 em{font-style:normal;color:var(--accent)}
-h1 .l{display:block;opacity:0;animation:rise 1s forwards}
-h1 .l:nth-child(1){animation-delay:.2s}
-h1 .l:nth-child(2){animation-delay:.34s}
-@media(max-width:640px){h1{line-height:1.07;margin-bottom:26px;max-width:none}}
-
-.lede{
-  font-size:clamp(1.12rem,2.2vw,1.45rem);
-  color:var(--ink-soft);max-width:50ch;line-height:1.55;
-  opacity:0;animation:rise 1s .6s forwards;
-}
-@media(max-width:640px){.lede{font-size:1.05rem;line-height:1.55}}
-
-/* hero risk-reversal — primary guarantee placement; the diagnostic CTA
-   section keeps only the credit-toward-build clause, not a restated guarantee */
-.hero-guarantee{
-  font-family:var(--mono);font-size:13px;line-height:1.5;
-  color:var(--ink);max-width:48ch;margin-top:24px;
-  padding-left:16px;border-left:2px solid var(--accent);
-  opacity:0;animation:rise 1s .72s forwards;
-}
-.hero-guarantee strong{font-weight:500}
-@media(max-width:640px){.hero-guarantee{font-size:12px;margin-top:20px}}
-
-.actions{margin-top:40px;display:flex;gap:14px;flex-wrap:wrap;
-  opacity:0;animation:rise 1s .84s forwards;}
-@media(max-width:640px){.actions{margin-top:32px;gap:12px}}
-
+/* ─── BUTTONS (pill, leader convention) ─── */
 .btn{
-  font-family:var(--mono);font-size:12.5px;letter-spacing:.06em;
-  text-transform:uppercase;
-  padding:15px 28px;border-radius:2px;text-decoration:none;
-  display:inline-flex;align-items:center;gap:10px;
-  transition:background .25s,border-color .25s,color .25s,transform .15s var(--easing);
-  min-height:50px;
+  font-family:var(--sans);font-size:14.5px;font-weight:600;letter-spacing:0;
+  padding:15px 26px;border-radius:99px;text-decoration:none;
+  display:inline-flex;align-items:center;gap:9px;min-height:50px;
+  transition:background .2s,border-color .2s,color .2s,transform .15s var(--easing);
 }
 .btn:active{transform:scale(.98)}
-.btn-primary{background:var(--accent);color:#fff;border:1px solid var(--accent)}
-.btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
-.btn-ghost{border:1px solid var(--line);color:var(--ink-soft);background:transparent}
-.btn-ghost:hover{border-color:var(--ink-soft);color:var(--ink)}
+.btn-primary{background:var(--ink);color:#fff;border:1px solid var(--ink)}
+.btn-primary:hover{background:var(--accent-ink);border-color:var(--accent-ink)}
+.btn-ghost{border:1px solid var(--line-strong);color:var(--ink);background:transparent}
+.btn-ghost:hover{border-color:var(--ink);background:var(--bg-soft)}
 @media(max-width:480px){.btn{width:100%;justify-content:center}}
 
-/* ─── SCHEMATIC (signature) ───────────────────────── */
-.schematic{margin-top:64px;opacity:0;animation:rise 1s 1s forwards}
-@media(max-width:640px){.schematic{margin-top:48px}}
-.schematic-frame{
-  border:1px solid var(--line);border-radius:2px;
-  padding:30px 26px 24px;background:var(--paper);position:relative;
+/* ─── HERO ─── */
+header{padding:150px 0 72px;position:relative}
+@media(max-width:640px){header{padding:120px 0 52px}}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:56px;align-items:center}
+@media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:44px}}
+.eyebrow{
+  font-family:var(--mono);font-size:12px;font-weight:500;
+  letter-spacing:.14em;text-transform:uppercase;color:var(--accent);
+  display:inline-flex;align-items:center;gap:10px;margin-bottom:24px;
+  padding:7px 14px;border:1px solid var(--line);border-radius:99px;background:var(--bg-soft);
 }
-.schematic-frame .fig-label{
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  color:var(--ink-faint);text-transform:uppercase;margin-bottom:22px;
+.eyebrow::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+h1{
+  font-weight:800;font-size:clamp(2.5rem,6.2vw,4.4rem);
+  line-height:1.02;letter-spacing:-.035em;margin-bottom:24px;
 }
-.schematic svg{width:100%;height:auto;display:block}
-
-/* bracket motif — corner ticks in the accent */
-.bracket{position:relative}
-.bracket::before,.bracket::after{
-  content:"";position:absolute;width:13px;height:13px;
-  border:2px solid var(--accent);
+h1 em{font-style:normal;color:var(--accent)}
+.lede{font-size:clamp(1.05rem,1.8vw,1.22rem);color:var(--ink-soft);max-width:48ch;line-height:1.6}
+.lede b{color:var(--ink);font-weight:600}
+.hero-guarantee{
+  font-family:var(--mono);font-size:12.5px;line-height:1.55;color:var(--ink);
+  margin-top:22px;padding:12px 16px;border-left:3px solid var(--accent);
+  background:var(--accent-soft);border-radius:0 10px 10px 0;max-width:52ch;
 }
-.bracket::before{top:-1px;left:-1px;border-right:none;border-bottom:none}
-.bracket::after{bottom:-1px;right:-1px;border-left:none;border-top:none}
+.actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 
-@keyframes rise{from{opacity:0;transform:translateY(22px)}to{opacity:1;transform:none}}
-
-/* ─── SECTIONS ────────────────────────────────────── */
-section{padding:clamp(64px,10vw,120px) 0;position:relative}
-@media(max-width:640px){section{padding:68px 0}}
-.divider{height:1px;background:var(--line);border:0;margin:0}
-
-.sec-label{
-  font-family:var(--mono);font-size:12px;
-  letter-spacing:.16em;text-transform:uppercase;color:var(--accent);
-  margin-bottom:16px;display:flex;align-items:center;gap:12px;
+/* console card — the solo-engineer signature */
+.console{
+  background:var(--dark);border-radius:var(--radius);box-shadow:var(--shadow);
+  border:1px solid #23291f;overflow:hidden;
 }
-.sec-label::before{content:"";width:24px;height:1px;background:var(--accent);display:inline-block}
-@media(max-width:640px){.sec-label{font-size:11px;margin-bottom:14px}}
-
-.sec-head{
-  font-family:var(--display);font-weight:500;
-  font-size:clamp(1.85rem,4.2vw,2.9rem);line-height:1.12;
-  letter-spacing:-.02em;max-width:22ch;
+.console-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;
+  border-bottom:1px solid #23291f;background:var(--dark-2)}
+.console-bar i{width:10px;height:10px;border-radius:50%;background:#2c332a;display:block}
+.console-bar span{margin-left:8px;font-family:var(--mono);font-size:11px;
+  letter-spacing:.1em;text-transform:uppercase;color:#7d8779}
+.console pre{
+  font-family:var(--mono);font-size:12.5px;line-height:2.05;color:#aab5a4;
+  padding:20px 20px 22px;white-space:pre;overflow-x:auto;
 }
-.sec-intro{color:var(--ink-soft);max-width:56ch;margin-top:16px;
-  font-size:clamp(1rem,1.6vw,1.08rem);line-height:1.6}
-@media(max-width:640px){.sec-intro{font-size:1rem}}
-.section-head{margin-bottom:52px}
-@media(max-width:640px){.section-head{margin-bottom:40px}}
+.console pre b{color:var(--accent-bright);font-weight:500}
+.console pre .t{color:#5d665a}
+.console-caption{
+  font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
+  margin-top:12px;text-align:right;letter-spacing:.04em;
+}
+.console-caption b{color:var(--accent);font-weight:500}
 
-/* reveal */
-.reveal{opacity:0;transform:translateY(28px);
-  transition:opacity .9s var(--easing),transform .9s var(--easing)}
+/* ─── TRUST STRIP (leader pattern: badges right under hero) ─── */
+.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  background:var(--bg-soft);padding:22px 0}
+.strip .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
+.strip .strip-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--ink-faint);margin-right:6px}
+.badge{
+  font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-soft);
+  border:1px solid var(--line-strong);border-radius:99px;padding:7px 15px;background:var(--bg);
+}
+
+/* ─── SECTIONS ─── */
+section{padding:clamp(72px,9vw,110px) 0}
+.sec-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:14px;font-weight:500}
+.sec-head{font-weight:800;font-size:clamp(1.8rem,4vw,2.7rem);line-height:1.08;
+  letter-spacing:-.03em;max-width:24ch}
+.sec-intro{color:var(--ink-soft);max-width:58ch;margin-top:16px;font-size:1.05rem}
+.section-head{margin-bottom:48px}
+
+.reveal{opacity:0;transform:translateY(24px);
+  transition:opacity .8s var(--easing),transform .8s var(--easing)}
 .reveal.in{opacity:1;transform:none}
-.r-stagger > *{opacity:0;transform:translateY(18px);
-  transition:opacity .65s var(--easing),transform .65s var(--easing)}
+.r-stagger > *{opacity:0;transform:translateY(16px);
+  transition:opacity .6s var(--easing),transform .6s var(--easing)}
 .r-stagger.in > *{opacity:1;transform:none}
-.r-stagger.in > *:nth-child(1){transition-delay:.05s}
-.r-stagger.in > *:nth-child(2){transition-delay:.15s}
-.r-stagger.in > *:nth-child(3){transition-delay:.25s}
+.r-stagger.in > *:nth-child(1){transition-delay:.04s}
+.r-stagger.in > *:nth-child(2){transition-delay:.12s}
+.r-stagger.in > *:nth-child(3){transition-delay:.2s}
+.r-stagger.in > *:nth-child(4){transition-delay:.28s}
 
-/* ─── BAND (paper-background section) ─────────────── */
-.band{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+/* ─── CARDS ─── */
+.card{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:30px 28px;box-shadow:var(--shadow)}
+.card .num{font-family:var(--mono);font-size:12px;font-weight:600;color:var(--accent);
+  letter-spacing:.12em;margin-bottom:14px;display:block}
+.card h3{font-weight:700;font-size:1.14rem;letter-spacing:-.015em;margin-bottom:10px}
+.card p{color:var(--ink-soft);font-size:.98rem;line-height:1.6}
+.grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+@media(max-width:860px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
 
-/* ─── SYSTEMS CATALOG ─────────────────────────────────
-   Reserved. The 3-system catalog is intentionally pulled from the live page
-   while the site runs a single focused offer. These rules are kept so the
-   catalog can be dropped back in unchanged once each system has real proof. */
-.systems-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-@media(max-width:860px){.systems-grid{grid-template-columns:1fr;gap:18px}}
-.system-card{
-  background:var(--paper);border:1px solid var(--line);
-  border-radius:2px;padding:32px 28px;display:flex;flex-direction:column;
-  transition:border-color .3s var(--easing),transform .35s var(--easing);
-}
-@media(hover:hover){
-  .system-card:hover{border-color:var(--ink-soft);transform:translateY(-3px)}
-}
-.system-card .sys-id{
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  color:var(--accent);margin-bottom:18px;
-}
-.system-card h3{font-family:var(--display);font-weight:600;font-size:1.3rem;
-  letter-spacing:-.015em;line-height:1.25;margin-bottom:16px}
-.system-card .problem{
-  font-family:var(--serif);font-style:italic;font-size:1.02rem;
-  color:var(--ink);border-left:2px solid var(--accent);padding-left:16px;
-  line-height:1.5;margin-bottom:18px;
-}
-.system-card .problem .klabel{
-  display:block;font-family:var(--mono);font-style:normal;font-size:10.5px;
-  letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);
-  margin-bottom:7px;
-}
-.system-card p.outcome{color:var(--ink-soft);font-size:1.02rem;line-height:1.6;flex-grow:1}
+/* checklists inside cards */
+.check{list-style:none;margin-top:6px}
+.check li{padding:10px 0 10px 30px;position:relative;color:var(--ink-soft);
+  font-size:.96rem;border-bottom:1px solid var(--line)}
+.check li:last-child{border-bottom:none}
+.check li::before{content:"";position:absolute;left:2px;top:16px;width:14px;height:8px;
+  border-left:2.5px solid var(--accent);border-bottom:2.5px solid var(--accent);
+  transform:rotate(-45deg)}
+.check li b{color:var(--ink);font-weight:600}
 
-/* ─── TWO-COL (prose + panel) ─────────────────────── */
-.proof{background:var(--paper);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
-.twocol{display:grid;grid-template-columns:1.1fr .9fr;gap:64px;align-items:center}
-@media(max-width:860px){.twocol{grid-template-columns:1fr;gap:40px}}
-.twocol .sec-head{margin-bottom:18px}
-.twocol .lead-line{
-  font-family:var(--display);font-weight:400;
-  font-size:clamp(1.2rem,2.4vw,1.55rem);line-height:1.32;letter-spacing:-.015em;
-  color:var(--ink);max-width:24ch;margin-bottom:22px;
-}
-.twocol .lead-line em{font-style:normal;color:var(--accent)}
-.twocol p{color:var(--ink-soft);font-size:1.05rem;line-height:1.62;margin-bottom:16px;max-width:52ch}
-.twocol p:last-child{margin-bottom:0}
+/* mono ledger rows (hire/rent/own) */
+.ledger{list-style:none}
+.ledger li{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
+  padding:12px 0;border-bottom:1px solid var(--line);
+  display:flex;justify-content:space-between;gap:14px;align-items:baseline}
+.ledger li:last-child{border-bottom:none}
+.ledger li b{color:var(--accent-ink);font-weight:600;text-align:right}
+.card.featured{border-color:var(--accent);border-width:1.5px;position:relative}
+.card .tag{position:absolute;top:-12px;left:24px;background:var(--accent);color:#fff;
+  font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;
+  text-transform:uppercase;padding:5px 12px;border-radius:99px}
 
-.own-panel{
-  border:1px solid var(--line);border-radius:2px;
-  padding:30px 28px;background:var(--bg);
-}
-.own-panel .fig-label{
-  font-family:var(--mono);font-size:11px;letter-spacing:.16em;
-  color:var(--ink-faint);text-transform:uppercase;margin-bottom:18px;
-}
-.own-panel ul{list-style:none}
-.own-panel li{
-  font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
-  padding:14px 0;border-bottom:1px solid var(--line);
-  display:flex;justify-content:space-between;gap:16px;align-items:baseline;
-}
-.own-panel li:last-child{border-bottom:none}
-.own-panel li b{color:var(--accent);font-weight:500}
-/* total row — for the cost ledger */
-.own-panel li.total{border-bottom:none;border-top:1px solid var(--accent);
-  margin-top:4px;padding-top:16px}
-.own-panel li.total b{font-size:1.15rem;font-family:var(--display)}
+/* ─── DIAGRAM ─── */
+.diagram-frame{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
+  padding:28px 24px 20px;box-shadow:var(--shadow);overflow-x:auto}
+.diagram-frame .fig-label{font-family:var(--mono);font-size:11px;letter-spacing:.14em;
+  color:var(--ink-faint);text-transform:uppercase;margin-bottom:18px}
+.diagram-frame svg{width:100%;min-width:640px;height:auto;display:block}
 
-/* ─── DUO SPLIT (the build: machine vs. human) ────── */
-.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
-@media(max-width:860px){.duo{grid-template-columns:1fr;gap:18px}}
-.duo .own-panel{background:var(--paper)}
-.duo .own-panel li{justify-content:flex-start}
-/* wide ledger — two-up list inside one panel */
-.own-panel.wide{margin-top:20px;background:var(--paper)}
-.own-panel.wide ul{display:grid;grid-template-columns:1fr 1fr;gap:0 30px}
-@media(max-width:640px){.own-panel.wide ul{grid-template-columns:1fr}}
-.own-panel.wide li{justify-content:flex-start}
+/* ─── STATS BAND (leader pattern: 3 bold stats) ─── */
+.stats{background:var(--dark);color:#e6eae2}
+.stats .sec-label{color:var(--accent-bright)}
+.stats .sec-head{color:#fff}
+.stats .sec-intro{color:#9aa494}
+.stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
+@media(max-width:860px){.stat-grid{grid-template-columns:1fr}}
+.stat{border:1px solid #262c22;border-radius:var(--radius);padding:28px;background:var(--dark-2)}
+.stat .big{font-weight:800;font-size:clamp(2.2rem,4.5vw,3.2rem);letter-spacing:-.03em;
+  color:var(--accent-bright);line-height:1;margin-bottom:10px}
+.stat h3{font-weight:600;font-size:1.02rem;margin-bottom:8px;color:#fff}
+.stat p{color:#9aa494;font-size:.95rem;line-height:1.6}
 
-/* ─── PROCESS LADDER ──────────────────────────────── */
-.ladder{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;position:relative}
-.ladder::before{
-  content:"";position:absolute;top:33px;left:8%;right:8%;height:1px;
-  background:repeating-linear-gradient(to right,var(--line) 0 7px,transparent 7px 14px);
-  z-index:0;
-}
-@media(max-width:860px){
-  .ladder{grid-template-columns:1fr;gap:38px}
-  .ladder::before{display:none}
-}
-.step{position:relative;z-index:1}
-.step .step-num{
-  width:66px;height:66px;border-radius:50%;
-  background:var(--paper);border:1px solid var(--line);
-  display:flex;align-items:center;justify-content:center;
-  font-family:var(--mono);font-size:13px;color:var(--accent);
-  margin-bottom:22px;
-}
-.step h3{font-family:var(--display);font-weight:600;font-size:1.15rem;
-  letter-spacing:-.01em;margin-bottom:10px}
-.step p{color:var(--ink-soft);font-size:1rem;line-height:1.58;max-width:34ch}
-.step .price{
-  display:inline-block;margin-top:14px;font-family:var(--mono);
-  font-size:12px;color:var(--ink-faint);letter-spacing:.04em;
-}
+/* ─── PROCESS ─── */
+.step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+@media(max-width:860px){.step-row{grid-template-columns:1fr}}
+.price-line{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12px;
+  color:var(--accent-ink);letter-spacing:.03em;background:var(--accent-soft);
+  padding:7px 13px;border-radius:99px;font-weight:500}
 
-/* ─── DIAGNOSTIC CTA ──────────────────────────────── */
-.diag{background:var(--ink);color:var(--paper)}
-.diag .wrap{padding-top:clamp(72px,10vw,116px);padding-bottom:clamp(72px,10vw,116px)}
-.diagnostic-panel{
-  display:grid;grid-template-columns:1.3fr 1fr;gap:52px;align-items:center;
+/* ─── FAQ (leader pattern: accordion) ─── */
+.faq-list{max-width:780px}
+.faq-list details{border-bottom:1px solid var(--line)}
+.faq-list summary{
+  cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:18px;
+  align-items:center;padding:22px 4px;font-weight:600;font-size:1.05rem;letter-spacing:-.01em;
 }
-@media(max-width:860px){.diagnostic-panel{grid-template-columns:1fr;gap:36px}}
-.diag .sec-label{color:var(--accent-on-dark)}
-.diag .sec-label::before{background:var(--accent-on-dark)}
-.diag h2{font-family:var(--display);font-weight:500;
-  font-size:clamp(1.8rem,4vw,2.8rem);letter-spacing:-.025em;line-height:1.1;
-  margin-bottom:18px;max-width:18ch}
-.diag h2 em{font-style:normal;color:var(--accent-on-dark)}
-.diag p{color:#c9c2b6;font-size:clamp(1rem,1.5vw,1.1rem);line-height:1.58;max-width:48ch}
-.diag p.guarantee{color:var(--paper);margin-top:18px}
-.diag p.guarantee b{color:var(--accent-on-dark);font-weight:500}
-.diagnostic-cta-actions{margin-top:30px}
-.diag .btn-primary{background:var(--accent);color:#fff;border-color:var(--accent)}
-.diag .btn-primary:hover{background:var(--accent-hover);border-color:var(--accent-hover)}
-.diagnostic-meta{
-  font-family:var(--mono);font-size:13px;color:#c9c2b6;line-height:1.7;
-  border-left:1px solid #555049;padding-left:24px;
-}
-@media(max-width:860px){.diagnostic-meta{border-left:0;padding-left:0;border-top:1px solid #555049;padding-top:24px}}
-.diagnostic-meta .price{
-  color:var(--accent-on-dark);font-size:1.7rem;display:block;margin-bottom:10px;
-  font-family:var(--display);font-weight:600;letter-spacing:-.02em;
-}
+.faq-list summary::-webkit-details-marker{display:none}
+.faq-list summary::after{content:"+";font-family:var(--mono);font-size:20px;
+  color:var(--accent);flex-shrink:0;transition:transform .25s var(--easing)}
+.faq-list details[open] summary::after{transform:rotate(45deg)}
+.faq-list .a{padding:0 4px 24px;color:var(--ink-soft);max-width:64ch;line-height:1.65}
+.faq-list .a b{color:var(--ink);font-weight:600}
 
-/* ─── FOOTER ──────────────────────────────────────── */
-footer{padding:48px 0;font-family:var(--mono);font-size:12px;
-  letter-spacing:.05em;color:var(--ink-faint)}
-footer .row{display:flex;justify-content:space-between;
-  flex-wrap:wrap;gap:18px;align-items:center}
-@media(max-width:640px){
-  footer{padding:40px 0}
-  footer .row{flex-direction:column;align-items:flex-start;gap:20px}
-}
-footer a{color:var(--ink-soft);text-decoration:none;
-  border-bottom:1px solid var(--line);padding:4px 0;display:inline-block;
-  transition:color .25s,border-color .25s}
-footer a:hover{color:var(--accent);border-color:var(--accent)}
-footer .fl{display:flex;gap:24px;flex-wrap:wrap}
-@media(max-width:640px){footer .fl{gap:18px}}
+/* ─── FINAL CTA ─── */
+.final{background:var(--dark);color:#e6eae2}
+.final-panel{display:grid;grid-template-columns:1.3fr 1fr;gap:52px;align-items:center}
+@media(max-width:860px){.final-panel{grid-template-columns:1fr;gap:36px}}
+.final .sec-label{color:var(--accent-bright)}
+.final h2{font-weight:800;font-size:clamp(1.9rem,4.2vw,2.9rem);letter-spacing:-.03em;
+  line-height:1.06;margin-bottom:18px;max-width:18ch;color:#fff}
+.final h2 em{font-style:normal;color:var(--accent-bright)}
+.final p{color:#9aa494;font-size:1.04rem;max-width:48ch}
+.final p.guarantee{color:#e6eae2;margin-top:16px}
+.final p.guarantee b{color:var(--accent-bright);font-weight:600}
+.final .btn-primary{background:var(--accent-bright);color:var(--dark);border-color:var(--accent-bright);margin-top:28px}
+.final .btn-primary:hover{background:#86efac;border-color:#86efac}
+.final-meta{font-family:var(--mono);font-size:13px;color:#9aa494;line-height:1.8;
+  border-left:1px solid #2c332a;padding-left:24px}
+@media(max-width:860px){.final-meta{border-left:0;padding-left:0;border-top:1px solid #2c332a;padding-top:24px}}
+.final-meta .price{color:var(--accent-bright);font-size:2rem;display:block;margin-bottom:8px;
+  font-weight:800;letter-spacing:-.02em;font-family:var(--sans)}
 
-/* ─── REDUCED MOTION ──────────────────────────────── */
+/* ─── FOOTER ─── */
+footer{padding:44px 0;font-size:13.5px;color:var(--ink-faint)}
+footer .row{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px;align-items:center}
+footer a{color:var(--ink-soft);text-decoration:none;font-weight:500;
+  transition:color .2s}
+footer a:hover{color:var(--accent-ink)}
+footer .fl{display:flex;gap:22px;flex-wrap:wrap}
+
+/* ─── REDUCED MOTION ─── */
 @media (prefers-reduced-motion: reduce){
-  *,*::before,*::after{
-    animation-duration:.01ms !important;animation-iteration-count:1 !important;
-    transition-duration:.01ms !important;transition-delay:0ms !important;
-    scroll-behavior:auto !important;
-  }
+  *,*::before,*::after{animation-duration:.01ms !important;transition-duration:.01ms !important;
+    transition-delay:0ms !important;scroll-behavior:auto !important}
   .reveal,.r-stagger > *{opacity:1 !important;transform:none !important}
-  .eyebrow,h1 .l,.lede,.hero-guarantee,.actions,.schematic{opacity:1 !important;animation:none !important}
 }
 </style>
 </head>
@@ -435,219 +330,396 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
 
 <nav>
   <a href="#top" class="brand">
-    <span class="dot" aria-hidden="true"></span>Matthew&nbsp;Bis
-    <span class="brand-sub">&middot; Leverage</span>
+    <span class="dot" aria-hidden="true"></span>Matt&nbsp;Bis <span class="brand-sub">/ Leverage</span>
   </a>
   <span class="links">
-    <a href="https://mattbis.com" class="nav-back">&#8592;&nbsp;Main&nbsp;site</a>
-    <a href="#build">The&nbsp;build</a>
-    <a href="#diagnostic" class="nav-cta">Diagnostic&nbsp;&rarr;</a>
+    <a href="#problem">Problem</a>
+    <a href="#system">The system</a>
+    <a href="#pricing">Pricing</a>
+    <a href="#faq">FAQ</a>
+    <a href="#diagnostic" class="nav-cta">Book a diagnostic</a>
   </span>
 </nav>
 
 <main id="main">
 
+<!-- ===== HERO ===== -->
 <header id="top">
   <div class="wrap">
-    <div class="eyebrow">Outbound systems for B2B sales teams</div>
-    <h1>
-      <span class="l">More pipeline.</span>
-      <span class="l"><em>Not more reps.</em></span>
-    </h1>
-    <p class="lede">A fully-loaded SDR runs six figures a year and is gone inside two. Before one is even ramped, you're hiring the next. I build the system that does the top-of-funnel work — finds the accounts, runs the sequences, qualifies the replies — installed in your own stack and handed to you to keep. Your reps stop prospecting and start closing.</p>
-    <p class="hero-guarantee"><strong>Guaranteed: you leave with three actionable fixes — or you don't pay.</strong></p>
-    <div class="actions">
-      <a class="btn btn-primary" href="#diagnostic">Book the diagnostic — guaranteed actionable or it's free</a>
-      <a class="btn btn-ghost" href="#math">See the math</a>
-    </div>
-
-    <div class="schematic">
-      <div class="schematic-frame bracket">
-        <div class="fig-label">Fig. 00 — Deterministic, not agentic</div>
-        <svg viewBox="0 0 800 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: ICP and buying-signal data flow through an installed, owned system into qualified meetings.">
-          <!-- INPUT -->
-          <rect x="20" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
-          <text x="110" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">INPUT</text>
-          <text x="110" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">ICP + signals</text>
-          <!-- connector 1 -->
-          <line x1="200" y1="80" x2="306" y2="80" stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <polygon points="312,80 302,75 302,85" fill="#b5341f"/>
-          <!-- SYSTEM -->
-          <rect x="312" y="20" width="176" height="120" fill="#faf8f3" stroke="#b5341f" stroke-width="1.5"/>
-          <text x="400" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">SYSTEM</text>
-          <text x="400" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">installed + owned</text>
-          <!-- connector 2 -->
-          <line x1="488" y1="80" x2="594" y2="80" stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5"/>
-          <polygon points="600,80 590,75 590,85" fill="#b5341f"/>
-          <!-- OUTPUT -->
-          <rect x="600" y="40" width="180" height="80" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
-          <text x="690" y="75" fill="#1a1714" font-family="JetBrains Mono, monospace" font-size="14" text-anchor="middle">OUTPUT</text>
-          <text x="690" y="96" fill="#6e6557" font-family="JetBrains Mono, monospace" font-size="11" text-anchor="middle">qualified meetings</text>
-        </svg>
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">GTM engineering · installed &amp; owned</span>
+        <h1>More pipeline.<br><em>Not more reps.</em></h1>
+        <p class="lede">I'm Matt Bis. I build the outbound system that finds your accounts, runs your sequences, and qualifies your replies — <b>installed in your stack, live in about 30 days, and yours to keep.</b> No retainer. No seat license. No SDR ramp.</p>
+        <p class="hero-guarantee"><b>Guaranteed:</b> the diagnostic ends with three actionable fixes — or you don't pay.</p>
+        <div class="actions">
+          <a class="btn btn-primary" href="#diagnostic">Book the diagnostic &rarr;</a>
+          <a class="btn btn-ghost" href="#system">See how it works</a>
+        </div>
+      </div>
+      <div>
+        <!-- MATTHEW: signature element. The leaders open with operator photos / client-logo walls —
+             proof assets you don't have yet. A live system log is the solo-engineer equivalent:
+             it demonstrates the deliverable in six lines. Keep the timestamps plausible and the
+             last line sacred — "what your reps see" is the whole pitch compressed. -->
+        <div class="console" role="img" aria-label="Example system log: accounts sourced and enriched, sequences sent, a reply classified as qualified, contact logged to the CRM, meeting routed to a rep.">
+          <div class="console-bar" aria-hidden="true"><i></i><i></i><i></i><span>system.log — live run</span></div>
+          <pre aria-hidden="true"><span class="t">09:02</span>  clay.enrich     142 accounts matched ICP v3
+<span class="t">09:04</span>  signals.scan    14 hiring SDRs · 6 new VP Sales
+<span class="t">09:07</span>  sequence.send   38 step-1 emails · voice check ✓
+<span class="t">11:31</span>  reply.classify  "loop in our head of sales…"
+<span class="t">11:31</span>  crm.sync        contact + thread → HubSpot
+<span class="t">11:32</span>  <b>handoff         MEETING → routed to your AE</b></pre>
+        </div>
+        <p class="console-caption">Your reps see <b>only the last line.</b></p>
       </div>
     </div>
   </div>
 </header>
 
-<hr class="divider">
-
-<!-- ===== THE MATH (cost of the status quo) ===== -->
-<section id="math" class="band">
+<!-- ===== TRUST STRIP (tool badges — honest proxy for a logo wall) ===== -->
+<!-- MATTHEW: the leaders put partner/certification badges here. Until you have client logos,
+     the stack is the trust signal — it tells operators you build on the same rails the top
+     GTM teams run. Swap these for client logos one at a time as you close case studies. -->
+<div class="strip" aria-label="Tools this system is built on">
   <div class="wrap">
-    <div class="twocol reveal">
-      <div>
-        <div class="sec-label">The status quo</div>
-        <h2 class="sec-head">The math on one SDR.</h2>
-        <p class="lead-line">A rep you hire this week isn't selling until Q2. <em>And won't be here in two years.</em></p>
-        <!-- MATTHEW: the figures in the ledger + this prose are industry numbers (Bridge Group SDR Metrics; Emergence Capital; Built In comp data) so they're defensible without claiming they're yours. If you want hard citations on the page later, a single small "sources" line under the panel is the cleanest place. Adjust ranges to whatever you're comfortable defending on a call. -->
-        <p>The real cost of an SDR isn't the base salary. Add benefits, tooling and data seats, a three-month ramp where they generate nothing, and a manager's time to coach them — and one rep lands between $100K and $170K a year, fully loaded.</p>
-        <p>Median tenure is under two years and turnover runs 34–40%. So you're not hiring once. You're re-hiring and re-ramping on a loop, and a five-person desk becomes a half-million-dollar line item that resets every couple of years.</p>
-        <p>A system doesn't ramp. It doesn't churn, and it never needs backfilling. It runs the same top-of-funnel work every day, for a one-time build, and it's yours.</p>
+    <span class="strip-label">Built on</span>
+    <span class="badge">Clay</span>
+    <span class="badge">n8n</span>
+    <span class="badge">Claude</span>
+    <span class="badge">Apollo</span>
+    <span class="badge">Instantly</span>
+    <span class="badge">HeyReach</span>
+    <span class="badge">HubSpot</span>
+    <span class="badge">your CRM</span>
+  </div>
+</div>
+
+<!-- ===== PROBLEM (leader pattern: numbered pain points) ===== -->
+<section id="problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">The problem</div>
+      <h2 class="sec-head">Your pipeline problem isn't effort. It's the model.</h2>
+      <p class="sec-intro">Every way the market sells you top-of-funnel has the same flaw: the cost recurs, and the capability never becomes yours.</p>
+    </div>
+    <div class="grid-4 reveal r-stagger">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>The SDR treadmill</h3>
+        <p>A rep runs $100–170K a year fully loaded, isn't producing until month four, and the median tenure is under two years. You're not hiring once — you're re-hiring and re-ramping on a loop.</p>
       </div>
-      <div class="own-panel bracket">
-        <div class="fig-label">Fig. 02 — One SDR, fully loaded</div>
-        <ul>
-          <li>Base salary <b>$55–60K</b></li>
-          <li>Benefits &amp; payroll tax <b>+~20%</b></li>
-          <li>Tools, data &amp; seats <b>$5–10K</b></li>
-          <li>3-month ramp <b>Sunk</b></li>
-          <li>Management overhead <b>Ongoing</b></li>
-          <li class="total">Per year <b>$100–170K</b></li>
-        </ul>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Rented pipeline</h3>
+        <p>Agency retainers and AI-SDR seats run $5–15K a month, usually behind a six-month minimum. Cancel, and the pipeline stops the same day. The playbook stays with the vendor. You keep the invoices.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>The founder ceiling</h3>
+        <p>If the founder is still the best — and only — SDR in the company, prospecting caps everything else: product, hiring, and the deals already in flight.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Data that dies</h3>
+        <p>Touches scatter across five tools and never land in the CRM. Nothing compounds, nothing is measurable, and every quarter starts from zero.</p>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== THE BUILD ===== -->
-<section id="build">
+<!-- ===== THE SYSTEM (leader pattern: system diagram + capability split) ===== -->
+<section id="system" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sec-label">The build</div>
-      <h2 class="sec-head">One system that runs the top of your funnel.</h2>
-      <!-- The "not an autonomous agent" framing is the implicit counter-position: it separates you from rented AI-SDR products and from set-it-loose agents, without naming anyone. -->
-      <p class="sec-intro">Not an autonomous agent turned loose on your CRM. A deterministic pipeline that does the repeatable work — sourcing, sequencing, qualifying, logging — so the only things that reach a human are the conversations that need one.</p>
+      <div class="sec-label">The system</div>
+      <h2 class="sec-head">One deterministic pipeline. Zero improvisation.</h2>
+      <p class="sec-intro">Not an autonomous agent turned loose on your CRM, and not an AI that freelances emails to your best accounts. A fixed pipeline that does the repeatable work, so the only things that reach a human are the conversations that need one.</p>
     </div>
 
-    <div class="duo reveal r-stagger">
-      <div class="own-panel bracket">
-        <div class="fig-label">The system handles — volume</div>
-        <ul>
-          <li>Sources &amp; enriches target accounts</li>
-          <li>Builds lists from live buying signals</li>
-          <li>Runs multi-step sequences</li>
-          <li>Personalizes every touch in your voice</li>
-          <li>Triages &amp; qualifies replies</li>
-          <li>Dedupes against open opps + customers</li>
-          <li>Logs every touch to your CRM</li>
+    <div class="diagram-frame reveal">
+      <div class="fig-label">Fig. 01 — What gets installed</div>
+      <svg viewBox="0 0 960 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: buying signals flow through enrichment, sequencing, and reply qualification into the CRM as booked meetings.">
+        <!-- nodes -->
+        <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+          <rect x="12" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
+          <text x="87" y="73" fill="#10130f" font-size="13" font-weight="600">SIGNALS</text>
+          <text x="87" y="93" fill="#6b7267" font-size="10.5">ICP + triggers</text>
+
+          <rect x="210" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
+          <text x="285" y="73" fill="#10130f" font-size="13" font-weight="600">ENRICH</text>
+          <text x="285" y="93" fill="#6b7267" font-size="10.5">Clay + Apollo</text>
+
+          <rect x="408" y="35" width="150" height="84" rx="10" fill="#e7f4ec" stroke="#15803d" stroke-width="1.5"/>
+          <text x="483" y="70" fill="#0f5c2c" font-size="13" font-weight="600">SEQUENCE</text>
+          <text x="483" y="90" fill="#3f463d" font-size="10.5">your voice, every</text>
+          <text x="483" y="104" fill="#3f463d" font-size="10.5">touch reviewed</text>
+
+          <rect x="606" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
+          <text x="681" y="73" fill="#10130f" font-size="13" font-weight="600">QUALIFY</text>
+          <text x="681" y="93" fill="#6b7267" font-size="10.5">reply classification</text>
+
+          <rect x="804" y="45" width="144" height="64" rx="10" fill="#10130f" stroke="#10130f" stroke-width="1.5"/>
+          <text x="876" y="73" fill="#ffffff" font-size="13" font-weight="600">CRM</text>
+          <text x="876" y="93" fill="#4ade80" font-size="10.5">meetings, logged</text>
+        </g>
+        <!-- connectors -->
+        <g stroke="#15803d" stroke-width="1.5" stroke-dasharray="4 5">
+          <line x1="162" y1="77" x2="204" y2="77"/>
+          <line x1="360" y1="77" x2="402" y2="77"/>
+          <line x1="558" y1="77" x2="600" y2="77"/>
+          <line x1="756" y1="77" x2="798" y2="77"/>
+        </g>
+        <g fill="#15803d">
+          <polygon points="210,77 201,72.5 201,81.5"/>
+          <polygon points="408,77 399,72.5 399,81.5"/>
+          <polygon points="606,77 597,72.5 597,81.5"/>
+          <polygon points="804,77 795,72.5 795,81.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="grid-2 reveal r-stagger" style="margin-top:18px">
+      <div class="card">
+        <h3>The system handles — volume</h3>
+        <ul class="check">
+          <li>Sources &amp; enriches target accounts from live buying signals</li>
+          <li>Runs multi-step sequences, personalized in your voice</li>
+          <li>Triages &amp; qualifies every reply — deterministically</li>
+          <li>Dedupes against open opps and current customers</li>
+          <li>Logs every touch to your CRM, automatically</li>
         </ul>
       </div>
-      <div class="own-panel bracket">
-        <div class="fig-label">Your reps keep — judgment</div>
-        <ul>
+      <div class="card">
+        <h3>Your reps keep — judgment</h3>
+        <ul class="check">
           <li>The qualified conversations</li>
           <li>Real objection handling</li>
           <li>Multi-threading the buying committee</li>
-          <li>Reading the room on a live call</li>
           <li>Negotiating and closing</li>
           <li>The relationships that compound</li>
         </ul>
       </div>
     </div>
+  </div>
+</section>
 
-    <div class="own-panel wide bracket reveal">
-      <div class="fig-label">Fig. 03 — In every build</div>
-      <ul>
-        <li>ICP + target-account definition</li>
-        <li>Sourcing + enrichment pipeline</li>
-        <li>Sequenced outbound in your brand voice</li>
-        <li>Qualification + reply-classification gate</li>
-        <li>CRM dedup + automatic logging</li>
-        <li>Deterministic orchestration (n8n)</li>
-        <li>Hallucination + false-positive guardrails</li>
-        <li>Documentation + full handoff</li>
-      </ul>
+<!-- ===== WHY ONE ENGINEER (leader pattern: bold 3-stat band, solo-ized) ===== -->
+<!-- MATTHEW: the category leader runs a "100+ clients / 1 team / $0 vanity metrics" stat band.
+     This is the same device flipped to make SOLO the feature: no account-manager layer, no
+     junior handoff, no retainer to feed. "150+" still needs its hardening second fact. -->
+<section class="stats" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">Why one engineer</div>
+      <h2 class="sec-head">The person on the call is the person who builds it.</h2>
+      <p class="sec-intro">Agencies quote you the A-team and staff the B-team. There is no B-team here — and no retainer engineered to keep you dependent.</p>
+    </div>
+    <div class="stat-grid reveal r-stagger">
+      <div class="stat">
+        <div class="big">150+</div>
+        <h3>Production systems shipped</h3>
+        <p>Built by an operator who runs this exact outbound motion daily — not a consultant who learned it secondhand.</p>
+      </div>
+      <div class="stat">
+        <div class="big">1</div>
+        <h3>Engineer. Zero account managers.</h3>
+        <p>No discovery spiral, no handoff to a junior, no game of telephone between "strategy" and the person doing the work.</p>
+      </div>
+      <div class="stat">
+        <div class="big">100%</div>
+        <h3>Yours at handoff</h3>
+        <p>Source, config, data, docs — in your stack, under your logins. It runs whether or not we ever work together again.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- ===== OWNERSHIP ===== -->
-<section class="proof">
+<!-- ===== HIRE / RENT / OWN ===== -->
+<section id="compare">
   <div class="wrap">
-    <div class="twocol reveal">
-      <div>
-        <div class="sec-label">Ownership</div>
-        <h2 class="sec-head">You own it when I'm done.</h2>
-        <!-- Implicit counter-position lives in this line: "subscription" → rented products, "vendor you can't switch off" → retainer agencies. No competitor named. -->
-        <p class="lead-line">No subscription. No black box. No <em>vendor you can't switch off.</em></p>
-        <p>Every system is built inside your own stack — your CRM, your infrastructure, your data. It isn't a seat you rent or a dashboard you log into. When the build ships, it's yours: documented, maintainable, and running whether or not we ever work together again.</p>
-        <p>Maintenance is opt-in, never a toll. Built by one operator who runs this exact outbound motion every day, not a consultant who learned it secondhand. 150+ production systems shipped.<!-- MATTHEW: harden "150+" with one definite second fact — across how many companies, or over how many years. A specific number gets believed; a round one gets discounted. This is also the slot for your first real anonymized result the moment you close one ("took [client] from X to Y meetings/month with zero new SDRs") — that single line outweighs every industry stat above it. --></p>
+    <div class="section-head reveal">
+      <div class="sec-label">The alternatives</div>
+      <h2 class="sec-head">Three ways to buy pipeline. Two of them are renting.</h2>
+      <p class="sec-intro">Headcount rents effort by the year. Agencies and AI-SDR seats rent access by the month. Only one option ends with you holding the machine.</p>
+    </div>
+    <div class="grid-3 reveal r-stagger">
+      <div class="card">
+        <span class="num">A — HIRE AN SDR</span>
+        <ul class="ledger">
+          <li>Cost <b>$100–170K / yr / rep</b></li>
+          <li>Producing by <b>Month 4</b></li>
+          <li>Median tenure <b>&lt; 2 years</b></li>
+          <li>When they leave <b>Re-hire, re-ramp</b></li>
+          <li>You keep <b>The CRM notes</b></li>
+        </ul>
       </div>
-      <div class="own-panel bracket">
-        <div class="fig-label">Fig. 01 — What you get</div>
-        <ul>
-          <li>Source &amp; config <b>Yours</b></li>
-          <li>Hosting &amp; data <b>Your stack</b></li>
-          <li>Documentation <b>Included</b></li>
-          <li>Handoff <b>Full</b></li>
-          <li>Ongoing maintenance <b>Optional</b></li>
+      <div class="card">
+        <span class="num">B — RENT IT</span>
+        <ul class="ledger">
+          <li>Cost <b>$5–15K / mo, ongoing</b></li>
+          <li>Minimum term <b>Often 6 months</b></li>
+          <li>The playbook lives <b>With the vendor</b></li>
+          <li>Cancel, and <b>Pipeline stops</b></li>
+          <li>You keep <b>The invoices</b></li>
+        </ul>
+      </div>
+      <div class="card featured">
+        <span class="tag">This offer</span>
+        <span class="num">C — OWN THE SYSTEM</span>
+        <ul class="ledger">
+          <li>Cost <b>One fixed build</b></li>
+          <li>Live in <b>~30 days</b></li>
+          <li>Runs for <b>As long as you want</b></li>
+          <li>Cancel, and <b>Nothing to cancel</b></li>
+          <li>You keep <b>Everything</b></li>
         </ul>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== PROCESS ===== -->
-<section id="process">
+<!-- ===== PRICING (leader pattern: side-by-side cards with checklists + badges) ===== -->
+<section id="pricing" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sec-label">How it works</div>
-      <h2 class="sec-head">Diagnostic &rarr; build &rarr; own.</h2>
-      <p class="sec-intro">A short, low-risk entry point, a fixed-scope build, and a clean handoff. No discovery spiral, no open-ended retainer to get started.</p>
+      <div class="sec-label">How it works · pricing</div>
+      <h2 class="sec-head">Diagnose &rarr; install &rarr; own.</h2>
+      <p class="sec-intro">A short, fixed-price entry point, a fixed-scope build, and a clean handoff. No discovery spiral, no six-month minimum, no open-ended retainer.</p>
     </div>
-
-    <div class="ladder reveal r-stagger">
-      <div class="step">
-        <div class="step-num">01</div>
-        <h3>Diagnostic</h3>
-        <p>A focused 2 to 3 hour audit of where your outbound motion leaks, stalls, or hides. You leave with a written proposal you can act on, with me or without me. If we build, the fee credits toward the system.</p>
-        <span class="price">$2,500 – $4,000</span>
+    <div class="step-row reveal r-stagger">
+      <div class="card featured">
+        <span class="tag">Start here</span>
+        <span class="num">01 — PIPELINE DIAGNOSTIC</span>
+        <h3>Find the leaks.</h3>
+        <p>A focused 2–3 hour audit of your outbound motion.</p>
+        <ul class="check">
+          <li>The <b>Pipeline Leak Map</b> — every place your pipeline leaks, stalls, or hides</li>
+          <li>A <b>fixed-scope system proposal</b> you can act on, with me or without me</li>
+          <li><b>Guaranteed actionable</b> — three fixes minimum, or it's free</li>
+          <li>Fee <b>credits toward the build</b></li>
+        </ul>
+        <!-- MATTHEW: flat $3,500 (vs the old $2.5–4K range) — one number reads productized,
+             a range reads negotiable. Also set in the ld+json block and final CTA. -->
+        <span class="price-line">$3,500 · flat</span>
       </div>
-      <div class="step">
-        <div class="step-num">02</div>
-        <h3>Build</h3>
-        <p>The system, built and configured for your exact stack on a fixed scope and timeline. You review the sequences and logic before anything goes live.</p>
-        <!-- MATTHEW: build range ($8–15K) is deliberately kept off the page per the single-price decision — it comes up live in the diagnostic, after the proposal has framed the value. Re-add a price line here if you ever want it to pre-qualify on budget. -->
-        <span class="price">Fixed scope · priced in the diagnostic</span>
+      <div class="card">
+        <span class="num">02 — THE INSTALL</span>
+        <h3>Build the machine.</h3>
+        <p>The full system, built for your exact stack.</p>
+        <ul class="check">
+          <li>Fixed scope, fixed price, <b>live in ~30 days</b></li>
+          <li>You review <b>every sequence and rule</b> before anything sends</li>
+          <li>Hallucination + false-positive guardrails built in</li>
+          <li><b>If it doesn't run as scoped, I keep building free until it does</b></li>
+        </ul>
+        <!-- Build range stays off-page per the single-price decision — it's quoted in the
+             diagnostic proposal, after value is framed. -->
+        <span class="price-line">Fixed price · quoted in your diagnostic</span>
       </div>
-      <div class="step">
-        <div class="step-num">03</div>
-        <h3>Own &amp; iterate</h3>
-        <p>The system ships, documented and yours. Add the next one, or layer in optional maintenance.</p>
-        <span class="price">Retainer optional</span>
+      <div class="card">
+        <span class="num">03 — OWN &amp; ITERATE</span>
+        <h3>Hold the keys.</h3>
+        <p>Documented handoff, then it's yours.</p>
+        <ul class="check">
+          <li>Source, config, data &amp; docs — <b>all in your stack</b></li>
+          <li>Optional care plan: monitoring, deliverability, iteration</li>
+          <li><b>Flat monthly, cancel anytime</b> — never a toll</li>
+          <li>Or add the next system when this one's paying for itself</li>
+        </ul>
+        <span class="price-line">Care plan optional · no minimums</span>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ===== DIAGNOSTIC CTA ===== -->
-<section id="diagnostic" class="diag">
+<!-- ===== FIT ===== -->
+<section id="fit">
   <div class="wrap">
-    <div class="diagnostic-panel reveal">
+    <div class="section-head reveal">
+      <div class="sec-label">Fit</div>
+      <h2 class="sec-head">Built for teams that already close.</h2>
+      <p class="sec-intro">A system multiplies a motion that works. It can't invent one — so I'm deliberate about who this is for.</p>
+    </div>
+    <div class="grid-2 reveal r-stagger">
+      <div class="card">
+        <h3>This is for you if</h3>
+        <ul class="check">
+          <li>You have a proven offer and someone who can close</li>
+          <li>Your reps burn hours a day prospecting, not selling</li>
+          <li>The founder is still the best — and only — SDR</li>
+          <li>You've rented an agency or AI-SDR seat and kept nothing</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>It's not for you if</h3>
+        <ul class="check">
+          <li>The offer has never closed manually — fix that first</li>
+          <li>You want meetings without ever owning the process</li>
+          <li>You're shopping for a $99/mo magic tool</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ (leader pattern: accordion, handles the sales objections) ===== -->
+<section id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-head">The questions every buyer asks.</h2>
+    </div>
+    <div class="faq-list reveal">
+      <details>
+        <summary>What exactly gets installed?</summary>
+        <div class="a">A complete top-of-funnel pipeline in your own stack: ICP and target-account definition, a sourcing and enrichment pipeline (Clay, Apollo), sequenced outbound in your brand voice, a deterministic reply-classification gate, CRM dedup and automatic logging, orchestration in n8n, and full documentation. Nothing proprietary — <b>nothing you couldn't hire for tomorrow.</b></div>
+      </details>
+      <details>
+        <summary>How is this different from an agency retainer?</summary>
+        <div class="a">A retainer is structured so the value lives with the agency — their tooling, their logins, a minimum term, a playbook you never see. This is a fixed-scope build inside <b>your</b> stack. When it ships, it's yours, and it keeps running whether or not we ever work together again. Maintenance exists, but it's opt-in and flat — never a toll.</div>
+      </details>
+      <details>
+        <summary>How is this different from an AI SDR tool?</summary>
+        <div class="a">AI-SDR products are seats you rent, and most are autonomous agents that improvise. This system is <b>deterministic</b>: every sequence and every rule is reviewed by you before anything sends, with hallucination and false-positive guardrails at the reply gate. And when you stop paying a tool, it vanishes. This doesn't — you own it.</div>
+      </details>
+      <details>
+        <summary>Do you guarantee meetings?</summary>
+        <div class="a">No — and be suspicious of anyone who does, because they don't control your offer or your market. What I guarantee is what I <b>do</b> control: the diagnostic produces three actionable fixes or it's free, and the system runs as scoped or I keep building at no charge until it does. That's more than any retainer will put in writing.</div>
+      </details>
+      <details>
+        <summary>What does the build cost?</summary>
+        <div class="a">The diagnostic is a flat <b>$3,500</b>, and every dollar credits toward the build. The build itself is a fixed price quoted in your proposal — scoped to your stack, not a menu. As an anchor: most builds land at a fraction of one SDR-year, and it's a one-time cost instead of a recurring one.</div>
+      </details>
+      <details>
+        <summary>What happens after handoff? What if it breaks?</summary>
+        <div class="a">You get full documentation and a working handoff — your team can run it, or any competent operator can, because it's built on standard tools. If you'd rather not think about it, the optional care plan covers monitoring, deliverability, and iteration for a flat monthly fee you can cancel anytime.</div>
+      </details>
+      <details>
+        <summary>Who actually does the work?</summary>
+        <div class="a">Me. One engineer, zero account managers, senior all the way down. I run this exact outbound motion every day for my own pipeline — 150+ production systems shipped. The person on the sales call, the diagnostic, and the build is the same person.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA ===== -->
+<section id="diagnostic" class="final">
+  <div class="wrap">
+    <div class="final-panel reveal">
       <div>
         <div class="sec-label">Start here</div>
         <h2>Start with the <em>pipeline diagnostic.</em></h2>
-        <p>A focused, paid audit of your outbound motion. In 2 to 3 hours I map where your pipeline stalls, what a system to fix it would do, and what it replaces in headcount cost. You leave with a written proposal you own — whether or not we ever build together.</p>
-        <!-- GUARANTEE: the risk-reversal itself now lives in the hero so it's the first thing a visitor sees. This paragraph just keeps the credit-toward-build clause, which isn't a duplicate. -->
+        <p>In 2–3 hours I map where your pipeline leaks, stalls, or hides, what a system to fix it would do, and what it replaces in headcount and retainer cost. You leave with the Pipeline Leak Map and a fixed-scope proposal you own — whether or not we ever build together.</p>
         <p class="guarantee">If we build, <b>every dollar of the diagnostic credits toward the system.</b></p>
-        <div class="diagnostic-cta-actions">
-          <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the scheduler exists. This is the single most important conversion asset on the page — confirm the booking flow fires a confirmation and lands on your calendar before going live. The hero and nav "Diagnostic" buttons both scroll here, so the whole funnel collapses onto THIS one href. -->
-          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic</a>
-        </div>
+        <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the
+             scheduler exists. Every CTA on the page collapses onto THIS href — confirm the booking
+             flow fires a confirmation and lands on your calendar before going live. -->
+        <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic &rarr;</a>
       </div>
-      <div class="diagnostic-meta">
-        <span class="price">$2,500 – $4,000</span>
-        2–3 hours · ends in a written proposal you own · fee credits toward the build · guaranteed actionable
+      <div class="final-meta">
+        <span class="price">$3,500</span>
+        2–3 hours · ends in a Pipeline Leak Map + fixed-scope proposal · fee credits toward the build · guaranteed actionable or it's free
       </div>
     </div>
   </div>
@@ -663,7 +735,7 @@ footer .fl{display:flex;gap:24px;flex-wrap:wrap}
         <a href="https://mattbis.com">Main site</a>
         <a href="https://blog.mattbis.com">Blog</a>
         <a href="https://www.linkedin.com/in/matthewjbis/" target="_blank" rel="noopener">LinkedIn</a>
-        <!-- TODO: swap for matthew@mattbis.com once the domain mailbox is live and forwarding somewhere you read -->
+        <!-- TODO: swap for matthew@mattbis.com once the domain mailbox is live -->
         <a href="mailto:matthewjbis@gmail.com">Email</a>
       </span>
     </div>
