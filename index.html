@@ -19,7 +19,7 @@
      replacing the client-logo walls you don't have yet, is the terminal/system-log card in the
      hero: it SHOWS the product doing its job, which no logo wall can. -->
 <meta name="description" content="I build the outbound system that finds your accounts, runs your sequences, and qualifies your replies — installed in your stack, live in ~30 days, and yours to keep. No retainer, no seat license, no SDR ramp.">
-<meta name="theme-color" content="#fdfdfb">
+<meta name="theme-color" content="#f4f1ea">
 <meta property="og:title" content="Leverage | GTM Engineering by Matt Bis">
 <meta property="og:description" content="More pipeline, not more reps. A GTM engineer builds your outbound system in your own stack — and hands you the keys.">
 <meta property="og:type" content="website">
@@ -58,23 +58,23 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --bg:#fdfdfb;
-  --bg-soft:#f4f5f1;
-  --ink:#10130f;
-  --ink-soft:#3f463d;
-  --ink-faint:#6b7267;
-  --line:#e0e3da;
-  --line-strong:#c9cec2;
-  --accent:#15803d;          /* pipeline green */
-  --accent-ink:#0f5c2c;
-  --accent-soft:#e7f4ec;
-  --accent-bright:#4ade80;   /* on dark only */
-  --dark:#0e120f;
-  --dark-2:#161b17;
+  --bg:#f4f1ea;
+  --bg-soft:#faf8f3;
+  --ink:#1a1714;
+  --ink-soft:#4a443c;
+  --ink-faint:#6e6557;
+  --line:#e4ded2;
+  --line-strong:#d8d2c6;
+  --accent:#b5341f;          /* pipeline rust */
+  --accent-ink:#9c2c1a;
+  --accent-soft:#f2e0da;
+  --accent-bright:#e8a08d;   /* on dark only */
+  --dark:#1a1714;
+  --dark-2:#1b1816;
   --sans:'Inter',-apple-system,BlinkMacSystemFont,sans-serif;
   --mono:'JetBrains Mono',ui-monospace,monospace;
   --radius:14px;
-  --shadow:0 1px 2px rgba(16,19,15,.05),0 8px 24px -12px rgba(16,19,15,.12);
+  --shadow:0 1px 2px rgba(26,23,20,.05),0 8px 24px -12px rgba(26,23,20,.12);
   --easing:cubic-bezier(.2,.7,.3,1);
   --focus:0 0 0 2px var(--bg),0 0 0 4px var(--accent);
 }
@@ -164,19 +164,19 @@ h1 em{font-style:normal;color:var(--accent)}
 /* console card — the solo-engineer signature */
 .console{
   background:var(--dark);border-radius:var(--radius);box-shadow:var(--shadow);
-  border:1px solid #23291f;overflow:hidden;
+  border:1px solid #29241f;overflow:hidden;
 }
 .console-bar{display:flex;align-items:center;gap:8px;padding:12px 16px;
-  border-bottom:1px solid #23291f;background:var(--dark-2)}
-.console-bar i{width:10px;height:10px;border-radius:50%;background:#2c332a;display:block}
+  border-bottom:1px solid #29241f;background:var(--dark-2)}
+.console-bar i{width:10px;height:10px;border-radius:50%;background:#332f2a;display:block}
 .console-bar span{margin-left:8px;font-family:var(--mono);font-size:11px;
-  letter-spacing:.1em;text-transform:uppercase;color:#7d8779}
+  letter-spacing:.1em;text-transform:uppercase;color:#878079}
 .console pre{
-  font-family:var(--mono);font-size:12.5px;line-height:2.05;color:#aab5a4;
+  font-family:var(--mono);font-size:12.5px;line-height:2.05;color:#b5aca4;
   padding:20px 20px 22px;white-space:pre;overflow-x:auto;
 }
 .console pre b{color:var(--accent-bright);font-weight:500}
-.console pre .t{color:#5d665a}
+.console pre .t{color:#66605a}
 .console-caption{
   font-family:var(--mono);font-size:11.5px;color:var(--ink-faint);
   margin-top:12px;text-align:right;letter-spacing:.04em;
@@ -259,14 +259,14 @@ section{padding:clamp(72px,9vw,110px) 0}
 .stats{background:var(--dark);color:#e6eae2}
 .stats .sec-label{color:var(--accent-bright)}
 .stats .sec-head{color:#fff}
-.stats .sec-intro{color:#9aa494}
+.stats .sec-intro{color:#a49c94}
 .stat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:44px}
 @media(max-width:860px){.stat-grid{grid-template-columns:1fr}}
-.stat{border:1px solid #262c22;border-radius:var(--radius);padding:28px;background:var(--dark-2)}
+.stat{border:1px solid #2c2722;border-radius:var(--radius);padding:28px;background:var(--dark-2)}
 .stat .big{font-weight:800;font-size:clamp(2.2rem,4.5vw,3.2rem);letter-spacing:-.03em;
   color:var(--accent-bright);line-height:1;margin-bottom:10px}
 .stat h3{font-weight:600;font-size:1.02rem;margin-bottom:8px;color:#fff}
-.stat p{color:#9aa494;font-size:.95rem;line-height:1.6}
+.stat p{color:#a49c94;font-size:.95rem;line-height:1.6}
 
 /* ─── PROCESS ─── */
 .step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
@@ -297,14 +297,14 @@ section{padding:clamp(72px,9vw,110px) 0}
 .final h2{font-weight:800;font-size:clamp(1.9rem,4.2vw,2.9rem);letter-spacing:-.03em;
   line-height:1.06;margin-bottom:18px;max-width:18ch;color:#fff}
 .final h2 em{font-style:normal;color:var(--accent-bright)}
-.final p{color:#9aa494;font-size:1.04rem;max-width:48ch}
+.final p{color:#a49c94;font-size:1.04rem;max-width:48ch}
 .final p.guarantee{color:#e6eae2;margin-top:16px}
 .final p.guarantee b{color:var(--accent-bright);font-weight:600}
 .final .btn-primary{background:var(--accent-bright);color:var(--dark);border-color:var(--accent-bright);margin-top:28px}
-.final .btn-primary:hover{background:#86efac;border-color:#86efac}
-.final-meta{font-family:var(--mono);font-size:13px;color:#9aa494;line-height:1.8;
-  border-left:1px solid #2c332a;padding-left:24px}
-@media(max-width:860px){.final-meta{border-left:0;padding-left:0;border-top:1px solid #2c332a;padding-top:24px}}
+.final .btn-primary:hover{background:#ff9b88;border-color:#ff9b88}
+.final-meta{font-family:var(--mono);font-size:13px;color:#a49c94;line-height:1.8;
+  border-left:1px solid #332f2a;padding-left:24px}
+@media(max-width:860px){.final-meta{border-left:0;padding-left:0;border-top:1px solid #332f2a;padding-top:24px}}
 .final-meta .price{color:var(--accent-bright);font-size:2rem;display:block;margin-bottom:8px;
   font-weight:800;letter-spacing:-.02em;font-family:var(--sans)}
 
@@ -442,35 +442,35 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
       <svg viewBox="0 0 960 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: buying signals flow through enrichment, sequencing, and reply qualification into the CRM as booked meetings.">
         <!-- nodes -->
         <g font-family="JetBrains Mono, monospace" text-anchor="middle">
-          <rect x="12" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
-          <text x="87" y="73" fill="#10130f" font-size="13" font-weight="600">SIGNALS</text>
-          <text x="87" y="93" fill="#6b7267" font-size="10.5">ICP + triggers</text>
+          <rect x="12" y="45" width="150" height="64" rx="10" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="87" y="73" fill="#1a1714" font-size="13" font-weight="600">SIGNALS</text>
+          <text x="87" y="93" fill="#6e6557" font-size="10.5">ICP + triggers</text>
 
-          <rect x="210" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
-          <text x="285" y="73" fill="#10130f" font-size="13" font-weight="600">ENRICH</text>
-          <text x="285" y="93" fill="#6b7267" font-size="10.5">Clay + Apollo</text>
+          <rect x="210" y="45" width="150" height="64" rx="10" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="285" y="73" fill="#1a1714" font-size="13" font-weight="600">ENRICH</text>
+          <text x="285" y="93" fill="#6e6557" font-size="10.5">Clay + Apollo</text>
 
-          <rect x="408" y="35" width="150" height="84" rx="10" fill="#e7f4ec" stroke="#15803d" stroke-width="1.5"/>
-          <text x="483" y="70" fill="#0f5c2c" font-size="13" font-weight="600">SEQUENCE</text>
-          <text x="483" y="90" fill="#3f463d" font-size="10.5">your voice, every</text>
-          <text x="483" y="104" fill="#3f463d" font-size="10.5">touch reviewed</text>
+          <rect x="408" y="35" width="150" height="84" rx="10" fill="#f2e0da" stroke="#b5341f" stroke-width="1.5"/>
+          <text x="483" y="70" fill="#9c2c1a" font-size="13" font-weight="600">SEQUENCE</text>
+          <text x="483" y="90" fill="#4a443c" font-size="10.5">your voice, every</text>
+          <text x="483" y="104" fill="#4a443c" font-size="10.5">touch reviewed</text>
 
-          <rect x="606" y="45" width="150" height="64" rx="10" fill="none" stroke="#c9cec2" stroke-width="1.5"/>
-          <text x="681" y="73" fill="#10130f" font-size="13" font-weight="600">QUALIFY</text>
-          <text x="681" y="93" fill="#6b7267" font-size="10.5">reply classification</text>
+          <rect x="606" y="45" width="150" height="64" rx="10" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="681" y="73" fill="#1a1714" font-size="13" font-weight="600">QUALIFY</text>
+          <text x="681" y="93" fill="#6e6557" font-size="10.5">reply classification</text>
 
-          <rect x="804" y="45" width="144" height="64" rx="10" fill="#10130f" stroke="#10130f" stroke-width="1.5"/>
+          <rect x="804" y="45" width="144" height="64" rx="10" fill="#1a1714" stroke="#1a1714" stroke-width="1.5"/>
           <text x="876" y="73" fill="#ffffff" font-size="13" font-weight="600">CRM</text>
-          <text x="876" y="93" fill="#4ade80" font-size="10.5">meetings, logged</text>
+          <text x="876" y="93" fill="#e8a08d" font-size="10.5">meetings, logged</text>
         </g>
         <!-- connectors -->
-        <g stroke="#15803d" stroke-width="1.5" stroke-dasharray="4 5">
+        <g stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5">
           <line x1="162" y1="77" x2="204" y2="77"/>
           <line x1="360" y1="77" x2="402" y2="77"/>
           <line x1="558" y1="77" x2="600" y2="77"/>
           <line x1="756" y1="77" x2="798" y2="77"/>
         </g>
-        <g fill="#15803d">
+        <g fill="#b5341f">
           <polygon points="210,77 201,72.5 201,81.5"/>
           <polygon points="408,77 399,72.5 399,81.5"/>
           <polygon points="606,77 597,72.5 597,81.5"/>
