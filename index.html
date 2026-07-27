@@ -12,45 +12,57 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Leverage | GTM Engineering by Matt Bis</title>
-<!-- MATTHEW: full redesign, modeled on the page architecture the category leaders converged on
-     (sticky nav + CTA button · hero + trust strip · numbered pain points · system diagram ·
-     card grids · big-stat band · pricing cards with checklists · FAQ accordion · final CTA band).
-     Both run LIGHT themes with bold sans headlines — so does this. Your signature element,
-     replacing the client-logo walls you don't have yet, is the terminal/system-log card in the
-     hero: it SHOWS the product doing its job, which no logo wall can. -->
-<meta name="description" content="I build the outbound system that finds your accounts, runs your sequences, and qualifies your replies — installed in your stack, live in ~30 days, and yours to keep. No retainer, no seat license, no SDR ramp.">
+<!-- MATTHEW: v2 — two-system tabbed layout. The page is now one shared shell (nav, hero,
+     trust strip, "why one engineer" band, final CTA) with a tab switcher that swaps the
+     service-specific middle: Outbound Engine (unchanged from v1) and The Watchtower
+     (competitive intelligence). Tab state is JS-only, deep links work: any #intel-* hash
+     activates the intel tab on load. Prices in the Watchtower panel are marked with
+     comments — set your final numbers before shipping. -->
+<meta name="description" content="Two systems, installed and owned: an outbound engine that finds, sequences, and qualifies your accounts — and a competitive intelligence watchtower that tracks your market and answers your questions. Built in your stack by one engineer.">
 <meta name="theme-color" content="#f4f1ea">
 <meta property="og:title" content="Leverage | GTM Engineering by Matt Bis">
-<meta property="og:description" content="More pipeline, not more reps. A GTM engineer builds your outbound system in your own stack — and hands you the keys.">
+<meta property="og:description" content="More pipeline, not more reps. GTM systems you own — an outbound engine and a competitive intelligence watchtower, installed in your stack.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leverage.mattbis.com">
 <meta property="og:site_name" content="Matthew Bis">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Leverage | GTM Engineering by Matt Bis">
-<meta name="twitter:description" content="More pipeline, not more reps. GTM engineering you own — not a seat you rent.">
+<meta name="twitter:description" content="More pipeline, not more reps. GTM systems you own — not seats you rent.">
 <link rel="canonical" href="https://leverage.mattbis.com">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 
-<!-- structured data: Service -->
+<!-- structured data: both services -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Service",
-  "name": "Leverage — GTM Engineering, Installed & Owned",
-  "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
-  "areaServed": "US",
-  "serviceType": "B2B GTM engineering — outbound system built in the client's stack and handed off",
-  "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff.",
-  "offers": {
-    "@type": "Offer",
-    "name": "Pipeline Diagnostic",
-    "priceCurrency": "USD",
-    "price": "3500",
-    "description": "A focused 2 to 3 hour audit of the outbound motion, ending in a Pipeline Leak Map and a fixed-scope system proposal. Guaranteed actionable or free; fee credits toward the build."
-  }
+  "@graph": [
+    {
+      "@type": "Service",
+      "name": "Leverage — Outbound Engine, Installed & Owned",
+      "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
+      "areaServed": "US",
+      "serviceType": "B2B GTM engineering — outbound system built in the client's stack and handed off",
+      "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff.",
+      "offers": {
+        "@type": "Offer",
+        "name": "Pipeline Diagnostic",
+        "priceCurrency": "USD",
+        "price": "3500",
+        "description": "A focused 2 to 3 hour audit of the outbound motion, ending in a Pipeline Leak Map and a fixed-scope system proposal. Guaranteed actionable or free; fee credits toward the build."
+      }
+    },
+    {
+      "@type": "Service",
+      "name": "The Watchtower — Managed Competitive Intelligence",
+      "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
+      "areaServed": "US",
+      "serviceType": "Managed competitive intelligence — monitoring, classification, human-reviewed briefings, and a queryable intelligence record",
+      "description": "A managed competitive intelligence service for mid-market B2B teams: public competitor signals monitored and classified continuously, a biweekly human-reviewed briefing framed against the client's positioning, and an ask-anything desk answered from the structured record. The record belongs to the client."
+    }
+  ]
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -103,7 +115,7 @@ body::before{
 .wrap{max-width:1120px;margin:0 auto;padding:0 6vw}
 @media(max-width:640px){.wrap{padding:0 20px}}
 
-/* ─── NAV (leader pattern: sticky bar + hard CTA button) ─── */
+/* ─── NAV ─── */
 nav{
   position:fixed;top:0;left:0;right:0;z-index:100;
   display:flex;justify-content:space-between;align-items:center;gap:16px;
@@ -169,7 +181,7 @@ h1 em{font-style:normal;color:var(--accent)}
 }
 .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
 
-/* console card — the solo-engineer signature */
+/* console card */
 .console{
   background:var(--dark);border-radius:var(--radius);box-shadow:var(--shadow);
   border:1px solid #29241f;overflow:hidden;
@@ -191,7 +203,7 @@ h1 em{font-style:normal;color:var(--accent)}
 }
 .console-caption b{color:var(--accent);font-weight:500}
 
-/* ─── TRUST STRIP (leader pattern: badges right under hero) ─── */
+/* ─── TRUST STRIP ─── */
 .strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);
   background:var(--bg-soft);padding:22px 0}
 .strip .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;justify-content:center}
@@ -201,6 +213,26 @@ h1 em{font-style:normal;color:var(--accent)}
   font-family:var(--mono);font-size:12.5px;font-weight:500;color:var(--ink-soft);
   border:1px solid var(--line-strong);border-radius:2px;padding:7px 15px;background:var(--bg);
 }
+
+/* ─── TAB SWITCHER (new) ─── */
+/* MATTHEW: the systems switcher. Mono tabs, accent underline on the active one.
+   Deliberately styled like a file switcher in an editor — matches the console motif. */
+.tabbar{padding:44px 0 0}
+.tabbar .tab-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
+  text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:500;
+  display:inline-flex;align-items:center;gap:10px}
+.tabbar .tab-label::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--accent)}
+.tabs{display:flex;gap:4px;border-bottom:1px solid var(--line-strong);flex-wrap:wrap}
+.tabs button{
+  font-family:var(--mono);font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;
+  background:transparent;border:none;border-bottom:2px solid transparent;
+  color:var(--ink-faint);padding:14px 18px 13px;cursor:pointer;
+  transition:color .2s,border-color .2s;margin-bottom:-1px;
+}
+.tabs button:hover{color:var(--ink)}
+.tabs button[aria-selected="true"]{color:var(--ink);border-bottom-color:var(--accent);font-weight:600}
+.tabs button .tab-num{color:var(--accent);margin-right:8px;font-weight:600}
+.panel[hidden]{display:none}
 
 /* ─── SECTIONS ─── */
 section{padding:clamp(72px,9vw,110px) 0}
@@ -234,7 +266,6 @@ section{padding:clamp(72px,9vw,110px) 0}
 .grid-4{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
 @media(max-width:860px){.grid-2,.grid-3,.grid-4{grid-template-columns:1fr}}
 
-/* checklists inside cards */
 .check{list-style:none;margin-top:6px}
 .check li{padding:10px 0 10px 30px;position:relative;color:var(--ink-soft);
   font-size:.96rem;border-bottom:1px solid var(--line)}
@@ -244,7 +275,6 @@ section{padding:clamp(72px,9vw,110px) 0}
   transform:rotate(-45deg)}
 .check li b{color:var(--ink);font-weight:600}
 
-/* mono ledger rows (hire/rent/own) */
 .ledger{list-style:none}
 .ledger li{font-family:var(--mono);font-size:12.5px;color:var(--ink-soft);
   padding:12px 0;border-bottom:1px solid var(--line);
@@ -263,7 +293,7 @@ section{padding:clamp(72px,9vw,110px) 0}
   color:var(--ink-faint);text-transform:uppercase;margin-bottom:18px}
 .diagram-frame svg{width:100%;min-width:640px;height:auto;display:block}
 
-/* ─── STATS BAND (leader pattern: 3 bold stats) ─── */
+/* ─── STATS BAND ─── */
 .stats{background:var(--dark);color:#e6eae2}
 .stats .sec-label{color:var(--accent-bright)}
 .stats .sec-head{color:#fff}
@@ -283,7 +313,7 @@ section{padding:clamp(72px,9vw,110px) 0}
   color:var(--accent-ink);letter-spacing:.03em;background:var(--accent-soft);
   padding:7px 13px;border-radius:2px;font-weight:500}
 
-/* ─── FAQ (leader pattern: accordion) ─── */
+/* ─── FAQ ─── */
 .faq-list{max-width:780px}
 .faq-list details{border-bottom:1px solid var(--line)}
 .faq-list summary{
@@ -310,6 +340,8 @@ section{padding:clamp(72px,9vw,110px) 0}
 .final p.guarantee b{color:var(--accent-bright);font-weight:600}
 .final .btn-primary{background:var(--accent-bright);color:var(--dark);border-color:var(--accent-bright);margin-top:28px}
 .final .btn-primary:hover{background:#ff9b88;border-color:#ff9b88}
+.final .btn-ghost{border-color:#3a352f;color:#e6eae2;margin-top:12px}
+.final .btn-ghost:hover{border-color:#a49c94;background:transparent}
 .final-meta{font-family:var(--mono);font-size:13px;color:#a49c94;line-height:1.8;
   border-left:1px solid #332f2a;padding-left:24px}
 @media(max-width:860px){.final-meta{border-left:0;padding-left:0;border-top:1px solid #332f2a;padding-top:24px}}
@@ -341,10 +373,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
     <span class="dot" aria-hidden="true"></span>Matt&nbsp;Bis <span class="brand-sub">/ Leverage</span>
   </a>
   <span class="links">
-    <a href="#problem">Problem</a>
-    <a href="#system">The system</a>
-    <a href="#pricing">Pricing</a>
-    <a href="#faq">FAQ</a>
+    <a href="#problem" data-tab="outbound">Outbound</a>
+    <a href="#intel-problem" data-tab="intel">Competitive&nbsp;intel</a>
     <a href="https://mattbis.com">&larr;&nbsp;Main&nbsp;site</a>
     <a href="#diagnostic" class="nav-cta">Book a diagnostic</a>
   </span>
@@ -352,25 +382,21 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 
 <main id="main">
 
-<!-- ===== HERO ===== -->
+<!-- ===== HERO (shared shell — outbound remains the flagship hook) ===== -->
 <header id="top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
         <span class="eyebrow">GTM engineering · installed &amp; owned</span>
         <h1>More pipeline.<br><em>Not more reps.</em></h1>
-        <p class="lede">I'm Matt Bis. I build the outbound system that finds your accounts, runs your sequences, and qualifies your replies — <b>installed in your stack, live in about 30 days, and yours to keep.</b> No retainer. No seat license. No SDR ramp.</p>
+        <p class="lede">I'm Matt Bis. I build GTM systems that do the repeatable work so your team keeps the judgment — <b>installed in your stack, and yours to keep.</b> Two systems below: one fills your pipeline. One watches your market.</p>
         <p class="hero-guarantee"><b>Guaranteed:</b> the diagnostic ends with three actionable fixes — or you don't pay.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#diagnostic">Book the diagnostic &rarr;</a>
-          <a class="btn btn-ghost" href="#system">See how it works</a>
+          <a class="btn btn-ghost" href="#systems">See the systems</a>
         </div>
       </div>
       <div>
-        <!-- MATTHEW: signature element. The leaders open with operator photos / client-logo walls —
-             proof assets you don't have yet. A live system log is the solo-engineer equivalent:
-             it demonstrates the deliverable in six lines. Keep the timestamps plausible and the
-             last line sacred — "what your reps see" is the whole pitch compressed. -->
         <div class="console" role="img" aria-label="Example system log: accounts sourced and enriched, sequences sent, a reply classified as qualified, contact logged to the CRM, meeting routed to a rep.">
           <div class="console-bar" aria-hidden="true"><i></i><i></i><i></i><span>system.log — live run</span></div>
           <pre aria-hidden="true"><span class="t">09:02</span>  clay.enrich     142 accounts matched ICP v3
@@ -386,25 +412,44 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </header>
 
-<!-- ===== TRUST STRIP (tool badges — honest proxy for a logo wall) ===== -->
-<!-- MATTHEW: the leaders put partner/certification badges here. Until you have client logos,
-     the stack is the trust signal — it tells operators you build on the same rails the top
-     GTM teams run. Swap these for client logos one at a time as you close case studies. -->
-<div class="strip" aria-label="Tools this system is built on">
+<!-- ===== TRUST STRIP ===== -->
+<div class="strip" aria-label="Tools these systems are built on">
   <div class="wrap">
     <span class="strip-label">Built on</span>
     <span class="badge">Clay</span>
     <span class="badge">n8n</span>
     <span class="badge">Claude</span>
     <span class="badge">Apollo</span>
+    <span class="badge">Apify</span>
     <span class="badge">Instantly</span>
     <span class="badge">HeyReach</span>
+    <span class="badge">Supabase</span>
     <span class="badge">HubSpot</span>
     <span class="badge">your CRM</span>
   </div>
 </div>
 
-<!-- ===== PROBLEM (leader pattern: numbered pain points) ===== -->
+<!-- ===== SYSTEM SWITCHER ===== -->
+<div class="tabbar" id="systems">
+  <div class="wrap">
+    <span class="tab-label">The systems</span>
+    <div class="tabs" role="tablist" aria-label="Leverage systems">
+      <button role="tab" id="tab-outbound" aria-selected="true" aria-controls="panel-outbound" onclick="setTab('outbound')">
+        <span class="tab-num">01</span>Outbound Engine
+      </button>
+      <button role="tab" id="tab-intel" aria-selected="false" aria-controls="panel-intel" onclick="setTab('intel')">
+        <span class="tab-num">02</span>The Watchtower
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PANEL 01 — OUTBOUND ENGINE (unchanged v1 content)
+     ═══════════════════════════════════════════════════════════════════ -->
+<div id="panel-outbound" class="panel" role="tabpanel" aria-labelledby="tab-outbound">
+
+<!-- ===== PROBLEM ===== -->
 <section id="problem">
   <div class="wrap">
     <div class="section-head reveal">
@@ -437,7 +482,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- ===== THE SYSTEM (leader pattern: system diagram + capability split) ===== -->
+<!-- ===== THE SYSTEM ===== -->
 <section id="system" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head reveal">
@@ -449,7 +494,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
     <div class="diagram-frame reveal">
       <div class="fig-label">Fig. 01 — What gets installed</div>
       <svg viewBox="0 0 960 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: buying signals flow through enrichment, sequencing, and reply qualification into the CRM as booked meetings.">
-        <!-- nodes -->
         <g font-family="JetBrains Mono, monospace" text-anchor="middle">
           <rect x="12" y="45" width="150" height="64" rx="3" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
           <text x="87" y="73" fill="#1a1714" font-size="13" font-weight="600">SIGNALS</text>
@@ -472,7 +516,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <text x="876" y="73" fill="#ffffff" font-size="13" font-weight="600">CRM</text>
           <text x="876" y="93" fill="#e8a08d" font-size="10.5">meetings, logged</text>
         </g>
-        <!-- connectors -->
         <g stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5">
           <line x1="162" y1="77" x2="204" y2="77"/>
           <line x1="360" y1="77" x2="402" y2="77"/>
@@ -508,37 +551,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li>Negotiating and closing</li>
           <li>The relationships that compound</li>
         </ul>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ===== WHY ONE ENGINEER (leader pattern: bold 3-stat band, solo-ized) ===== -->
-<!-- MATTHEW: the category leader runs a "100+ clients / 1 team / $0 vanity metrics" stat band.
-     This is the same device flipped to make SOLO the feature: no account-manager layer, no
-     junior handoff, no retainer to feed. "150+" still needs its hardening second fact. -->
-<section class="stats" id="why">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="sec-label">Why one engineer</div>
-      <h2 class="sec-head">The person on the call is the person who builds it.</h2>
-      <p class="sec-intro">Agencies quote you the A-team and staff the B-team. There is no B-team here — and no retainer engineered to keep you dependent.</p>
-    </div>
-    <div class="stat-grid reveal r-stagger">
-      <div class="stat">
-        <div class="big">150+</div>
-        <h3>Production systems shipped</h3>
-        <p>Built by an operator who runs this exact outbound motion daily — not a consultant who learned it secondhand.</p>
-      </div>
-      <div class="stat">
-        <div class="big">1</div>
-        <h3>Engineer. Zero account managers.</h3>
-        <p>No discovery spiral, no handoff to a junior, no game of telephone between "strategy" and the person doing the work.</p>
-      </div>
-      <div class="stat">
-        <div class="big">100%</div>
-        <h3>Yours at handoff</h3>
-        <p>Source, config, data, docs — in your stack, under your logins. It runs whether or not we ever work together again.</p>
       </div>
     </div>
   </div>
@@ -588,7 +600,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- ===== PRICING (leader pattern: side-by-side cards with checklists + badges) ===== -->
+<!-- ===== PRICING ===== -->
 <section id="pricing" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head reveal">
@@ -608,8 +620,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li><b>Guaranteed actionable</b> — three fixes minimum, or it's free</li>
           <li>Fee <b>credits toward the build</b></li>
         </ul>
-        <!-- MATTHEW: flat $3,500 (vs the old $2.5–4K range) — one number reads productized,
-             a range reads negotiable. Also set in the ld+json block and final CTA. -->
         <span class="price-line">$3,500 · flat</span>
       </div>
       <div class="card">
@@ -622,8 +632,6 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li>Hallucination + false-positive guardrails built in</li>
           <li><b>If it doesn't run as scoped, I keep building free until it does</b></li>
         </ul>
-        <!-- Build range stays off-page per the single-price decision — it's quoted in the
-             diagnostic proposal, after value is framed. -->
         <span class="price-line">Fixed price · quoted in your diagnostic</span>
       </div>
       <div class="card">
@@ -672,7 +680,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- ===== FAQ (leader pattern: accordion, handles the sales objections) ===== -->
+<!-- ===== FAQ (outbound) ===== -->
 <section id="faq" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
   <div class="wrap">
     <div class="section-head reveal">
@@ -712,7 +720,314 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </section>
 
-<!-- ===== FINAL CTA ===== -->
+</div><!-- /panel-outbound -->
+
+<!-- ═══════════════════════════════════════════════════════════════════
+     PANEL 02 — THE WATCHTOWER (competitive intelligence)
+     MATTHEW: new. Same architecture as the outbound panel so the page
+     reads as one product family. Prices marked below — set final numbers
+     before shipping. The "rent vs own" tension is handled head-on in the
+     compare ledger and the first FAQ: you rent the WATCHING, you own the
+     RECORD. Don't soften that line — it's the whole positioning.
+     ═══════════════════════════════════════════════════════════════════ -->
+<div id="panel-intel" class="panel" role="tabpanel" aria-labelledby="tab-intel" hidden>
+
+<!-- ===== PROBLEM (intel) ===== -->
+<section id="intel-problem">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">The problem</div>
+      <h2 class="sec-head">You'll hear about it eventually. Usually from a lost deal.</h2>
+      <p class="sec-intro">Every mid-market team does competitive intelligence the same way: nobody owns it, everybody needs it, and the truth arrives late.</p>
+    </div>
+    <div class="grid-4 reveal r-stagger">
+      <div class="card">
+        <span class="num">01</span>
+        <h3>The lost-deal discovery</h3>
+        <p>Your competitor cut prices six weeks ago. You found out on a closing call, from the prospect. Whatever your rep says next is improvised — and the deal was decided before the meeting started.</p>
+      </div>
+      <div class="card">
+        <span class="num">02</span>
+        <h3>Feeds aren't intelligence</h3>
+        <p>The $20 alert tools dump raw links into a channel nobody reads. Volume was never the problem. <em>Meaning</em> is the problem — what changed, how much it matters, and what you should do about it.</p>
+      </div>
+      <div class="card">
+        <span class="num">03</span>
+        <h3>The enterprise ransom</h3>
+        <p>Klue and Crayon start around $15K a year — and then quietly require a full-time owner to turn the feed into anything a rep can actually use. You'd be paying for software <em>and</em> a headcount you don't have.</p>
+      </div>
+      <div class="card">
+        <span class="num">04</span>
+        <h3>Intel that evaporates</h3>
+        <p>What your team knows about the competition lives in one rep's head and last quarter's Slack scrollback. Nothing accumulates. Nothing is queryable. Every planning cycle starts blind.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== THE SYSTEM (intel) ===== -->
+<section id="intel-system" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">The system</div>
+      <h2 class="sec-head">A watchtower with an analyst in it.</h2>
+      <p class="sec-intro">Software watches everything. I read what matters. You get a briefing that already knows your positioning — and a desk you can ask anything, whenever a deal depends on the answer.</p>
+    </div>
+
+    <div class="grid-2 reveal" style="align-items:start;margin-bottom:18px">
+      <div>
+        <div class="console" role="img" aria-label="Example watchtower log: competitor sources scanned, a pricing signal classified and scored, the record updated, a human-reviewed brief delivered to Slack, and an ad hoc question answered from the record.">
+          <div class="console-bar" aria-hidden="true"><i></i><i></i><i></i><span>watchtower.log — this week</span></div>
+          <pre aria-hidden="true"><span class="t">Mon 09:00</span>  watch.scan     4 competitors · 22 sources
+<span class="t">Mon 09:02</span>  signal.new     PRICING · Competitor A · mag 4/5
+<span class="t">Mon 09:03</span>  record.update  pricing history +1 · profile ✓
+<span class="t">Fri 07:30</span>  brief.draft    → human review (me)
+<span class="t">Fri 08:10</span>  slack.deliver  → #market-intel
+<span class="t">Tue 11:42</span>  <b>desk.ask       "did A raise prices twice this yr?" → yes: Mar + Sep</b></pre>
+        </div>
+        <p class="console-caption">The last line is answered from the <b>record</b> — not from vibes.</p>
+      </div>
+      <div class="card">
+        <h3>Why "in context" changes everything</h3>
+        <p style="margin-bottom:12px">Generic monitoring tells you a competitor posted something. This system reads every signal <b style="color:var(--ink)">through your positioning</b> — your differentiators, your ICP, the moves that would actually hurt you — because we define that lens together on day one.</p>
+        <p>A pricing change at a competitor you out-service is noise. The same change at the one that undercuts you on your best segment is a 4/5 — and your brief says so, with a recommended response.</p>
+      </div>
+    </div>
+
+    <div class="diagram-frame reveal">
+      <div class="fig-label">Fig. 02 — What gets installed</div>
+      <svg viewBox="0 0 960 150" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Diagram: competitor sources are watched, signals classified and scored, recorded in a permanent structured record, synthesized into a human-reviewed brief, and made queryable through an ask-anything desk.">
+        <g font-family="JetBrains Mono, monospace" text-anchor="middle">
+          <rect x="12" y="45" width="150" height="64" rx="3" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="87" y="73" fill="#1a1714" font-size="13" font-weight="600">WATCH</text>
+          <text x="87" y="93" fill="#6e6557" font-size="10.5">socials · pricing · email</text>
+
+          <rect x="210" y="45" width="150" height="64" rx="3" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="285" y="73" fill="#1a1714" font-size="13" font-weight="600">CLASSIFY</text>
+          <text x="285" y="93" fill="#6e6557" font-size="10.5">typed · scored 1–5</text>
+
+          <rect x="408" y="45" width="150" height="64" rx="3" fill="none" stroke="#d8d2c6" stroke-width="1.5"/>
+          <text x="483" y="73" fill="#1a1714" font-size="13" font-weight="600">RECORD</text>
+          <text x="483" y="93" fill="#6e6557" font-size="10.5">structured · permanent</text>
+
+          <rect x="606" y="35" width="150" height="84" rx="3" fill="#f2e0da" stroke="#b5341f" stroke-width="1.5"/>
+          <text x="681" y="70" fill="#9c2c1a" font-size="13" font-weight="600">BRIEF</text>
+          <text x="681" y="90" fill="#4a443c" font-size="10.5">biweekly, reviewed</text>
+          <text x="681" y="104" fill="#4a443c" font-size="10.5">by a human — me</text>
+
+          <rect x="804" y="45" width="144" height="64" rx="3" fill="#1a1714" stroke="#1a1714" stroke-width="1.5"/>
+          <text x="876" y="73" fill="#ffffff" font-size="13" font-weight="600">ASK</text>
+          <text x="876" y="93" fill="#e8a08d" font-size="10.5">your intel desk</text>
+        </g>
+        <g stroke="#b5341f" stroke-width="1.5" stroke-dasharray="4 5">
+          <line x1="162" y1="77" x2="204" y2="77"/>
+          <line x1="360" y1="77" x2="402" y2="77"/>
+          <line x1="558" y1="77" x2="600" y2="77"/>
+          <line x1="756" y1="77" x2="798" y2="77"/>
+        </g>
+        <g fill="#b5341f">
+          <polygon points="210,77 201,72.5 201,81.5"/>
+          <polygon points="408,77 399,72.5 399,81.5"/>
+          <polygon points="606,77 597,72.5 597,81.5"/>
+          <polygon points="804,77 795,72.5 795,81.5"/>
+        </g>
+      </svg>
+    </div>
+
+    <div class="grid-2 reveal r-stagger" style="margin-top:18px">
+      <div class="card">
+        <h3>The system handles — the watching</h3>
+        <ul class="check">
+          <li>Monitors LinkedIn, X, Instagram, pricing pages &amp; competitor marketing emails — <b>public sources only</b></li>
+          <li>Classifies every signal: pricing, product, hiring, messaging, partnerships</li>
+          <li>Scores strategic magnitude 1–5 against <b>your</b> positioning</li>
+          <li>Builds a permanent, structured record per competitor</li>
+          <li>Drafts the brief — nothing ships without human review</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h3>You get — the knowing</h3>
+        <ul class="check">
+          <li>A <b>biweekly brief</b> in your Slack: what moved, why it matters, what to do</li>
+          <li>Every brief <b>read and signed off by me</b> before it sends — no AI slop in your channel</li>
+          <li>An <b>ask-anything desk</b>: "Has X changed pricing twice this year?" — answered from the record, with receipts</li>
+          <li>Competitor profiles that <b>compound</b> — quarter over quarter</li>
+          <li>The entire record <b>exports with you</b> if you ever leave</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== COMPARE (intel) ===== -->
+<section id="intel-compare">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">The alternatives</div>
+      <h2 class="sec-head">Three ways to watch your market. Two of them don't.</h2>
+      <p class="sec-intro">Free tools give you links without meaning. Enterprise platforms give you meaning — if you hire someone to extract it. Only one option gives you an analyst without the analyst's salary.</p>
+    </div>
+    <div class="grid-3 reveal r-stagger">
+      <div class="card">
+        <span class="num">A — THE FREE STACK</span>
+        <ul class="ledger">
+          <li>Cost <b>$0</b></li>
+          <li>Coverage <b>Links, not meaning</b></li>
+          <li>Who owns it <b>Nobody</b></li>
+          <li>When it matters <b>You're scrolling</b></li>
+          <li>You keep <b>Browser tabs</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">B — ENTERPRISE PLATFORM</span>
+        <ul class="ledger">
+          <li>Cost <b>$15–40K / yr + owner</b></li>
+          <li>Requires <b>A full-time curator</b></li>
+          <li>Built for <b>1,000-rep orgs</b></li>
+          <li>Contract <b>Annual, quote-only</b></li>
+          <li>You keep <b>A login</b></li>
+        </ul>
+      </div>
+      <div class="card featured">
+        <span class="tag">This offer</span>
+        <span class="num">C — THE WATCHTOWER</span>
+        <ul class="ledger">
+          <li>Cost <b>Setup + flat monthly</b></li>
+          <li>The analyst is <b>Included — me</b></li>
+          <li>Built for <b>Your exact position</b></li>
+          <li>Cancel <b>Anytime, no minimum</b></li>
+          <li>You keep <b>The entire record</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== PRICING (intel) ===== -->
+<section id="intel-pricing" style="background:var(--bg-soft);border-top:1px solid var(--line);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">How it works · pricing</div>
+      <h2 class="sec-head">Aim &rarr; watch &rarr; know.</h2>
+      <p class="sec-intro">One fixed onboarding, one flat monthly, zero lock-in. The subscription pays for the watching. The record it builds is yours from day one.</p>
+    </div>
+    <div class="step-row reveal r-stagger">
+      <div class="card featured">
+        <span class="tag">Start here</span>
+        <span class="num">01 — THE BASELINE</span>
+        <h3>Aim the tower.</h3>
+        <p>A working session that turns your market into a monitoring spec.</p>
+        <ul class="check">
+          <li>Your <b>Positioning Profile</b> — differentiators, ICP, the moves that would actually hurt you</li>
+          <li>Competitor set defined, <b>every source wired</b></li>
+          <li>Historical baseline: where each competitor stands <b>today</b></li>
+          <li><b>First brief delivered within 14 days</b> — or onboarding is free</li>
+        </ul>
+        <!-- MATTHEW: set your final number. $2,500 anchors well against the $3,500
+             diagnostic and reads productized. -->
+        <span class="price-line">$2,500 · flat, one-time</span>
+      </div>
+      <div class="card">
+        <span class="num">02 — THE WATCH</span>
+        <h3>Always on.</h3>
+        <p>Continuous monitoring, biweekly briefs, and your intel desk.</p>
+        <ul class="check">
+          <li><b>Biweekly brief</b> in Slack + email — human-reviewed, every time</li>
+          <li><b>Ask-anything desk</b> — answers from the record, usually same-day</li>
+          <li>Up to <b>5 competitors</b> · add more, flat per-competitor</li>
+          <li>Unlimited teammates — <b>never a per-seat fee</b></li>
+        </ul>
+        <!-- MATTHEW: $495/mo sits above Parano Pro (€269 self-serve) and 5–8x below
+             the enterprise floor — the "managed for less than a lunch-per-day" zone.
+             Adjust to taste; keep it flat and public. -->
+        <span class="price-line">$495 / mo · flat · cancel anytime</span>
+      </div>
+      <div class="card">
+        <span class="num">03 — THE RECORD</span>
+        <h3>Yours. Permanently.</h3>
+        <p>The part no subscription tool will give you.</p>
+        <ul class="check">
+          <li>Every signal, score, and brief stored in a <b>structured record</b></li>
+          <li><b>Full export, any time you ask</b> — not just at exit</li>
+          <li>Cancel, and the record <b>leaves with you</b> — clean, documented, portable</li>
+          <li>Two years in, you own two years of your market's history. <b>Nobody can take that back.</b></li>
+        </ul>
+        <span class="price-line">Included · this is the point</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ (intel) ===== -->
+<section id="intel-faq">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">FAQ</div>
+      <h2 class="sec-head">The questions every buyer asks.</h2>
+    </div>
+    <div class="faq-list reveal">      <details>
+        <summary>Wait — isn't a monthly fee exactly the renting you rail against?</summary>
+        <div class="a">Fair question, and here's the honest answer: you're renting the <b>watching</b> — the monitoring, the classification, my eyes on every brief. That's genuinely ongoing work, so it's honestly priced as ongoing. But the <b>record</b> — every signal, score, profile, and brief the system produces — is yours from day one, exports whenever you ask, and leaves with you if you cancel. A retainer you can quit anytime, that hands you everything it built on the way out, isn't a trap. It's a service.</div>
+      </details>
+      <details>
+        <summary>How is this different from Klue or Crayon?</summary>
+        <div class="a">Those are excellent platforms for organizations with a thousand reps and a dedicated CI owner to feed them. They start around <b>$15–40K a year</b> — before the salary of the person required to run them. This is the inverse: the analyst is included, the price is flat and public, and it's scoped to a mid-market team that needs to <b>know</b>, not to administrate a platform.</div>
+      </details>
+      <details>
+        <summary>How is this different from the $20–80/month alert tools?</summary>
+        <div class="a">Those tools answer "did something happen?" This answers <b>"does it matter, and what should we do?"</b> Every signal is scored against your positioning — defined with you at onboarding, not guessed by a generic model — and every brief is read by a human before it reaches your team. The self-serve tools also can't answer questions: ask them "has X raised prices twice this year?" and you get a search box. Ask the desk, and you get an answer with dates.</div>
+      </details>
+      <details>
+        <summary>What's actually in a brief?</summary>
+        <div class="a">Three parts, every time: <b>what moved</b> (the signals that cleared the noise floor, scored), <b>what it means for you</b> (read through your Positioning Profile — not generic commentary), and <b>what I'd do about it</b> (2–3 recommended actions, concrete enough to forward to a rep). If nothing meaningful happened, the brief says so in one paragraph — I will never pad a quiet fortnight into fake urgency.</div>
+      </details>
+      <details>
+        <summary>Where does the data come from?</summary>
+        <div class="a"><b>Public sources only.</b> Competitors' public social accounts, public pricing and product pages, and the marketing emails they send to anyone who signs up. No logged-in scraping, no gray-area access, no pretexting. If it's not something you could see yourself with a browser and an inbox, it's not in the system.</div>
+      </details>
+      <details>
+        <summary>Who reads this stuff before it hits my Slack?</summary>
+        <div class="a">Me. Every brief is drafted by the system and <b>reviewed, edited, or rewritten by me</b> before it sends. That's the difference between this and a feed — and it's why the price is what it is. You're not paying for compute. You're paying for the judgment call on what a 4/5 signal actually is in <em>your</em> market.</div>
+      </details>
+      <details>
+        <summary>Can I get both systems?</summary>
+        <div class="a">Yes — and they compound. The Watchtower tells you a competitor just raised prices on your best segment; the Outbound Engine puts that exact angle in front of their customers the same week. Most clients start with one. The ones who add the second usually do it within a quarter.</div>
+      </details>
+    </div>
+  </div>
+</section>
+
+</div><!-- /panel-intel -->
+
+<!-- ===== WHY ONE ENGINEER (shared) ===== -->
+<section class="stats" id="why">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">Why one engineer</div>
+      <h2 class="sec-head">The person on the call is the person who builds it.</h2>
+      <p class="sec-intro">Agencies quote you the A-team and staff the B-team. There is no B-team here — and no retainer engineered to keep you dependent.</p>
+    </div>
+    <div class="stat-grid reveal r-stagger">
+      <div class="stat">
+        <div class="big">150+</div>
+        <h3>Production systems shipped</h3>
+        <p>Built by an operator who runs these exact motions daily — not a consultant who learned them secondhand.</p>
+      </div>
+      <div class="stat">
+        <div class="big">1</div>
+        <h3>Engineer. Zero account managers.</h3>
+        <p>No discovery spiral, no handoff to a junior, no game of telephone between "strategy" and the person doing the work.</p>
+      </div>
+      <div class="stat">
+        <div class="big">100%</div>
+        <h3>Yours at handoff</h3>
+        <p>Source, config, data, docs — in your stack, under your logins. Systems that run, and records that leave with you.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FINAL CTA (shared) ===== -->
 <section id="diagnostic" class="final">
   <div class="wrap">
     <div class="final-panel reveal">
@@ -721,10 +1036,15 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
         <h2>Start with the <em>pipeline diagnostic.</em></h2>
         <p>In 2–3 hours I map where your pipeline leaks, stalls, or hides, what a system to fix it would do, and what it replaces in headcount and retainer cost. You leave with the Pipeline Leak Map and a fixed-scope proposal you own — whether or not we ever build together.</p>
         <p class="guarantee">If we build, <b>every dollar of the diagnostic credits toward the system.</b></p>
-        <!-- TODO: swap this mailto for your live booking link (Cal.com / Calendly) as soon as the
-             scheduler exists. Every CTA on the page collapses onto THIS href — confirm the booking
-             flow fires a confirmation and lands on your calendar before going live. -->
-        <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic &rarr;</a>
+        <!-- TODO: swap these mailtos for your live booking links (Cal.com / Calendly) as soon
+             as the scheduler exists. Confirm the booking flow fires a confirmation and lands
+             on your calendar before going live. -->
+        <div>
+          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic &rarr;</a>
+        </div>
+        <div>
+          <a class="btn btn-ghost" href="mailto:matthewjbis@gmail.com?subject=Watchtower%20Scoping%20Call">Here for the Watchtower? Book a scoping call &rarr;</a>
+        </div>
       </div>
       <div class="final-meta">
         <span class="price">$3,500</span>
@@ -755,7 +1075,32 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 (function(){
   'use strict';
 
-  // scroll reveal
+  // ── tab switcher ──
+  window.setTab = function(name){
+    var panels = { outbound: document.getElementById('panel-outbound'),
+                   intel:    document.getElementById('panel-intel') };
+    var tabs   = { outbound: document.getElementById('tab-outbound'),
+                   intel:    document.getElementById('tab-intel') };
+    Object.keys(panels).forEach(function(k){
+      var active = (k === name);
+      panels[k].hidden = !active;
+      tabs[k].setAttribute('aria-selected', active ? 'true' : 'false');
+      if(active){
+        // hidden panels never intersect, so force-reveal on activation
+        panels[k].querySelectorAll('.reveal').forEach(function(el){ el.classList.add('in'); });
+      }
+    });
+  };
+
+  // nav links carry data-tab — activate the right panel before the anchor jump
+  document.querySelectorAll('a[data-tab]').forEach(function(a){
+    a.addEventListener('click', function(){ setTab(a.getAttribute('data-tab')); });
+  });
+
+  // deep links: any #intel-* hash opens the Watchtower panel
+  if(location.hash && location.hash.indexOf('#intel') === 0){ setTab('intel'); }
+
+  // ── scroll reveal ──
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
       if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
@@ -763,7 +1108,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   },{threshold:.15, rootMargin:'0px 0px -40px 0px'});
   document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
 
-  // nav hairline on scroll
+  // ── nav hairline on scroll ──
   var navEl = document.querySelector('nav');
   if(navEl){
     var onScroll = function(){ navEl.classList.toggle('scrolled', window.scrollY > 40); };
