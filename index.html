@@ -11,47 +11,60 @@
 </script>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Leverage | GTM Engineering by Matt Bis</title>
-<!-- MATTHEW: v2 — two-system tabbed layout. The page is now one shared shell (nav, hero,
-     trust strip, "why one engineer" band, final CTA) with a tab switcher that swaps the
-     service-specific middle: Outbound Engine (unchanged from v1) and The Watchtower
-     (competitive intelligence). Tab state is JS-only, deep links work: any #intel-* hash
-     activates the intel tab on load. Prices in the Watchtower panel are marked with
-     comments — set your final numbers before shipping. -->
-<meta name="description" content="Two systems, installed and owned: an outbound engine that finds, sequences, and qualifies your accounts — and a competitive intelligence watchtower that tracks your market and answers your questions. Built in your stack by one engineer.">
+<title>Leverage | AI-Assisted Growth Systems by Matt Bis</title>
+<!-- MATTHEW: v3 — repositioned from contractor to AI-assisted agency partnership.
+     Three structural changes from v2:
+     1. THE MODEL SHIFT — "build & hand off" is no longer the headline motion. The default
+        engagement is now build + operate: AI does the fulfillment, you run the system as an
+        ongoing partner. Ownership stays as the moat (vs. agency retainers), resolved with the
+        Watchtower's own logic applied everywhere: they rent the OPERATING, they own the SYSTEM.
+        Pure handoff still exists but is positioned as the fallback, not the product.
+     2. FOUNDING PARTNER PRICING — new shared band after the trust strip. First 5 clients get
+        founding rates in exchange for a case study + testimonial + one referral intro. The
+        price ladder is stated publicly (Founding → Growth → Standard) so every future raise
+        is pre-announced, not awkward. Founding rates are locked for the client permanently
+        (operate/watch tiers: locked 12 months) — cheap now reads as deliberate, not desperate.
+     3. PRICES — Diagnostic $3,500 → $1,500 founding (standard shown struck through).
+        Outbound operate tier: $750/mo founding (standard $1,500/mo — set final numbers).
+        Watchtower baseline $2,500 → $1,250 founding; watch $495 → $295/mo founding, locked 12mo.
+        Competitive anchors for confidence: GTM engineering agencies run $3–15K+/mo retainers;
+        the cheapest credible flat-fee GTM shop is ~$1,250/mo; Klue/Crayon $15–40K/yr + owner.
+        Your founding rates undercut everything credible in the category — that's the point
+        at this stage. Raise via the ladder as case studies land. -->
+<meta name="description" content="An AI-assisted growth partner for B2B teams: I build GTM systems where AI does the fulfillment, then stay on to operate them — outbound pipeline and competitive intelligence, installed in your stack and yours to keep. Founding partner pricing for the first five clients.">
 <meta name="theme-color" content="#f4f1ea">
-<meta property="og:title" content="Leverage | GTM Engineering by Matt Bis">
-<meta property="og:description" content="More pipeline, not more reps. GTM systems you own — an outbound engine and a competitive intelligence watchtower, installed in your stack.">
+<meta property="og:title" content="Leverage | AI-Assisted Growth Systems by Matt Bis">
+<meta property="og:description" content="More pipeline, not more reps. AI does the fulfillment, I build and operate the system, you own it. Founding partner pricing for the first five clients.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://leverage.mattbis.com">
 <meta property="og:site_name" content="Matthew Bis">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Leverage | GTM Engineering by Matt Bis">
-<meta name="twitter:description" content="More pipeline, not more reps. GTM systems you own — not seats you rent.">
+<meta name="twitter:title" content="Leverage | AI-Assisted Growth Systems by Matt Bis">
+<meta name="twitter:description" content="AI does the fulfillment. I build and operate the system. You own it.">
 <link rel="canonical" href="https://leverage.mattbis.com">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png">
 <link rel="apple-touch-icon" href="/favicon-180.png">
 
-<!-- structured data: both services -->
+<!-- structured data: both services, founding pricing -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
       "@type": "Service",
-      "name": "Leverage — Outbound Engine, Installed & Owned",
+      "name": "Leverage — Outbound Engine, Built & Operated",
       "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
       "areaServed": "US",
-      "serviceType": "B2B GTM engineering — outbound system built in the client's stack and handed off",
-      "description": "A deterministic outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — installed in the client's own stack and owned by them after handoff.",
+      "serviceType": "AI-assisted GTM engineering — outbound system built in the client's stack and operated as an ongoing partnership",
+      "description": "An AI-assisted outbound system for B2B sales teams that sources accounts, runs sequences, qualifies replies, and logs to the CRM — built in the client's own stack, operated as an ongoing partnership, and owned by the client throughout.",
       "offers": {
         "@type": "Offer",
-        "name": "Pipeline Diagnostic",
+        "name": "Pipeline Diagnostic — Founding Partner rate",
         "priceCurrency": "USD",
-        "price": "3500",
-        "description": "A focused 2 to 3 hour audit of the outbound motion, ending in a Pipeline Leak Map and a fixed-scope system proposal. Guaranteed actionable or free; fee credits toward the build."
+        "price": "1500",
+        "description": "A focused 2 to 3 hour audit of the outbound motion, ending in a Pipeline Leak Map and a fixed-scope system proposal. Guaranteed actionable or free; fee credits toward the build. Founding partner rate for the first five clients; standard rate 3500."
       }
     },
     {
@@ -60,7 +73,7 @@
       "provider": { "@type": "Person", "name": "Matthew Bis", "url": "https://mattbis.com" },
       "areaServed": "US",
       "serviceType": "Managed competitive intelligence — monitoring, classification, human-reviewed briefings, and a queryable intelligence record",
-      "description": "A managed competitive intelligence service for mid-market B2B teams: public competitor signals monitored and classified continuously, a biweekly human-reviewed briefing framed against the client's positioning, and an ask-anything desk answered from the structured record. The record belongs to the client."
+      "description": "A managed competitive intelligence service for mid-market B2B teams: public competitor signals monitored and classified continuously, a biweekly human-reviewed briefing framed against the client's positioning, and an ask-anything desk answered from the structured record. The record belongs to the client. Founding partner pricing for the first five clients."
     }
   ]
 }
@@ -180,6 +193,12 @@ h1 em{font-style:normal;color:var(--accent)}
   background:var(--accent-soft);max-width:52ch;
 }
 .actions{margin-top:30px;display:flex;gap:12px;flex-wrap:wrap}
+.founding-note{
+  font-family:var(--mono);font-size:11.5px;letter-spacing:.05em;color:var(--ink-faint);
+  margin-top:16px;
+}
+.founding-note a{color:var(--accent-ink);text-decoration:none;font-weight:500}
+.founding-note a:hover{text-decoration:underline}
 
 /* console card */
 .console{
@@ -214,9 +233,7 @@ h1 em{font-style:normal;color:var(--accent)}
   border:1px solid var(--line-strong);border-radius:2px;padding:7px 15px;background:var(--bg);
 }
 
-/* ─── TAB SWITCHER (new) ─── */
-/* MATTHEW: the systems switcher. Mono tabs, accent underline on the active one.
-   Deliberately styled like a file switcher in an editor — matches the console motif. */
+/* ─── TAB SWITCHER ─── */
 .tabbar{padding:44px 0 0}
 .tabbar .tab-label{font-family:var(--mono);font-size:12px;letter-spacing:.14em;
   text-transform:uppercase;color:var(--accent);margin-bottom:16px;font-weight:500;
@@ -286,6 +303,13 @@ section{padding:clamp(72px,9vw,110px) 0}
   font-family:var(--mono);font-size:10.5px;font-weight:600;letter-spacing:.12em;
   text-transform:uppercase;padding:5px 12px;border-radius:2px}
 
+/* price lines — founding pricing shows struck standard rate */
+.price-line{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12px;
+  color:var(--accent-ink);letter-spacing:.03em;background:var(--accent-soft);
+  padding:7px 13px;border-radius:2px;font-weight:500}
+.price-line s{color:var(--ink-faint);font-weight:400;margin-right:8px;
+  text-decoration-thickness:1.5px;text-decoration-color:var(--accent)}
+
 /* ─── DIAGRAM ─── */
 .diagram-frame{background:var(--bg);border:1px solid var(--line);border-radius:var(--radius);
   padding:28px 24px 20px;box-shadow:var(--shadow);overflow-x:auto}
@@ -309,9 +333,6 @@ section{padding:clamp(72px,9vw,110px) 0}
 /* ─── PROCESS ─── */
 .step-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
 @media(max-width:860px){.step-row{grid-template-columns:1fr}}
-.price-line{display:inline-block;margin-top:16px;font-family:var(--mono);font-size:12px;
-  color:var(--accent-ink);letter-spacing:.03em;background:var(--accent-soft);
-  padding:7px 13px;border-radius:2px;font-weight:500}
 
 /* ─── FAQ ─── */
 .faq-list{max-width:780px}
@@ -347,6 +368,8 @@ section{padding:clamp(72px,9vw,110px) 0}
 @media(max-width:860px){.final-meta{border-left:0;padding-left:0;border-top:1px solid #332f2a;padding-top:24px}}
 .final-meta .price{color:var(--accent-bright);font-size:2rem;display:block;margin-bottom:8px;
   font-weight:600;letter-spacing:-.02em;font-family:var(--display)}
+.final-meta .price s{color:#66605a;font-size:1.1rem;font-weight:400;margin-right:10px;
+  text-decoration-color:var(--accent-bright);text-decoration-thickness:1.5px}
 
 /* ─── FOOTER ─── */
 footer{padding:44px 0;font-family:var(--mono);font-size:12px;letter-spacing:.05em;color:var(--ink-faint)}
@@ -375,6 +398,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   <span class="links">
     <a href="#problem" data-tab="outbound">Outbound</a>
     <a href="#intel-problem" data-tab="intel">Competitive&nbsp;intel</a>
+    <a href="#founding">Founding&nbsp;pricing</a>
     <a href="https://mattbis.com">&larr;&nbsp;Main&nbsp;site</a>
     <a href="#diagnostic" class="nav-cta">Book a diagnostic</a>
   </span>
@@ -382,19 +406,20 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 
 <main id="main">
 
-<!-- ===== HERO (shared shell — outbound remains the flagship hook) ===== -->
+<!-- ===== HERO (shared shell) ===== -->
 <header id="top">
   <div class="wrap">
     <div class="hero-grid">
       <div>
-        <span class="eyebrow">GTM engineering · installed &amp; owned</span>
+        <span class="eyebrow">AI-assisted growth systems · built &amp; operated</span>
         <h1>More pipeline.<br><em>Not more reps.</em></h1>
-        <p class="lede">I'm Matt Bis. I build GTM systems that do the repeatable work so your team keeps the judgment — <b>installed in your stack, and yours to keep.</b> Two systems below: one fills your pipeline. One watches your market.</p>
+        <p class="lede">I'm Matt Bis. I build GTM systems where <b>AI does the fulfillment</b> — the sourcing, the sequencing, the watching — then I stay on as your operator, tuning what the machines run. <b>Installed in your stack, and yours to keep, whether we work together for a month or a year.</b></p>
         <p class="hero-guarantee"><b>Guaranteed:</b> the diagnostic ends with three actionable fixes — or you don't pay.</p>
         <div class="actions">
           <a class="btn btn-primary" href="#diagnostic">Book the diagnostic &rarr;</a>
           <a class="btn btn-ghost" href="#systems">See the systems</a>
         </div>
+        <p class="founding-note">Founding partner pricing is live for the first five clients — <a href="#founding">here's the deal</a>.</p>
       </div>
       <div>
         <div class="console" role="img" aria-label="Example system log: accounts sourced and enriched, sequences sent, a reply classified as qualified, contact logged to the CRM, meeting routed to a rep.">
@@ -406,7 +431,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 <span class="t">11:31</span>  crm.sync        contact + thread → HubSpot
 <span class="t">11:32</span>  <b>handoff         MEETING → routed to your AE</b></pre>
         </div>
-        <p class="console-caption">Your reps see <b>only the last line.</b></p>
+        <p class="console-caption">AI runs every line above. Your reps see <b>only the last one.</b></p>
       </div>
     </div>
   </div>
@@ -429,6 +454,57 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   </div>
 </div>
 
+<!-- ===== FOUNDING PARTNER PRICING (new, shared) =====
+     MATTHEW: this is the honesty play. The productized offer is new; the systems aren't.
+     Publishing the ladder makes every future price raise pre-announced instead of awkward,
+     and framing the discount as an exchange (case study + testimonial + referral) reads
+     as strategy, not desperation. Update the tier copy as slots fill — when founding is
+     full, this whole section becomes the "Growth" tier with founding shown as sold out. -->
+<section id="founding" style="background:var(--bg-soft);border-bottom:1px solid var(--line)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="sec-label">Founding partner pricing</div>
+      <h2 class="sec-head">Early prices. In exchange for proof.</h2>
+      <p class="sec-intro">The systems behind Leverage have shipped 150+ times in production. The productized offer is new — and rather than pretend otherwise, I'm pricing it like it: the first five clients get founding rates, I get the public case studies. Everyone after pays more. Here's exactly how that works.</p>
+    </div>
+    <div class="grid-3 reveal r-stagger">
+      <div class="card featured">
+        <span class="tag">First 5 clients</span>
+        <span class="num">01 — THE DEAL</span>
+        <h3>Founding rates, locked.</h3>
+        <p>Every price on this page shows the standard rate struck through and the founding rate you actually pay. Your founding rate on any monthly tier is <b style="color:var(--ink)">locked for 12 months</b> — when prices rise for new clients, yours doesn't.</p>
+        <ul class="check">
+          <li>Diagnostic <b>$1,500</b> (standard $3,500)</li>
+          <li>Outbound operation <b>from $750/mo</b> (standard $1,500/mo)</li>
+          <li>Watchtower <b>$1,250 setup + $295/mo</b> (standard $2,500 + $495/mo)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">02 — THE EXCHANGE</span>
+        <h3>What founding clients trade.</h3>
+        <p>The discount isn't charity in either direction. In exchange for founding rates, you agree to:</p>
+        <ul class="check">
+          <li>A <b>written case study</b> — anonymized if you prefer, but with real numbers</li>
+          <li>A <b>testimonial</b> I can publish with your name and title</li>
+          <li><b>One referral introduction</b> to a peer who has the same problem, if the system delivers</li>
+          <li>A 30-minute feedback call at the 60-day mark</li>
+        </ul>
+      </div>
+      <div class="card">
+        <span class="num">03 — THE LADDER</span>
+        <h3>Prices only move one way.</h3>
+        <p>The full ladder, published now so no future raise is a surprise:</p>
+        <ul class="ledger">
+          <li>Founding · clients 1–5 <b>Current rates</b></li>
+          <li>Growth · clients 6–15 <b>~2x founding</b></li>
+          <li>Standard · client 16+ <b>Full listed rate</b></li>
+          <li>Your locked rate <b>Never rises mid-term</b></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ===== SYSTEM SWITCHER ===== -->
 <div class="tabbar" id="systems">
   <div class="wrap">
@@ -445,7 +521,11 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 </div>
 
 <!-- ═══════════════════════════════════════════════════════════════════
-     PANEL 01 — OUTBOUND ENGINE (unchanged v1 content)
+     PANEL 01 — OUTBOUND ENGINE
+     MATTHEW v3: build+operate is now the default motion. Pricing step 03
+     changed from "own & iterate" (passive care plan) to "the partnership"
+     (active operation — AI fulfillment, you as operator). Ownership stays
+     the moat: they rent the operating, they own the machine.
      ═══════════════════════════════════════════════════════════════════ -->
 <div id="panel-outbound" class="panel" role="tabpanel" aria-labelledby="tab-outbound">
 
@@ -487,8 +567,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="sec-label">The system</div>
-      <h2 class="sec-head">One deterministic pipeline. Zero improvisation.</h2>
-      <p class="sec-intro">Not an autonomous agent turned loose on your CRM, and not an AI that freelances emails to your best accounts. A fixed pipeline that does the repeatable work, so the only things that reach a human are the conversations that need one.</p>
+      <h2 class="sec-head">AI does the fulfillment. I run the machine. You keep the judgment.</h2>
+      <p class="sec-intro">Not an autonomous agent turned loose on your CRM, and not an AI that freelances emails to your best accounts. A fixed pipeline where AI handles every repeatable step, I tune what it runs — targeting, sequences, deliverability — and the only things that reach your team are the conversations that need a human.</p>
     </div>
 
     <div class="diagram-frame reveal">
@@ -561,8 +641,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="sec-label">The alternatives</div>
-      <h2 class="sec-head">Three ways to buy pipeline. Two of them are renting.</h2>
-      <p class="sec-intro">Headcount rents effort by the year. Agencies and AI-SDR seats rent access by the month. Only one option ends with you holding the machine.</p>
+      <h2 class="sec-head">Three ways to buy pipeline. Two of them leave you with nothing.</h2>
+      <p class="sec-intro">Headcount rents effort by the year. Agencies and AI-SDR seats rent access by the month — and keep the machine. This is the third model: an operated system that lives in your stack, where cancelling the operation doesn't cost you the asset.</p>
     </div>
     <div class="grid-3 reveal r-stagger">
       <div class="card">
@@ -576,7 +656,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
         </ul>
       </div>
       <div class="card">
-        <span class="num">B — RENT IT</span>
+        <span class="num">B — AGENCY / AI-SDR SEAT</span>
         <ul class="ledger">
           <li>Cost <b>$5–15K / mo, ongoing</b></li>
           <li>Minimum term <b>Often 6 months</b></li>
@@ -587,12 +667,12 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
       </div>
       <div class="card featured">
         <span class="tag">This offer</span>
-        <span class="num">C — OWN THE SYSTEM</span>
+        <span class="num">C — OWN THE MACHINE, RENT THE OPERATOR</span>
         <ul class="ledger">
-          <li>Cost <b>One fixed build</b></li>
+          <li>Cost <b>Fixed build + flat operate</b></li>
           <li>Live in <b>~30 days</b></li>
-          <li>Runs for <b>As long as you want</b></li>
-          <li>Cancel, and <b>Nothing to cancel</b></li>
+          <li>The playbook lives <b>In your stack</b></li>
+          <li>Cancel, and <b>The system stays yours</b></li>
           <li>You keep <b>Everything</b></li>
         </ul>
       </div>
@@ -605,8 +685,8 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
   <div class="wrap">
     <div class="section-head reveal">
       <div class="sec-label">How it works · pricing</div>
-      <h2 class="sec-head">Diagnose &rarr; install &rarr; own.</h2>
-      <p class="sec-intro">A short, fixed-price entry point, a fixed-scope build, and a clean handoff. No discovery spiral, no six-month minimum, no open-ended retainer.</p>
+      <h2 class="sec-head">Diagnose &rarr; install &rarr; operate.</h2>
+      <p class="sec-intro">A short, fixed-price entry point, a fixed-scope build, and then the part that makes this an agency partnership instead of a handoff: I keep operating the machine while AI keeps doing the work. Ownership never leaves your stack — cancel the operation any month, keep the system forever.</p>
     </div>
     <div class="step-row reveal r-stagger">
       <div class="card featured">
@@ -620,7 +700,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li><b>Guaranteed actionable</b> — three fixes minimum, or it's free</li>
           <li>Fee <b>credits toward the build</b></li>
         </ul>
-        <span class="price-line">$3,500 · flat</span>
+        <span class="price-line"><s>$3,500</s>$1,500 · founding · flat</span>
       </div>
       <div class="card">
         <span class="num">02 — THE INSTALL</span>
@@ -632,19 +712,25 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li>Hallucination + false-positive guardrails built in</li>
           <li><b>If it doesn't run as scoped, I keep building free until it does</b></li>
         </ul>
-        <span class="price-line">Fixed price · quoted in your diagnostic</span>
+        <span class="price-line">Fixed price · founding discount quoted in your diagnostic</span>
       </div>
-      <div class="card">
-        <span class="num">03 — OWN &amp; ITERATE</span>
-        <h3>Hold the keys.</h3>
-        <p>Documented handoff, then it's yours.</p>
+      <div class="card featured">
+        <span class="tag">The partnership</span>
+        <span class="num">03 — OPERATE</span>
+        <h3>I run it. AI works it. You own it.</h3>
+        <p>The machine doesn't tune itself — markets shift, reply rates decay, deliverability drifts. I stay on as your operator.</p>
         <ul class="check">
-          <li>Source, config, data &amp; docs — <b>all in your stack</b></li>
-          <li>Optional care plan: monitoring, deliverability, iteration</li>
-          <li><b>Flat monthly, cancel anytime</b> — never a toll</li>
-          <li>Or add the next system when this one's paying for itself</li>
+          <li><b>Monthly targeting &amp; sequence refresh</b> — the system never goes stale</li>
+          <li>Deliverability, monitoring &amp; guardrails — <b>watched daily, by me</b></li>
+          <li>A monthly numbers review: what booked, what didn't, what changes</li>
+          <li><b>Flat monthly, cancel anytime — the system stays yours either way</b></li>
+          <li>Prefer a pure handoff instead? Available — full docs included</li>
         </ul>
-        <span class="price-line">Care plan optional · no minimums</span>
+        <!-- MATTHEW: set final numbers. $750/mo founding vs $1,500/mo standard sits far
+             under agency retainers ($3–15K/mo) and just under the cheapest credible
+             flat-fee GTM shops (~$1,250/mo) — deliberately, at this stage. Raise via
+             the ladder as case studies land. -->
+        <span class="price-line"><s>$1,500 / mo</s>from $750 / mo · founding · cancel anytime</span>
       </div>
     </div>
   </div>
@@ -693,28 +779,32 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
         <div class="a">A complete top-of-funnel pipeline in your own stack: ICP and target-account definition, a sourcing and enrichment pipeline (Clay, Apollo), sequenced outbound in your brand voice, a deterministic reply-classification gate, CRM dedup and automatic logging, orchestration in n8n, and full documentation. Nothing proprietary — <b>nothing you couldn't hire for tomorrow.</b></div>
       </details>
       <details>
-        <summary>How is this different from an agency retainer?</summary>
-        <div class="a">A retainer is structured so the value lives with the agency — their tooling, their logins, a minimum term, a playbook you never see. This is a fixed-scope build inside <b>your</b> stack. When it ships, it's yours, and it keeps running whether or not we ever work together again. Maintenance exists, but it's opt-in and flat — never a toll.</div>
+        <summary>So is this an agency or not?</summary>
+        <div class="a">It's the agency model with the trap removed. Like an agency, I take ongoing responsibility for the outcome: AI does the fulfillment, I do the operating — targeting, sequences, deliverability, the monthly numbers call. Unlike an agency, <b>the entire machine lives in your stack under your logins</b>, the operating fee is flat with no minimum term, and cancelling costs you the operator, not the asset. An agency retainer is structured so the value lives with the agency. This is structured so it lives with you.</div>
       </details>
       <details>
         <summary>How is this different from an AI SDR tool?</summary>
-        <div class="a">AI-SDR products are seats you rent, and most are autonomous agents that improvise. This system is <b>deterministic</b>: every sequence and every rule is reviewed by you before anything sends, with hallucination and false-positive guardrails at the reply gate. And when you stop paying a tool, it vanishes. This doesn't — you own it.</div>
+        <div class="a">AI-SDR products are seats you rent, and most are autonomous agents that improvise. This system is <b>deterministic</b>: every sequence and every rule is reviewed by you before anything sends, with hallucination and false-positive guardrails at the reply gate — and there's a human operator (me) watching it run, not a dashboard hoping you notice. When you stop paying a tool, it vanishes. This doesn't — you own it.</div>
       </details>
       <details>
         <summary>Do you guarantee meetings?</summary>
         <div class="a">No — and be suspicious of anyone who does, because they don't control your offer or your market. What I guarantee is what I <b>do</b> control: the diagnostic produces three actionable fixes or it's free, and the system runs as scoped or I keep building at no charge until it does. That's more than any retainer will put in writing.</div>
       </details>
       <details>
-        <summary>What does the build cost?</summary>
-        <div class="a">The diagnostic is a flat <b>$3,500</b>, and every dollar credits toward the build. The build itself is a fixed price quoted in your proposal — scoped to your stack, not a menu. As an anchor: most builds land at a fraction of one SDR-year, and it's a one-time cost instead of a recurring one.</div>
+        <summary>Why is founding pricing this low?</summary>
+        <div class="a">Because I'm buying something with it: <b>public proof.</b> The systems behind this offer have shipped 150+ times in production, but the productized version of Leverage is new, and the fastest way to make it undeniable is a handful of named case studies with real numbers. Founding clients trade a case study, a testimonial, and one referral intro for rates that will never be offered again — and their monthly rate stays locked for 12 months while the ladder rises behind them. It's a deliberate trade, priced once. The <a href="#founding" style="color:var(--accent-ink)">full ladder is published</a> so you can see exactly where prices go next.</div>
       </details>
       <details>
-        <summary>What happens after handoff? What if it breaks?</summary>
-        <div class="a">You get full documentation and a working handoff — your team can run it, or any competent operator can, because it's built on standard tools. If you'd rather not think about it, the optional care plan covers monitoring, deliverability, and iteration for a flat monthly fee you can cancel anytime.</div>
+        <summary>What does the build cost?</summary>
+        <div class="a">The diagnostic is a flat <b>$1,500 at the founding rate</b> ($3,500 standard), and every dollar credits toward the build. The build itself is a fixed price quoted in your proposal — scoped to your stack, not a menu, with the founding discount applied. As an anchor: most builds land at a fraction of one SDR-year, and the ongoing operation runs at a fraction of any agency retainer.</div>
+      </details>
+      <details>
+        <summary>What if I want to run it myself?</summary>
+        <div class="a">Then take the handoff — it's a real option, not a punishment tier. You get full documentation and a working system your team can run, because it's built on standard tools any competent operator knows. Most clients choose the operate tier anyway, for the same reason they wouldn't buy a plane and skip the pilot: the machine is yours either way, but reply rates decay, deliverability drifts, and markets move. The partnership is what keeps the system current without it becoming someone's side job.</div>
       </details>
       <details>
         <summary>Who actually does the work?</summary>
-        <div class="a">Me. One engineer, zero account managers, senior all the way down. I run this exact outbound motion every day for my own pipeline — 150+ production systems shipped. The person on the sales call, the diagnostic, and the build is the same person.</div>
+        <div class="a">AI does the volume — sourcing, enrichment, drafting, classifying, logging. I do everything that needs judgment: the architecture, the targeting, the review gates, the tuning, and the call where we look at the numbers. One engineer, zero account managers, senior all the way down — 150+ production systems shipped. The person on the sales call, the diagnostic, the build, and the monthly review is the same person.</div>
       </details>
     </div>
   </div>
@@ -724,11 +814,10 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 
 <!-- ═══════════════════════════════════════════════════════════════════
      PANEL 02 — THE WATCHTOWER (competitive intelligence)
-     MATTHEW: new. Same architecture as the outbound panel so the page
-     reads as one product family. Prices marked below — set final numbers
-     before shipping. The "rent vs own" tension is handled head-on in the
-     compare ledger and the first FAQ: you rent the WATCHING, you own the
-     RECORD. Don't soften that line — it's the whole positioning.
+     MATTHEW v3: structure unchanged — this panel was already the partnership
+     model. Prices moved to founding rates with standard struck through, and
+     the 12-month rate lock is stated. The "rent the watching, own the record"
+     line stays — it's now the logic of the whole site.
      ═══════════════════════════════════════════════════════════════════ -->
 <div id="panel-intel" class="panel" role="tabpanel" aria-labelledby="tab-intel" hidden>
 
@@ -909,7 +998,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
     <div class="section-head reveal">
       <div class="sec-label">How it works · pricing</div>
       <h2 class="sec-head">Aim &rarr; watch &rarr; know.</h2>
-      <p class="sec-intro">One fixed onboarding, one flat monthly, zero lock-in. The subscription pays for the watching. The record it builds is yours from day one.</p>
+      <p class="sec-intro">One fixed onboarding, one flat monthly, zero lock-in. The subscription pays for the watching. The record it builds is yours from day one — and founding rates are locked for 12 months.</p>
     </div>
     <div class="step-row reveal r-stagger">
       <div class="card featured">
@@ -923,9 +1012,9 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li>Historical baseline: where each competitor stands <b>today</b></li>
           <li><b>First brief delivered within 14 days</b> — or onboarding is free</li>
         </ul>
-        <!-- MATTHEW: set your final number. $2,500 anchors well against the $3,500
-             diagnostic and reads productized. -->
-        <span class="price-line">$2,500 · flat, one-time</span>
+        <!-- MATTHEW: founding = half the v2 anchor. Standard $2,500 stays as the
+             struck reference and the post-ladder target. -->
+        <span class="price-line"><s>$2,500</s>$1,250 · founding · flat, one-time</span>
       </div>
       <div class="card">
         <span class="num">02 — THE WATCH</span>
@@ -937,10 +1026,10 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
           <li>Up to <b>5 competitors</b> · add more, flat per-competitor</li>
           <li>Unlimited teammates — <b>never a per-seat fee</b></li>
         </ul>
-        <!-- MATTHEW: $495/mo sits above Parano Pro (€269 self-serve) and 5–8x below
-             the enterprise floor — the "managed for less than a lunch-per-day" zone.
-             Adjust to taste; keep it flat and public. -->
-        <span class="price-line">$495 / mo · flat · cancel anytime</span>
+        <!-- MATTHEW: $295/mo founding (locked 12 months) vs $495 standard. Founding
+             sits just above self-serve tools and ~4x under the cheapest managed
+             alternative — the "impossible to say no" zone while you collect proof. -->
+        <span class="price-line"><s>$495 / mo</s>$295 / mo · founding · locked 12 mo · cancel anytime</span>
       </div>
       <div class="card">
         <span class="num">03 — THE RECORD</span>
@@ -967,7 +1056,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
     </div>
     <div class="faq-list reveal">      <details>
         <summary>Wait — isn't a monthly fee exactly the renting you rail against?</summary>
-        <div class="a">Fair question, and here's the honest answer: you're renting the <b>watching</b> — the monitoring, the classification, my eyes on every brief. That's genuinely ongoing work, so it's honestly priced as ongoing. But the <b>record</b> — every signal, score, profile, and brief the system produces — is yours from day one, exports whenever you ask, and leaves with you if you cancel. A retainer you can quit anytime, that hands you everything it built on the way out, isn't a trap. It's a service.</div>
+        <div class="a">Fair question, and here's the honest answer: you're renting the <b>watching</b> — the monitoring, the classification, my eyes on every brief. That's genuinely ongoing work, so it's honestly priced as ongoing. But the <b>record</b> — every signal, score, profile, and brief the system produces — is yours from day one, exports whenever you ask, and leaves with you if you cancel. A retainer you can quit anytime, that hands you everything it built on the way out, isn't a trap. It's a service. The same logic runs the whole site: you rent the operating, you own the machine.</div>
       </details>
       <details>
         <summary>How is this different from Klue or Crayon?</summary>
@@ -990,8 +1079,12 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
         <div class="a">Me. Every brief is drafted by the system and <b>reviewed, edited, or rewritten by me</b> before it sends. That's the difference between this and a feed — and it's why the price is what it is. You're not paying for compute. You're paying for the judgment call on what a 4/5 signal actually is in <em>your</em> market.</div>
       </details>
       <details>
+        <summary>Why is founding pricing this low?</summary>
+        <div class="a">Same answer as everywhere on this site: I'm trading margin for <b>public proof</b>. The first five Leverage clients get founding rates — locked for 12 months on the monthly tiers — in exchange for a case study, a testimonial, and a referral intro. The <a href="#founding" style="color:var(--accent-ink)">ladder is published</a>: clients 6–15 pay roughly double, and after that it's full rate. If you're reading this while founding slots exist, you're early. That's the whole offer.</div>
+      </details>
+      <details>
         <summary>Can I get both systems?</summary>
-        <div class="a">Yes — and they compound. The Watchtower tells you a competitor just raised prices on your best segment; the Outbound Engine puts that exact angle in front of their customers the same week. Most clients start with one. The ones who add the second usually do it within a quarter.</div>
+        <div class="a">Yes — and they compound. The Watchtower tells you a competitor just raised prices on your best segment; the Outbound Engine puts that exact angle in front of their customers the same week. Most clients start with one. The ones who add the second usually do it within a quarter — and founding clients who take both get the second setup fee waived.</div>
       </details>
     </div>
   </div>
@@ -999,13 +1092,13 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 
 </div><!-- /panel-intel -->
 
-<!-- ===== WHY ONE ENGINEER (shared) ===== -->
+<!-- ===== WHY ONE OPERATOR (shared) ===== -->
 <section class="stats" id="why">
   <div class="wrap">
     <div class="section-head reveal">
-      <div class="sec-label">Why one engineer</div>
-      <h2 class="sec-head">The person on the call is the person who builds it.</h2>
-      <p class="sec-intro">Agencies quote you the A-team and staff the B-team. There is no B-team here — and no retainer engineered to keep you dependent.</p>
+      <div class="sec-label">Why one operator</div>
+      <h2 class="sec-head">The person on the call is the person who runs it.</h2>
+      <p class="sec-intro">Agencies quote you the A-team and staff the B-team. Here, AI is the team — and the one human in the loop is the same senior engineer at every stage: the sales call, the build, and the monthly review.</p>
     </div>
     <div class="stat-grid reveal r-stagger">
       <div class="stat">
@@ -1015,13 +1108,13 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
       </div>
       <div class="stat">
         <div class="big">1</div>
-        <h3>Engineer. Zero account managers.</h3>
-        <p>No discovery spiral, no handoff to a junior, no game of telephone between "strategy" and the person doing the work.</p>
+        <h3>Operator. Zero account managers.</h3>
+        <p>AI does the fulfillment, so there's no junior team to hide behind and no game of telephone between "strategy" and the work. What you're paying for is judgment — and it doesn't get delegated.</p>
       </div>
       <div class="stat">
         <div class="big">100%</div>
-        <h3>Yours at handoff</h3>
-        <p>Source, config, data, docs — in your stack, under your logins. Systems that run, and records that leave with you.</p>
+        <h3>Yours, from day one</h3>
+        <p>Source, config, data, docs — in your stack, under your logins. Cancel the partnership any month; the machine and the record stay with you.</p>
       </div>
     </div>
   </div>
@@ -1035,20 +1128,20 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
         <div class="sec-label">Start here</div>
         <h2>Start with the <em>pipeline diagnostic.</em></h2>
         <p>In 2–3 hours I map where your pipeline leaks, stalls, or hides, what a system to fix it would do, and what it replaces in headcount and retainer cost. You leave with the Pipeline Leak Map and a fixed-scope proposal you own — whether or not we ever build together.</p>
-        <p class="guarantee">If we build, <b>every dollar of the diagnostic credits toward the system.</b></p>
+        <p class="guarantee">If we build, <b>every dollar of the diagnostic credits toward the system</b> — and founding partner rates apply to everything that follows.</p>
         <!-- TODO: swap these mailtos for your live booking links (Cal.com / Calendly) as soon
              as the scheduler exists. Confirm the booking flow fires a confirmation and lands
              on your calendar before going live. -->
         <div>
-          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic">Book a diagnostic &rarr;</a>
+          <a class="btn btn-primary" href="mailto:matthewjbis@gmail.com?subject=Pipeline%20Diagnostic%20(Founding%20Partner)">Book a diagnostic &rarr;</a>
         </div>
         <div>
           <a class="btn btn-ghost" href="mailto:matthewjbis@gmail.com?subject=Watchtower%20Scoping%20Call">Here for the Watchtower? Book a scoping call &rarr;</a>
         </div>
       </div>
       <div class="final-meta">
-        <span class="price">$3,500</span>
-        2–3 hours · ends in a Pipeline Leak Map + fixed-scope proposal · fee credits toward the build · guaranteed actionable or it's free
+        <span class="price"><s>$3,500</s>$1,500</span>
+        Founding partner rate · first 5 clients · 2–3 hours · ends in a Pipeline Leak Map + fixed-scope proposal · fee credits toward the build · guaranteed actionable or it's free
       </div>
     </div>
   </div>
