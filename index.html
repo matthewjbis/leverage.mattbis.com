@@ -158,7 +158,6 @@ nav .brand{font-weight:500;color:var(--ink);
   text-decoration:none;display:inline-flex;align-items:center;gap:9px;
   padding:8px 8px 8px 0;flex-shrink:0}
 nav .brand .dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex-shrink:0}
-nav .brand .brand-sub{color:var(--ink-faint);font-weight:400}
 nav .links{display:flex;gap:2px;align-items:center;margin:0 2px}
 nav .links > a{color:var(--ink-soft);text-decoration:none;padding:10px 13px;border-radius:20px;
   transition:color .2s,background .2s}
@@ -175,10 +174,9 @@ nav .links > a.nav-cta:hover{background:var(--accent-ink);color:#fff}
   nav{padding:7px}
 }
 /* below ~430px, brand + full CTA text no longer fit in a hugging pill (no
-   hamburger exists on this simpler nav to absorb the width) — drop the
-   "/ Leverage" subtitle and shorten the CTA label instead of letting it wrap */
+   hamburger exists on this simpler nav to absorb the width) — shorten the
+   CTA label instead of letting it wrap */
 @media(max-width:480px){
-  nav .brand .brand-sub{display:none}
   .nav-cta .cta-full{display:none}
   .nav-cta .cta-short{display:inline}
 }
@@ -449,7 +447,7 @@ footer .fl{display:flex;gap:22px;flex-wrap:wrap}
 <div class="nav-dock">
 <nav>
   <a href="#top" class="brand">
-    <span class="dot" aria-hidden="true"></span>Matthew&nbsp;Bis <span class="brand-sub">/ Leverage</span>
+    <span class="dot" aria-hidden="true"></span>Matthew&nbsp;Bis
   </a>
   <span class="links">
     <a href="#problem" data-tab="outbound">Outbound</a>
